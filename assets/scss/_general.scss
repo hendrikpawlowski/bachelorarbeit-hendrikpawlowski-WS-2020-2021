@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+// Variables
+
+$m-font: 1rem;
+$l-font: $m-font * 1.618;
+$xl-font: $l-font * 1.618;
+$xxl-font: $xl-font * 1.618;
+
+// General Layout
+
+* */ *,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  color: #3b3b3b;
+}
+
+.container {
+  padding: 64px 20%;
+}
+
+h1 {
+  font-size: $xxl-font;
+}
+
+h2 {
+  font-size: $xl-font;
+}
+
+h3 {
+  font-size: $l-font;
+}
