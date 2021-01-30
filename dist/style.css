@@ -1,10 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
-/**
- * Variables
- */
-/*
-
-* */
 *,
 *:before,
 *:after {
@@ -17,34 +11,58 @@ html {
   color: #3b3b3b;
 }
 
-.container {
-  padding: 64px 20%;
-}
-
-h1 {
+html h1 {
   font-size: 4.2358rem;
 }
 
-h2 {
+html h2 {
   font-size: 2.61792rem;
 }
 
-h3 {
+html h3 {
   font-size: 1.618rem;
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
+html .container {
+  padding: 64px 20%;
+}
+
+html .container .element {
+  margin-bottom: 128px;
+}
+
+@keyframes enableSwitch {
+  0% {
+  }
+  10% {
+  }
+  50% {
+    width: 32px;
+    height: 20px;
+    top: 7px;
+  }
+  100% {
+    left: 43px;
+    width: 26px;
+  }
+}
+
+@keyframes disableSwitch {
+  0% {
+  }
+  50% {
+    width: 32px;
+    height: 20px;
+    top: 7px;
+  }
+  100% {
+    left: 43px;
+    width: 26px;
+  }
 }
 
 .switch {
-  display: inline-block;
   position: relative;
-  margin: 0 0 10px;
-  font-size: 16px;
-  line-height: 24px;
 }
 
 .switch__input {
@@ -52,7 +70,7 @@ h3 {
   top: 0;
   left: 0;
   width: 36px;
-  height: 20px;
+  height: 36px;
   opacity: 0;
   z-index: 0;
 }
@@ -66,12 +84,11 @@ h3 {
 .switch__label:before {
   content: "";
   position: absolute;
-  top: 5px;
   left: 0;
-  width: 36px;
-  height: 14px;
-  background-color: rgba(0, 0, 0, 0.26);
-  border-radius: 14px;
+  width: 60px;
+  height: 34px;
+  background-color: #cecece;
+  border-radius: 100px;
   z-index: 1;
   transition: background-color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -79,23 +96,27 @@ h3 {
 .switch__label:after {
   content: "";
   position: absolute;
-  top: 2px;
-  left: 0;
-  width: 20px;
-  height: 20px;
-  background-color: #fff;
+  left: 17px;
+  top: 4px;
+  width: 26px;
+  height: 26px;
+  background-color: white;
   border-radius: 14px;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
   z-index: 2;
   transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   transition-property: left, background-color;
+  transform: translate(-50%);
+  animation: ease-in-out disableSwitch 200ms;
+  animation-fill-mode: forwards;
+  animation-direction: reverse;
 }
 
 .switch__input:checked + .switch__label:before {
-  background-color: rgba(63, 81, 181, 0.5);
+  background-color: #dca2f7;
 }
 
 .switch__input:checked + .switch__label:after {
-  left: 16px;
-  background-color: #3f51b5;
+  animation: ease-in-out enableSwitch 200ms;
+  animation-fill-mode: forwards;
 }
