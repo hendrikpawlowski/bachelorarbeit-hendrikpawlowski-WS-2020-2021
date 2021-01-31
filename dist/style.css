@@ -23,6 +23,19 @@ html h3 {
   font-size: 1.618rem;
 }
 
+html button {
+  font-size: 24px;
+  font-family: "Montserrat", sans-serif;
+  padding: 12px 32px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background: #9313ce;
+  box-shadow: 0px 0px 2px #e7c4f7, 0px 4px 2px #e7c4f7;
+  color: white;
+  transition: 0.3s;
+}
+
 html .container {
   padding: 64px 20%;
 }
@@ -31,13 +44,31 @@ html .container .element {
   margin-bottom: 128px;
 }
 
-@keyframes enableSwitch {
+@keyframes enableSwitch_Prin_1 {
   0% {
   }
   10% {
   }
   50% {
-    width: 32px;
+    width: 34px;
+    height: 20px;
+    top: 7px;
+  }
+  50% {
+  }
+  70% {
+  }
+  100% {
+    left: 43px;
+    width: 26px;
+  }
+}
+
+@keyframes disableSwitch_Prin_1 {
+  0% {
+  }
+  50% {
+    width: 34px;
     height: 20px;
     top: 7px;
   }
@@ -47,22 +78,40 @@ html .container .element {
   }
 }
 
-@keyframes disableSwitch {
+@keyframes enableSwitch_Prin_5_FT {
   0% {
+    left: 17px;
   }
   50% {
-    width: 32px;
-    height: 20px;
-    top: 7px;
+    left: 48px;
+  }
+  70% {
+    left: 38px;
   }
   100% {
     left: 43px;
-    width: 26px;
+  }
+}
+
+@keyframes disableSwitch_Prin_5_FT {
+  0% {
+    left: 43px;
+  }
+  50% {
+    left: 12px;
+  }
+  70% {
+    left: 22px;
+  }
+  100% {
+    left: 17px;
   }
 }
 
 .switch {
   position: relative;
+  height: 34px;
+  margin-bottom: 24px;
 }
 
 .switch__input {
@@ -79,6 +128,7 @@ html .container .element {
   display: block;
   padding: 0 0 0 44px;
   cursor: pointer;
+  margin-left: 32px;
 }
 
 .switch__label:before {
@@ -107,16 +157,42 @@ html .container .element {
   transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   transition-property: left, background-color;
   transform: translate(-50%);
-  animation: ease-in-out disableSwitch 200ms;
-  animation-fill-mode: forwards;
-  animation-direction: reverse;
 }
 
 .switch__input:checked + .switch__label:before {
   background-color: #dca2f7;
 }
 
-.switch__input:checked + .switch__label:after {
-  animation: ease-in-out enableSwitch 200ms;
+.switch.prin_5_ft .switch__label:after {
+  animation: ease-in-out disableSwitch_Prin_5_FT 300ms;
   animation-fill-mode: forwards;
+}
+
+.switch.prin_5_ft .switch__input:checked + .switch__label:after {
+  animation: ease-in-out enableSwitch_Prin_5_FT 300ms;
+  animation-fill-mode: forwards;
+}
+
+.switch.prin_1 .switch__label:after {
+  animation: ease-in-out disableSwitch_Prin_1 200ms;
+  animation-fill-mode: forwards;
+  animation-direction: reverse;
+}
+
+.switch.prin_1 .switch__input:checked + .switch__label:after {
+  animation: ease-in-out enableSwitch_Prin_1 200ms;
+  animation-fill-mode: forwards;
+}
+
+.button:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 8px #e7c4f7, 0px 8px 8px #e7c4f7;
+  z-index: 24;
+  transition: 0.2s;
+  transform: scale(1.05);
+}
+
+.button:active {
+  transform: scale(0.95);
+  box-shadow: none;
 }
