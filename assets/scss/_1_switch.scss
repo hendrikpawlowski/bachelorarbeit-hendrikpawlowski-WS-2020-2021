@@ -1,10 +1,30 @@
-@keyframes enableSwitch {
+// only squash and stretch 200ms
+
+@keyframes enableSwitch_Prin_1 {
   0% {
   }
   10% {
   }
   50% {
-    width: 32px;
+    width: 34px;
+    height: 20px;
+    top: 7px;
+  }
+  50% {
+  }
+  70% {
+  }
+  100% {
+    left: 43px;
+    width: 26px;
+  }
+}
+
+@keyframes disableSwitch_Prin_1 {
+  0% {
+  }
+  50% {
+    width: 34px;
     height: 20px;
     top: 7px;
   }
@@ -14,22 +34,45 @@
   }
 }
 
-@keyframes disableSwitch {
+// squash and stretch and follow through 400ms
+@keyframes enableSwitch_Prin_5_FT {
   0% {
+    left: 17px;
   }
   50% {
-    width: 32px;
-    height: 20px;
-    top: 7px;
+    left: 48px;
+    // width: 26px;
+  }
+  70% {
+    left: 38px;
   }
   100% {
     left: 43px;
-    width: 26px;
+    // width: 26px;
+  }
+}
+
+@keyframes disableSwitch_Prin_5_FT {
+  0% {
+    left: 43px;
+  }
+  50% {
+    left: 12px;
+    // width: 26px;
+  }
+  70% {
+    left: 22px;
+  }
+  100% {
+    left: 17px;
+    // width: 26px;
   }
 }
 
 .switch {
   position: relative;
+  height: 34px;
+  margin-bottom: 24px;
 
   &__input {
     position: absolute;
@@ -46,6 +89,7 @@
     display: block;
     padding: 0 0 0 44px;
     cursor: pointer;
+    margin-left: 32px;
 
     &:before {
       content: "";
@@ -74,9 +118,6 @@
       transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
       transition-property: left, background-color;
       transform: translate(-50%);
-      animation: ease-in-out disableSwitch 200ms;
-      animation-fill-mode: forwards;
-      animation-direction: reverse;
     }
   }
 
@@ -85,18 +126,38 @@
     &:before {
       background-color: $primary-light;
     }
+  }
+}
 
+.switch.prin_5_ft {
+  .switch__label {
     &:after {
-      animation: ease-in-out enableSwitch 200ms;
+      animation: ease-in-out disableSwitch_Prin_5_FT 300ms;
       animation-fill-mode: forwards;
     }
   }
 
-  // Focused
-  // Uncomment for accessible outline
-  // &__input:focus + &__label {
-  //     &:after {
-  //         outline: 1px dotted currentColor;
-  //     }
-  // }
+  .switch__input:checked + .switch__label {
+    &:after {
+      animation: ease-in-out enableSwitch_Prin_5_FT 300ms;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+.switch.prin_1 {
+  .switch__label {
+    &:after {
+      animation: ease-in-out disableSwitch_Prin_1 200ms;
+      animation-fill-mode: forwards;
+      animation-direction: reverse;
+    }
+  }
+
+  .switch__input:checked + .switch__label {
+    &:after {
+      animation: ease-in-out enableSwitch_Prin_1 200ms;
+      animation-fill-mode: forwards;
+    }
+  }
 }
