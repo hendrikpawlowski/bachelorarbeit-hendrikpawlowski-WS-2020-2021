@@ -4,6 +4,7 @@
 
 $primary: #9313ce;
 $primary-light: #dca2f7;
+$primary-shadow: #e7c4f7;
 $primary-extra-light: #fbf2ff;
 $grey-light: #cecece;
 
@@ -35,6 +36,19 @@ html {
 
   h3 {
     font-size: $l-font;
+  }
+
+  button {
+    font-size: 24px;
+    font-family: "Montserrat", sans-serif;
+    padding: 12px 32px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background: $primary;
+    box-shadow: 0px 0px 2px $primary-shadow, 0px 4px 2px $primary-shadow;
+    color: white;
+    transition: 0.3s;
   }
 
   .container {
