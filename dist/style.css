@@ -31,7 +31,7 @@ html button {
   outline: none;
   border-radius: 5px;
   background: #9313ce;
-  box-shadow: 0px 0px 2px #e7c4f7, 0px 4px 2px #e7c4f7;
+  box-shadow: 0px 0px 4px #e7c4f7, 0px 4px 4px #e7c4f7;
   color: white;
   transition: 0.3s;
 }
@@ -186,13 +186,53 @@ html .container .element {
 
 .button:hover {
   cursor: pointer;
-  box-shadow: 0px 0px 8px #e7c4f7, 0px 8px 8px #e7c4f7;
-  z-index: 24;
-  transition: 0.2s;
-  transform: scale(1.05);
 }
 
-.button:active {
-  transform: scale(0.95);
-  box-shadow: none;
+.animateHover {
+  animation: ease-in-out hoverAnimation 400ms;
+}
+
+.animatePressed {
+  animation: ease-in-out pressedAnimation 300ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes pressedAnimation {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(0.9, 0.9);
+    box-shadow: none;
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes releasedAnimation {
+  0% {
+    transform: scale(0.9, 0.9);
+    box-shadow: none;
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes hoverAnimation {
+  0% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(0.9, 1.05);
+  }
+  50% {
+    transform: scale(1.05, 0.9);
+  }
+  75% {
+  }
+  100% {
+    transform: scale(1, 1);
+  }
 }
