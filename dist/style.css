@@ -34,7 +34,7 @@ html button {
   background: #9313ce;
   box-shadow: 0px 0px 4px #e7c4f7, 0px 4px 4px #e7c4f7;
   color: white;
-  transition: 0.1s;
+  transition: 200ms;
 }
 
 html .container {
@@ -187,14 +187,21 @@ html .container .element {
 
 .button:hover {
   cursor: pointer;
-  transform: scale(1.05, 1.05);
   box-shadow: 0px 0px 4px #e7c4f7, 0px 8px 16px #e7c4f7;
-  transition: 100ms;
 }
 
 .button:active {
-  transform: scale(0.95, 0.95);
   background: #880cc2;
+  transition: 100ms;
+}
+
+.button.prin_1:hover {
+  transform: scale(1.05, 1.05);
+  transition: 100ms;
+}
+
+.button.prin_1:active {
+  transform: scale(0.95, 0.95);
   box-shadow: none;
 }
 
