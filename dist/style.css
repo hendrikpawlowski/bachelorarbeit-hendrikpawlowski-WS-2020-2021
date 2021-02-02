@@ -45,6 +45,84 @@ html .container .element {
   margin-bottom: 128px;
 }
 
+.switch {
+  position: relative;
+  height: 34px;
+  margin-bottom: 24px;
+}
+
+.switch__input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  z-index: 0;
+}
+
+.switch__label {
+  display: flex;
+  align-items: center;
+  margin-left: 76px;
+  height: 34px;
+  cursor: pointer;
+}
+
+.switch__label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 60px;
+  height: 34px;
+  background-color: #cecece;
+  border-radius: 100px;
+  z-index: 1;
+  transition: background-color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.switch__label:after {
+  content: "";
+  position: absolute;
+  left: 17px;
+  top: 4px;
+  width: 26px;
+  height: 26px;
+  background-color: white;
+  border-radius: 14px;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  z-index: 2;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: left, background-color;
+  transform: translate(-50%);
+}
+
+.switch__input:checked + .switch__label:before {
+  background-color: #dca2f7;
+}
+
+.switch.prin_5_ft .switch__label:after {
+  animation: ease-in-out disableSwitch_Prin_5_FT 300ms;
+  animation-fill-mode: forwards;
+}
+
+.switch.prin_5_ft .switch__input:checked + .switch__label:after {
+  animation: ease-in-out enableSwitch_Prin_5_FT 300ms;
+  animation-fill-mode: forwards;
+}
+
+.switch.prin_1 .switch__label:after {
+  animation: ease-in-out disableSwitch_Prin_1 200ms;
+  animation-fill-mode: forwards;
+  animation-direction: reverse;
+}
+
+.switch.prin_1 .switch__input:checked + .switch__label:after {
+  animation: ease-in-out enableSwitch_Prin_1 200ms;
+  animation-fill-mode: forwards;
+}
+
 @keyframes enableSwitch_Prin_1 {
   0% {
   }
@@ -107,82 +185,6 @@ html .container .element {
   100% {
     left: 17px;
   }
-}
-
-.switch {
-  position: relative;
-  height: 34px;
-  margin-bottom: 24px;
-}
-
-.switch__input {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 36px;
-  height: 36px;
-  opacity: 0;
-  z-index: 0;
-}
-
-.switch__label {
-  display: block;
-  padding: 0 0 0 44px;
-  cursor: pointer;
-  margin-left: 32px;
-}
-
-.switch__label:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 60px;
-  height: 34px;
-  background-color: #cecece;
-  border-radius: 100px;
-  z-index: 1;
-  transition: background-color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.switch__label:after {
-  content: "";
-  position: absolute;
-  left: 17px;
-  top: 4px;
-  width: 26px;
-  height: 26px;
-  background-color: white;
-  border-radius: 14px;
-  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-  z-index: 2;
-  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-  transition-property: left, background-color;
-  transform: translate(-50%);
-}
-
-.switch__input:checked + .switch__label:before {
-  background-color: #dca2f7;
-}
-
-.switch.prin_5_ft .switch__label:after {
-  animation: ease-in-out disableSwitch_Prin_5_FT 300ms;
-  animation-fill-mode: forwards;
-}
-
-.switch.prin_5_ft .switch__input:checked + .switch__label:after {
-  animation: ease-in-out enableSwitch_Prin_5_FT 300ms;
-  animation-fill-mode: forwards;
-}
-
-.switch.prin_1 .switch__label:after {
-  animation: ease-in-out disableSwitch_Prin_1 200ms;
-  animation-fill-mode: forwards;
-  animation-direction: reverse;
-}
-
-.switch.prin_1 .switch__input:checked + .switch__label:after {
-  animation: ease-in-out enableSwitch_Prin_1 200ms;
-  animation-fill-mode: forwards;
 }
 
 .button:hover {
