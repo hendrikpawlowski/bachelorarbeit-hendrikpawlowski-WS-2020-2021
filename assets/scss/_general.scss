@@ -3,7 +3,9 @@
 // Variables
 
 $primary: #9313ce;
+$primary-dark: #880cc2;
 $primary-light: #dca2f7;
+$primary-test: #9313ce;
 $primary-shadow: #e7c4f7;
 $primary-extra-light: #fbf2ff;
 $grey-light: #cecece;
@@ -41,6 +43,7 @@ html {
   button {
     font-size: 24px;
     font-family: "Montserrat", sans-serif;
+    position: relative;
     padding: 12px 32px;
     border: none;
     outline: none;
@@ -50,7 +53,7 @@ html {
     box-shadow: 0px 0px 4px $primary-shadow, 0px 4px 4px $primary-shadow;
     // box-shadow: 0px 0px 8px $primary-shadow, 0px 8px 8px $primary-shadow;
     color: white;
-    transition: 0.3s;
+    transition: 0.1s;
   }
 
   .container {
