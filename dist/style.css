@@ -195,6 +195,7 @@ html .container .element {
 .button:active {
   background: #880cc2;
   transition: 100ms;
+  lololol: 4;
 }
 
 .button.prin_1:hover {
