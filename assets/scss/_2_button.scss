@@ -1,53 +1,100 @@
-.button:hover {
-  cursor: pointer;
-}
-
-.animateHover {
-  animation: ease-in-out hoverAnimation 400ms;
-}
-
-.animatePressed {
-  animation: ease-in-out pressedAnimation 300ms;
-  animation-fill-mode: forwards;
-}
-
-@keyframes pressedAnimation {
-  0% {
-    transform: scale(1, 1);
+.button {
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.05, 1.05);
+    box-shadow: 0px 0px 4px $primary-shadow, 0px 8px 16px $primary-shadow;
+    transition: 100ms;
   }
-  50% {
-    transform: scale(0.9, 0.9);
+
+  &:active {
+    transform: scale(0.95, 0.95);
+    background: $primary-dark;
     box-shadow: none;
   }
-  100% {
-    transform: scale(1, 1);
+
+  &.prin_8:before,
+  &.prin_8:after {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 140%;
+    height: 100%;
+    left: -20%;
+    z-index: -1000;
+    transition: all ease-in-out 0.5s;
+    background-repeat: no-repeat;
+  }
+
+  &.prin_8:before {
+    display: none;
+    top: -75%;
+    background-image: radial-gradient(
+        circle,
+        $primary-light 20%,
+        transparent 20%
+      ),
+      radial-gradient(circle, $primary-light 20%, transparent 20%),
+      radial-gradient(circle, $primary-light 20%, transparent 20%),
+      radial-gradient(circle, $primary-light 20%, transparent 20%),
+      radial-gradient(circle, $primary-light 20%, transparent 20%);
+    background-size: 15% 15%, 15% 15%, 15% 15%;
+    //background-position: 0% 80%, -5% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 85% 30%;
+  }
+
+  &.prin_8:after {
+    display: none;
+    bottom: -75%;
+    background-image: radial-gradient(
+        circle,
+        $primary-light 20%,
+        transparent 20%
+      ),
+      radial-gradient(circle, $primary-light 20%, transparent 20%),
+      radial-gradient(circle, $primary-light 20%, transparent 20%),
+      radial-gradient(circle, $primary-light 20%, transparent 20%),
+      radial-gradient(circle, $primary-light 20%, transparent 20%);
+    background-size: 15% 15%, 15% 15%, 15% 15%;
+    //background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+  }
+
+  &.animate {
+    &:before {
+      display: block;
+      animation: topBubbles ease-out 0.3s forwards;
+    }
+    &:after {
+      display: block;
+      animation: bottomBubbles ease-out 0.3s forwards;
+    }
   }
 }
 
-@keyframes releasedAnimation {
+@keyframes topBubbles {
   0% {
-    transform: scale(0.9, 0.9);
-    box-shadow: none;
+    background-position: 0% 80%, 25% 55%, 50% 50%, 75% 55%, 100% 80%;
+  }
+  90% {
+    background-position: -2% 75%, 24% 48%, 50% 43%, 76% 48%, 102% 75%;
+    // opacity: 0;
+    // background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
   }
   100% {
-    transform: scale(1, 1);
+    background-position: -2% 75%, 24% 48%, 50% 43%, 76% 48%, 102% 75%;
+    opacity: 0;
+    // background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
   }
 }
 
-@keyframes hoverAnimation {
+@keyframes bottomBubbles {
   0% {
-    transform: scale(1, 1);
+    background-position: 0% 20%, 25% 45%, 50% 50%, 75% 45%, 100% 20%;
   }
-  25% {
-    transform: scale(0.9, 1.05);
-  }
-
-  50% {
-    transform: scale(1.05, 0.9);
-  }
-  75% {
+  90% {
+    background-position: -2% 25%, 24% 48%, 50% 57%, 76% 52%, 102% 25%;
+    // opacity: 0;
   }
   100% {
-    transform: scale(1, 1);
+    background-position: -2% 25%, 24% 48%, 50% 57%, 76% 52%, 102% 25%;
+    opacity: 0;
   }
 }
