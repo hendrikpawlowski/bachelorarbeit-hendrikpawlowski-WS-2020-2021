@@ -26,6 +26,7 @@ html h3 {
 html button {
   font-size: 24px;
   font-family: "Montserrat", sans-serif;
+  position: relative;
   padding: 12px 32px;
   border: none;
   outline: none;
@@ -33,7 +34,7 @@ html button {
   background: #9313ce;
   box-shadow: 0px 0px 4px #e7c4f7, 0px 4px 4px #e7c4f7;
   color: white;
-  transition: 0.3s;
+  transition: 0.1s;
 }
 
 html .container {
@@ -186,53 +187,75 @@ html .container .element {
 
 .button:hover {
   cursor: pointer;
+  transform: scale(1.05, 1.05);
+  box-shadow: 0px 0px 4px #e7c4f7, 0px 8px 16px #e7c4f7;
+  transition: 100ms;
 }
 
-.animateHover {
-  animation: ease-in-out hoverAnimation 400ms;
+.button:active {
+  transform: scale(0.95, 0.95);
+  background: #880cc2;
+  box-shadow: none;
 }
 
-.animatePressed {
-  animation: ease-in-out pressedAnimation 300ms;
-  animation-fill-mode: forwards;
+.button.prin_8:before, .button.prin_8:after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 140%;
+  height: 100%;
+  left: -20%;
+  z-index: -1000;
+  transition: all ease-in-out 0.5s;
+  background-repeat: no-repeat;
 }
 
-@keyframes pressedAnimation {
+.button.prin_8:before {
+  display: none;
+  top: -75%;
+  background-image: radial-gradient(circle, #dca2f7 20%, transparent 20%), radial-gradient(circle, #dca2f7 20%, transparent 20%), radial-gradient(circle, #dca2f7 20%, transparent 20%), radial-gradient(circle, #dca2f7 20%, transparent 20%), radial-gradient(circle, #dca2f7 20%, transparent 20%);
+  background-size: 15% 15%, 15% 15%, 15% 15%;
+}
+
+.button.prin_8:after {
+  display: none;
+  bottom: -75%;
+  background-image: radial-gradient(circle, #dca2f7 20%, transparent 20%), radial-gradient(circle, #dca2f7 20%, transparent 20%), radial-gradient(circle, #dca2f7 20%, transparent 20%), radial-gradient(circle, #dca2f7 20%, transparent 20%), radial-gradient(circle, #dca2f7 20%, transparent 20%);
+  background-size: 15% 15%, 15% 15%, 15% 15%;
+}
+
+.button.animate:before {
+  display: block;
+  animation: topBubbles ease-out 0.3s forwards;
+}
+
+.button.animate:after {
+  display: block;
+  animation: bottomBubbles ease-out 0.3s forwards;
+}
+
+@keyframes topBubbles {
   0% {
-    transform: scale(1, 1);
+    background-position: 0% 80%, 25% 55%, 50% 50%, 75% 55%, 100% 80%;
   }
-  50% {
-    transform: scale(0.9, 0.9);
-    box-shadow: none;
+  90% {
+    background-position: -2% 75%, 24% 48%, 50% 43%, 76% 48%, 102% 75%;
   }
   100% {
-    transform: scale(1, 1);
+    background-position: -2% 75%, 24% 48%, 50% 43%, 76% 48%, 102% 75%;
+    opacity: 0;
   }
 }
 
-@keyframes releasedAnimation {
+@keyframes bottomBubbles {
   0% {
-    transform: scale(0.9, 0.9);
-    box-shadow: none;
+    background-position: 0% 20%, 25% 45%, 50% 50%, 75% 45%, 100% 20%;
+  }
+  90% {
+    background-position: -2% 25%, 24% 48%, 50% 57%, 76% 52%, 102% 25%;
   }
   100% {
-    transform: scale(1, 1);
-  }
-}
-
-@keyframes hoverAnimation {
-  0% {
-    transform: scale(1, 1);
-  }
-  25% {
-    transform: scale(0.9, 1.05);
-  }
-  50% {
-    transform: scale(1.05, 0.9);
-  }
-  75% {
-  }
-  100% {
-    transform: scale(1, 1);
+    background-position: -2% 25%, 24% 48%, 50% 57%, 76% 52%, 102% 25%;
+    opacity: 0;
   }
 }
