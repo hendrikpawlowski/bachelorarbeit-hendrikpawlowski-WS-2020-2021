@@ -10,6 +10,8 @@ $primary-shadow: #e7c4f7;
 $primary-extra-light: #fbf2ff;
 $grey-light: #cecece;
 $text-color: #3b3b3b;
+$text-color-light: #6b6b6b;
+$background-color: white;
 
 $m-font: 1rem;
 $l-font: $m-font * 1.618;
@@ -55,6 +57,11 @@ html {
     // box-shadow: 0px 0px 8px $primary-shadow, 0px 8px 8px $primary-shadow;
     color: white;
     transition: 200ms;
+  }
+
+  .card {
+    // transition: 200ms;
+    box-sizing: border-box;
   }
 
   .container {
