@@ -1,58 +1,185 @@
 $card-width: 300px;
+$card-height: 280px;
 $card-margin: 16px;
 $card-border-radius: 5px;
+$picture-height: $card-width / 1.618;
+$picture-height-minimized: 50px;
+$line-height: $m-font * 1.618;
 
 .card {
   width: $card-width;
   color: $text-color;
   text-decoration: none;
+  height: $card-height;
   display: block;
   //   background: $primary-light;
   cursor: pointer;
-  //   padding-bottom: $card-margin;
+  padding-bottom: $card-margin;
   border-radius: $card-border-radius;
   box-shadow: 0px 0px 4px #ccc, 0px 4px 4px #ccc;
-  transition: 0.1s;
+  transition: 0.5s;
 
   &:hover {
     box-shadow: 0px 0px 4px #ccc, 0px 8px 16px #ccc;
     transition: 0.1s;
   }
 
-  &__picture {
+  //   &.prin_1:hover {
+  //     transform: scale(1.02, 1.02);
+  //     transition: 200ms;
+  //   }
+
+  //   &.prin_1:active {
+  //     transform: scale(0.95, 0.95);
+  //     box-shadow: none;
+  //   }
+
+  .picture {
     border-top-left-radius: $card-border-radius;
     border-top-right-radius: $card-border-radius;
     width: $card-width;
     height: $card-width / 1.618;
+    // transition: 0.5s;
+    object-fit: cover;
+    animation: maximizePicture ease-in-out 0.4s forwards;
   }
 
-  &__title,
-  &__description {
-    margin: 0 $card-margin 0 $card-margin;
-  }
-
-  &__title {
-    margin-bottom: $card-margin;
-    margin-top: $card-margin;
-  }
-
-  &__description {
-    margin-bottom: $card-margin;
-    line-height: $m-font * 1.618;
-  }
-
-  &__action {
-    color: $primary;
-    // margin: $card-margin;
-    font-weight: 700;
-    display: flex;
-    justify-content: flex-end;
-    margin: 0 $card-margin 0 $card-margin;
-
-    img {
-      width: 32px;
-      color: $primary;
-      fill: $primary;
+  .bottom {
+    .title,
+    .description,
+    .subtitle {
+      margin: 0 $card-margin 0 $card-margin;
     }
+
+    .title {
+      margin-top: $card-margin;
+    }
+
+    .subtitle {
+      margin-top: $card-margin / 2;
+      color: $primary;
+    }
+
+    .description {
+      margin-bottom: $card-margin;
+      margin-top: $card-margin;
+      line-height: $m-font * 1.618;
+      //   display: none;
+      overflow: hidden;
+      animation: hideDescription ease-in-out 0.2s forwards;
+
+      //   max-height: 100px;
+      //   word-wrap: break-word;
+      //   text-overflow: ellipsis;
+      //   white-space: nowrap;
+      //   line-height: 24px;
+      //   max-height: 24px * 2;
+
+      &:after {
+        content: "...";
+        // color: $primary;
+      }
+    }
+
+    .action {
+      display: none;
+      color: $primary;
+      font-weight: 700;
+      justify-content: flex-end;
+      margin: 0 $card-margin 0 $card-margin;
+    }
+  }
+
+  &.mouseenter {
+    .picture {
+      //   height: $picture-height-minimized;
+      object-fit: cover;
+      //   transition: 0.3s;
+      //   animation: ease-in-out 1 forwards;
+      animation: minimizePicture ease-in-out 0.4s forwards;
+    }
+
+    .bottom {
+      .description {
+        display: block;
+        animation: showDescription ease-in-out 0.2s forwards;
+      }
+
+      //   .action {
+      //     animation: showDescription ease-in-out 0.5s forwards;
+      //     display: flex;
+      //   }
+    }
+
+    .bottom {
+      //   height: $picture-height;
+      background: $background-color;
+      //   transition: 0.2s;
+
+      .description {
+        display: block;
+        color: $text-color-light;
+      }
+    }
+  }
+}
+
+// .mouseleave {
+//   .bottom {
+//     .description {
+//       background: red;
+//       // animation: hideDescription ease-in-out 1s forwards;
+//       animation: hideDescription ease-in-out 1s forwards;
+//       // animation-direction: reverse;
+//     }
+//   }
+// }
+
+@keyframes minimizePicture {
+  0% {
+  }
+  50% {
+    height: $picture-height-minimized - 8px;
+  }
+  75% {
+    height: $picture-height-minimized + 4px;
+  }
+  100% {
+    height: $picture-height-minimized;
+  }
+}
+
+@keyframes maximizePicture {
+  0% {
+    height: $picture-height-minimized;
+  }
+  50% {
+    height: $picture-height + 8px;
+  }
+  75% {
+    height: $picture-height - 4px;
+  }
+  100% {
+    height: $picture-height;
+  }
+}
+
+@keyframes showDescription {
+  from {
+    height: 0px;
+  }
+  to {
+    height: $line-height * 3;
+  }
+}
+
+@keyframes hideDescription {
+  from {
+    height: $line-height * 3;
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    height: 0px;
   }
 }
