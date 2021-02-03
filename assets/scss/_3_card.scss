@@ -101,6 +101,8 @@ $picture-height-minimized: 70px;
       margin-bottom: $card-margin;
       margin-top: 8px;
       line-height: $m-font * 1.618;
+      display: none;
+      color: $text-color-light;
       overflow: hidden;
       animation: hideDescription ease-in-out 0.25s forwards;
 
@@ -110,7 +112,7 @@ $picture-height-minimized: 70px;
     }
 
     .action {
-      display: none;
+      display: flex;
       color: $primary;
       font-weight: 700;
       justify-content: flex-end;
@@ -125,7 +127,6 @@ $picture-height-minimized: 70px;
 
     .bottom {
       .description {
-        display: block;
         animation: showDescription ease-in-out 0.2s forwards;
       }
     }
@@ -139,15 +140,7 @@ $picture-height-minimized: 70px;
 
     .bottom {
       .description {
-        display: block;
         animation: showDescription ease-in-out 0.3s forwards;
-      }
-    }
-
-    .bottom {
-      .description {
-        display: block;
-        color: $text-color-light;
       }
     }
   }
@@ -202,6 +195,7 @@ $picture-height-minimized: 70px;
 @keyframes showDescription {
   from {
     height: 0px;
+    display: block;
   }
   to {
     height: $m-line-height * 3;
@@ -214,7 +208,8 @@ $picture-height-minimized: 70px;
     opacity: 1;
   }
   to {
-    opacity: 0;
+    // opacity: 0;
+    display: none;
     height: 0px;
   }
 }
