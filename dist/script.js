@@ -16,29 +16,28 @@ const initButton = function () {
 
 const initCard = function () {
 
-    const stopAnimations = function () {
-        this.classList.remove("mouseleave");
-        console.log("animation end");
-    }
+    // const stopAnimations = function () {
+    //     this.classList.remove("mouseleave");
+    //     console.log("animation end");
+    // }
 
-    const mouseenter = function () {
-        this.classList.add("mouseenter");
-    }
+    // const mouseenter = function () {
+    //     this.classList.add("mouseenter");
+    // }
 
-    const mouseleave = function () {
-        this.classList.remove("mouseenter");
-        this.classList.add("mouseleave");
-        console.log("mouseleave");
-    }
+    // const mouseleave = function () {
+    //     this.classList.remove("mouseenter");
+    //     this.classList.add("mouseleave");
+    //     console.log("mouseleave");
+    // }
 
-    let card = document.querySelector(".card")
-    card.addEventListener("mouseenter", mouseenter);
-    card.addEventListener("mouseleave", mouseleave);
-    card.addEventListener("animationend", stopAnimations);
+    // let card = document.querySelector(".card")
+    // card.addEventListener("mouseenter", mouseenter);
+    // card.addEventListener("mouseleave", mouseleave);
+    // card.addEventListener("animationend", stopAnimations);
 
     let description = document.querySelector("[js-description]");
     description.innerHTML = description.innerHTML.substr(0, 116);
-    console.log(description);
 }
 
 initButton();

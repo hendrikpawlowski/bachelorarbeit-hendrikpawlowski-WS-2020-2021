@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap");
 *,
 *:before,
 *:after {
@@ -23,6 +23,11 @@ html h3 {
   font-size: 1.618rem;
 }
 
+html h4 {
+  font-size: 1rem;
+  line-height: 2.61792rem;
+}
+
 html button {
   font-size: 24px;
   font-family: "Montserrat", sans-serif;
@@ -38,6 +43,7 @@ html button {
 }
 
 html .card {
+  transition: 200ms;
   box-sizing: border-box;
 }
 
@@ -283,7 +289,7 @@ html .container .element {
   width: 300px;
   color: #3b3b3b;
   text-decoration: none;
-  height: 280px;
+  height: 260px;
   display: block;
   cursor: pointer;
   padding-bottom: 16px;
@@ -294,7 +300,21 @@ html .container .element {
 
 .card:hover {
   box-shadow: 0px 0px 4px #ccc, 0px 8px 16px #ccc;
-  transition: 0.1s;
+}
+
+.card:hover .bottom .title {
+  white-space: normal;
+  animation: showTitle ease-in-out 0.2s forwards;
+}
+
+.card.prin_1:hover {
+  transform: scale(1.02, 1.02);
+  transition: 200ms;
+}
+
+.card.prin_1:active {
+  transform: scale(0.95, 0.95);
+  box-shadow: none;
 }
 
 .card .picture {
@@ -302,8 +322,17 @@ html .container .element {
   border-top-right-radius: 5px;
   width: 300px;
   height: 185.41409px;
+  transition: 1s;
   object-fit: cover;
-  animation: maximizePicture ease-in-out 0.4s forwards;
+  animation: maximizePicture_Default ease-in-out 0.3s forwards;
+}
+
+.card.prin_5_ft .picture {
+  animation: maximizePicture_Prin_5_FT ease-in-out 0.4s forwards;
+}
+
+.card.prin_5_ft .bottom .description {
+  animation: hideDescription ease-in-out 0.2s forwards;
 }
 
 .card .bottom .title,
@@ -312,21 +341,33 @@ html .container .element {
   margin: 0 16px 0 16px;
 }
 
+.card .bottom .title,
+.card .bottom .subtitle {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
 .card .bottom .title {
+  font-size: 1.25rem;
+  line-height: 2.0225rem;
   margin-top: 16px;
+  animation: hideTitle ease-in-out 0.2s forwards;
 }
 
 .card .bottom .subtitle {
-  margin-top: 8px;
+  margin-top: 4px;
+  font-size: 1rem;
+  line-height: 1.618rem;
   color: #9313ce;
 }
 
 .card .bottom .description {
   margin-bottom: 16px;
-  margin-top: 16px;
+  margin-top: 8px;
   line-height: 1.618rem;
   overflow: hidden;
-  animation: hideDescription ease-in-out 0.2s forwards;
+  animation: hideDescription ease-in-out 0.25s forwards;
 }
 
 .card .bottom .description:after {
@@ -341,48 +382,70 @@ html .container .element {
   margin: 0 16px 0 16px;
 }
 
-.card.mouseenter .picture {
-  object-fit: cover;
-  animation: minimizePicture ease-in-out 0.4s forwards;
+.card:hover.prin_5_ft .picture {
+  animation: minimizePicture_Prin_5_FT ease-in-out 0.4s forwards;
 }
 
-.card.mouseenter .bottom .description {
+.card:hover.prin_5_ft .bottom .description {
   display: block;
   animation: showDescription ease-in-out 0.2s forwards;
 }
 
-.card.mouseenter .bottom {
-  background: white;
+.card:hover .picture {
+  object-fit: cover;
+  animation: minimizePicture_Default ease-in-out 0.3s forwards;
 }
 
-.card.mouseenter .bottom .description {
+.card:hover .bottom .description {
+  display: block;
+  animation: showDescription ease-in-out 0.3s forwards;
+}
+
+.card:hover .bottom .description {
   display: block;
   color: #6b6b6b;
 }
 
-@keyframes minimizePicture {
+@keyframes minimizePicture_Prin_5_FT {
   0% {
   }
   50% {
-    height: 42px;
+    height: 62px;
   }
   75% {
-    height: 54px;
+    height: 74px;
   }
   100% {
-    height: 50px;
+    height: 70px;
   }
 }
 
-@keyframes maximizePicture {
+@keyframes minimizePicture_Default {
   0% {
-    height: 50px;
+  }
+  100% {
+    height: 70px;
+  }
+}
+
+@keyframes maximizePicture_Prin_5_FT {
+  0% {
+    height: 70px;
   }
   50% {
     height: 193.41409px;
   }
   75% {
     height: 181.41409px;
+  }
+  100% {
+    height: 185.41409px;
+  }
+}
+
+@keyframes maximizePicture_Default {
+  0% {
+    height: 70px;
   }
   100% {
     height: 185.41409px;
@@ -406,5 +469,25 @@ html .container .element {
   to {
     opacity: 0;
     height: 0px;
+  }
+}
+
+@keyframes showTitle {
+  from {
+    height: 2.0225rem;
+  }
+  to {
+    height: 4.045rem;
+  }
+}
+
+@keyframes hideTitle {
+  from {
+    height: 4.045rem;
+    white-space: normal;
+  }
+  to {
+    height: 2.0225rem;
+    white-space: nowrap;
   }
 }
