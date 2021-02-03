@@ -1,10 +1,9 @@
 $card-width: 300px;
-$card-height: 280px;
+$card-height: 260px;
 $card-margin: 16px;
 $card-border-radius: 5px;
 $picture-height: $card-width / 1.618;
-$picture-height-minimized: 50px;
-$line-height: $m-font * 1.618;
+$picture-height-minimized: 70px;
 
 .card {
   width: $card-width;
@@ -12,7 +11,6 @@ $line-height: $m-font * 1.618;
   text-decoration: none;
   height: $card-height;
   display: block;
-  //   background: $primary-light;
   cursor: pointer;
   padding-bottom: $card-margin;
   border-radius: $card-border-radius;
@@ -21,7 +19,20 @@ $line-height: $m-font * 1.618;
 
   &:hover {
     box-shadow: 0px 0px 4px #ccc, 0px 8px 16px #ccc;
-    transition: 0.1s;
+    // transition: 2s;
+    // width: 1000px;
+    // background: red;
+
+    .bottom {
+      .title {
+        white-space: normal;
+        // text-overflow: ;
+        // transition: 1s;
+        // overflow: hidden;
+        // animation-delay: 0.2s;
+        animation: showTitle ease-in-out 0.2s forwards;
+      }
+    }
   }
 
   &.prin_1:hover {
@@ -39,9 +50,23 @@ $line-height: $m-font * 1.618;
     border-top-right-radius: $card-border-radius;
     width: $card-width;
     height: $card-width / 1.618;
-    // transition: 0.5s;
+    transition: 1s;
     object-fit: cover;
-    animation: maximizePicture ease-in-out 0.4s forwards;
+    animation: maximizePicture_Default ease-in-out 0.3s forwards;
+  }
+
+  &.prin_5_ft {
+    .picture {
+      animation: maximizePicture_Prin_5_FT ease-in-out 0.4s forwards;
+    }
+  }
+
+  &.prin_5_ft {
+    .bottom {
+      .description {
+        animation: hideDescription ease-in-out 0.2s forwards;
+      }
+    }
   }
 
   .bottom {
@@ -51,33 +76,36 @@ $line-height: $m-font * 1.618;
       margin: 0 $card-margin 0 $card-margin;
     }
 
+    .title,
+    .subtitle {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
     .title {
+      font-size: $card-font;
+      line-height: $card-line-height;
       margin-top: $card-margin;
+      animation: hideTitle ease-in-out 0.2s forwards;
     }
 
     .subtitle {
-      margin-top: $card-margin / 2;
+      margin-top: 4px;
+      font-size: $m-font;
+      line-height: $m-font * 1.618;
       color: $primary;
     }
 
     .description {
       margin-bottom: $card-margin;
-      margin-top: $card-margin;
+      margin-top: 8px;
       line-height: $m-font * 1.618;
-      //   display: none;
       overflow: hidden;
-      animation: hideDescription ease-in-out 0.2s forwards;
-
-      //   max-height: 100px;
-      //   word-wrap: break-word;
-      //   text-overflow: ellipsis;
-      //   white-space: nowrap;
-      //   line-height: 24px;
-      //   max-height: 24px * 2;
+      animation: hideDescription ease-in-out 0.25s forwards;
 
       &:after {
         content: "...";
-        // color: $primary;
       }
     }
 
@@ -90,13 +118,9 @@ $line-height: $m-font * 1.618;
     }
   }
 
-  &.mouseenter {
+  &:hover.prin_5_ft {
     .picture {
-      //   height: $picture-height-minimized;
-      object-fit: cover;
-      //   transition: 0.3s;
-      //   animation: ease-in-out 1 forwards;
-      animation: minimizePicture ease-in-out 0.4s forwards;
+      animation: minimizePicture_Prin_5_FT ease-in-out 0.4s forwards;
     }
 
     .bottom {
@@ -104,18 +128,23 @@ $line-height: $m-font * 1.618;
         display: block;
         animation: showDescription ease-in-out 0.2s forwards;
       }
+    }
+  }
 
-      //   .action {
-      //     animation: showDescription ease-in-out 0.5s forwards;
-      //     display: flex;
-      //   }
+  &:hover {
+    .picture {
+      object-fit: cover;
+      animation: minimizePicture_Default ease-in-out 0.3s forwards;
     }
 
     .bottom {
-      //   height: $picture-height;
-      background: $background-color;
-      //   transition: 0.2s;
+      .description {
+        display: block;
+        animation: showDescription ease-in-out 0.3s forwards;
+      }
+    }
 
+    .bottom {
       .description {
         display: block;
         color: $text-color-light;
@@ -124,18 +153,7 @@ $line-height: $m-font * 1.618;
   }
 }
 
-// .mouseleave {
-//   .bottom {
-//     .description {
-//       background: red;
-//       // animation: hideDescription ease-in-out 1s forwards;
-//       animation: hideDescription ease-in-out 1s forwards;
-//       // animation-direction: reverse;
-//     }
-//   }
-// }
-
-@keyframes minimizePicture {
+@keyframes minimizePicture_Prin_5_FT {
   0% {
   }
   50% {
@@ -149,7 +167,15 @@ $line-height: $m-font * 1.618;
   }
 }
 
-@keyframes maximizePicture {
+@keyframes minimizePicture_Default {
+  0% {
+  }
+  100% {
+    height: $picture-height-minimized;
+  }
+}
+
+@keyframes maximizePicture_Prin_5_FT {
   0% {
     height: $picture-height-minimized;
   }
@@ -164,22 +190,51 @@ $line-height: $m-font * 1.618;
   }
 }
 
+@keyframes maximizePicture_Default {
+  0% {
+    height: $picture-height-minimized;
+  }
+  100% {
+    height: $picture-height;
+  }
+}
+
 @keyframes showDescription {
   from {
     height: 0px;
   }
   to {
-    height: $line-height * 3;
+    height: $m-line-height * 3;
   }
 }
 
 @keyframes hideDescription {
   from {
-    height: $line-height * 3;
+    height: $m-line-height * 3;
     opacity: 1;
   }
   to {
     opacity: 0;
     height: 0px;
+  }
+}
+
+@keyframes showTitle {
+  from {
+    height: $card-line-height;
+  }
+  to {
+    height: $card-line-height * 2;
+  }
+}
+
+@keyframes hideTitle {
+  from {
+    height: $card-line-height * 2;
+    white-space: normal;
+  }
+  to {
+    height: $card-line-height;
+    white-space: nowrap;
   }
 }
