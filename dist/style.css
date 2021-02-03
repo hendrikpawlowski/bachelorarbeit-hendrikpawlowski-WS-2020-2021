@@ -37,6 +37,10 @@ html button {
   transition: 200ms;
 }
 
+html .card {
+  box-sizing: border-box;
+}
+
 html .container {
   padding: 64px 20%;
 }
@@ -279,11 +283,13 @@ html .container .element {
   width: 300px;
   color: #3b3b3b;
   text-decoration: none;
+  height: 280px;
   display: block;
   cursor: pointer;
+  padding-bottom: 16px;
   border-radius: 5px;
   box-shadow: 0px 0px 4px #ccc, 0px 4px 4px #ccc;
-  transition: 0.1s;
+  transition: 0.5s;
 }
 
 .card:hover {
@@ -291,37 +297,114 @@ html .container .element {
   transition: 0.1s;
 }
 
-.card__picture {
+.card .picture {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   width: 300px;
   height: 185.41409px;
+  object-fit: cover;
+  animation: maximizePicture ease-in-out 0.4s forwards;
 }
 
-.card__title, .card__description {
+.card .bottom .title,
+.card .bottom .description,
+.card .bottom .subtitle {
   margin: 0 16px 0 16px;
 }
 
-.card__title {
-  margin-bottom: 16px;
+.card .bottom .title {
   margin-top: 16px;
 }
 
-.card__description {
-  margin-bottom: 16px;
-  line-height: 1.618rem;
+.card .bottom .subtitle {
+  margin-top: 8px;
+  color: #9313ce;
 }
 
-.card__action {
+.card .bottom .description {
+  margin-bottom: 16px;
+  margin-top: 16px;
+  line-height: 1.618rem;
+  overflow: hidden;
+  animation: hideDescription ease-in-out 0.2s forwards;
+}
+
+.card .bottom .description:after {
+  content: "...";
+}
+
+.card .bottom .action {
+  display: none;
   color: #9313ce;
   font-weight: 700;
-  display: flex;
   justify-content: flex-end;
   margin: 0 16px 0 16px;
 }
 
-.card__action img {
-  width: 32px;
-  color: #9313ce;
-  fill: #9313ce;
+.card.mouseenter .picture {
+  object-fit: cover;
+  animation: minimizePicture ease-in-out 0.4s forwards;
+}
+
+.card.mouseenter .bottom .description {
+  display: block;
+  animation: showDescription ease-in-out 0.2s forwards;
+}
+
+.card.mouseenter .bottom {
+  background: white;
+}
+
+.card.mouseenter .bottom .description {
+  display: block;
+  color: #6b6b6b;
+}
+
+@keyframes minimizePicture {
+  0% {
+  }
+  50% {
+    height: 42px;
+  }
+  75% {
+    height: 54px;
+  }
+  100% {
+    height: 50px;
+  }
+}
+
+@keyframes maximizePicture {
+  0% {
+    height: 50px;
+  }
+  50% {
+    height: 193.41409px;
+  }
+  75% {
+    height: 181.41409px;
+  }
+  100% {
+    height: 185.41409px;
+  }
+}
+
+@keyframes showDescription {
+  from {
+    height: 0px;
+  }
+  to {
+    height: 4.854rem;
+  }
+}
+
+@keyframes hideDescription {
+  from {
+    height: 4.854rem;
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    height: 0px;
+  }
 }

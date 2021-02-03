@@ -1,48 +1,45 @@
-// const animateHover = function () {
-//     this.classList.add("animateHover");
 
-//     // EventListener wird während der Animation entfernt, damit nicht mehrere Animationen gleichzeitig spielen können
-//     this.removeEventListener("mouseover", animateHover);
-// }
+const initButton = function () {
 
-const stopAnimations = function () {
-    // this.classList.remove("animateHover");
-    this.classList.remove("animate");
+    const stopAnimations = function () {
+        this.classList.remove("animate");
+    }
 
-    //this.classList.remove("animatePressed");
+    const animateBubbles = function () {
+        this.classList.add("animate")
+    }
 
-
-    // this.classList.remove("runClickAnimation");
-    // this.classList.remove("pressed");
-
-
-    console.log("ANIMATION END")
-
-    // Der entfernte EventListener wird wieder hinzugefügt
-    // this.addEventListener("mouseover", animateHover);
+    let button = document.querySelector(".button.prin_8");
+    button.addEventListener("mouseup", animateBubbles);
+    button.addEventListener("animationend", stopAnimations);
 }
 
-// const animatePressed = function () {
-//     this.classList.add("animatePressed");
-//     this.classList.remove("animateHover");
-//     //     this.classList.add("pressed");
-// }
+const initCard = function () {
 
-// const animateReleased = function () {
-//     this.classList.remove("animatePressed");
-//     console.log("mouse up");
-//     // this.classList.add("animateReleased");
-// }
+    const stopAnimations = function () {
+        this.classList.remove("mouseleave");
+        console.log("animation end");
+    }
 
-const animateBubbles = function () {
-    this.classList.add("animate")
+    const mouseenter = function () {
+        this.classList.add("mouseenter");
+    }
+
+    const mouseleave = function () {
+        this.classList.remove("mouseenter");
+        this.classList.add("mouseleave");
+        console.log("mouseleave");
+    }
+
+    let card = document.querySelector(".card")
+    card.addEventListener("mouseenter", mouseenter);
+    card.addEventListener("mouseleave", mouseleave);
+    card.addEventListener("animationend", stopAnimations);
+
+    let description = document.querySelector("[js-description]");
+    description.innerHTML = description.innerHTML.substr(0, 116);
+    console.log(description);
 }
 
-let button = document.querySelector(".button");
-// button.addEventListener("mouseover", animateHover);
-button.addEventListener("animationend", stopAnimations);
-
-// button.addEventListener("mousedown", animatePressed);
-// button.addEventListener("mouseup", animateReleased);
-button.addEventListener("mouseup", animateBubbles);
-
+initButton();
+initCard();
