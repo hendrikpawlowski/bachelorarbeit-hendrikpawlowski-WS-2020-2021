@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap");
 
 // Variables
 
@@ -14,9 +14,15 @@ $text-color-light: #6b6b6b;
 $background-color: white;
 
 $m-font: 1rem;
+$m-line-height: $m-font * 1.618;
 $l-font: $m-font * 1.618;
+$l-line-height: $l-font * 1.618;
 $xl-font: $l-font * 1.618;
+$xl-line-height: $xl-font * 1.618;
 $xxl-font: $xl-font * 1.618;
+$xxl-line-height: $xxl-font * 1.618;
+$card-font: $m-font * 1.25;
+$card-line-height: $card-font * 1.618;
 
 // General Layout
 
@@ -41,6 +47,10 @@ html {
 
   h3 {
     font-size: $l-font;
+  }
+  h4 {
+    font-size: $m-font;
+    line-height: $l-line-height;
   }
 
   button {
