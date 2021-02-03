@@ -24,15 +24,15 @@ $line-height: $m-font * 1.618;
     transition: 0.1s;
   }
 
-  //   &.prin_1:hover {
-  //     transform: scale(1.02, 1.02);
-  //     transition: 200ms;
-  //   }
+  &.prin_1:hover {
+    transform: scale(1.02, 1.02);
+    transition: 200ms;
+  }
 
-  //   &.prin_1:active {
-  //     transform: scale(0.95, 0.95);
-  //     box-shadow: none;
-  //   }
+  &.prin_1:active {
+    transform: scale(0.95, 0.95);
+    box-shadow: none;
+  }
 
   .picture {
     border-top-left-radius: $card-border-radius;
