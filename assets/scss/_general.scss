@@ -9,6 +9,7 @@ $primary-test: #9313ce;
 $primary-shadow: #e7c4f7;
 $primary-extra-light: #fbf2ff;
 $grey-light: #cecece;
+$text-color: #3b3b3b;
 
 $m-font: 1rem;
 $l-font: $m-font * 1.618;
@@ -26,7 +27,7 @@ $xxl-font: $xl-font * 1.618;
 html {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
-  color: #3b3b3b;
+  color: $text-color;
 
   h1 {
     font-size: $xxl-font;

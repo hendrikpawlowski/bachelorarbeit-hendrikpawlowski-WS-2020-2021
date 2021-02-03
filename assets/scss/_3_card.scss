@@ -1,2 +1,58 @@
+$card-width: 300px;
+$card-margin: 16px;
+$card-border-radius: 5px;
+
 .card {
+  width: $card-width;
+  color: $text-color;
+  text-decoration: none;
+  display: block;
+  //   background: $primary-light;
+  cursor: pointer;
+  //   padding-bottom: $card-margin;
+  border-radius: $card-border-radius;
+  box-shadow: 0px 0px 4px #ccc, 0px 4px 4px #ccc;
+  transition: 0.1s;
+
+  &:hover {
+    box-shadow: 0px 0px 4px #ccc, 0px 8px 16px #ccc;
+    transition: 0.1s;
+  }
+
+  &__picture {
+    border-top-left-radius: $card-border-radius;
+    border-top-right-radius: $card-border-radius;
+    width: $card-width;
+    height: $card-width / 1.618;
+  }
+
+  &__title,
+  &__description {
+    margin: 0 $card-margin 0 $card-margin;
+  }
+
+  &__title {
+    margin-bottom: $card-margin;
+    margin-top: $card-margin;
+  }
+
+  &__description {
+    margin-bottom: $card-margin;
+    line-height: $m-font * 1.618;
+  }
+
+  &__action {
+    color: $primary;
+    // margin: $card-margin;
+    font-weight: 700;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 $card-margin 0 $card-margin;
+
+    img {
+      width: 32px;
+      color: $primary;
+      fill: $primary;
+    }
+  }
 }
