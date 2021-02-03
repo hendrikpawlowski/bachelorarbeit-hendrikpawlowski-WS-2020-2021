@@ -15,7 +15,7 @@ $picture-height-minimized: 50px;
   padding-bottom: $card-margin;
   border-radius: $card-border-radius;
   box-shadow: 0px 0px 4px #ccc, 0px 4px 4px #ccc;
-  transition: 0.5s;
+  // transition: 0.5s;
 
   &:hover {
     box-shadow: 0px 0px 4px #ccc, 0px 8px 16px #ccc;
@@ -43,9 +43,9 @@ $picture-height-minimized: 50px;
     border-top-right-radius: $card-border-radius;
     width: $card-width;
     height: $card-width / 1.618;
-    transition: 1s;
+    // transition: 1s;
     object-fit: cover;
-    animation: maximizePicture_Default ease-in-out 0.3s forwards;
+    animation: maximizePicture_Default ease-in-out 0.2s forwards;
   }
 
   &.prin_5_ft {
@@ -96,7 +96,7 @@ $picture-height-minimized: 50px;
       line-height: $m-font * 1.618;
       color: $text-color-light;
       overflow: hidden;
-      animation: hideDescription ease-in-out 0.25s forwards;
+      animation: hideDescription ease-in-out 0.2s forwards;
 
       .description {
         margin: 0;
@@ -145,12 +145,12 @@ $picture-height-minimized: 50px;
   &:hover {
     .picture {
       object-fit: cover;
-      animation: minimizePicture_Default ease-in-out 0.3s forwards;
+      animation: minimizePicture_Default ease-in-out 0.2s forwards;
     }
 
     .bottom {
       .description-container {
-        animation: showDescription ease-in-out 0.3s forwards;
+        animation: showDescription ease-in-out 0.2s forwards;
       }
     }
   }

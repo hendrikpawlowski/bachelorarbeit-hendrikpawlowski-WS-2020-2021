@@ -295,7 +295,6 @@ html .container .element {
   padding-bottom: 16px;
   border-radius: 5px;
   box-shadow: 0px 0px 4px #ccc, 0px 4px 4px #ccc;
-  transition: 0.5s;
 }
 
 .card:hover {
@@ -322,9 +321,8 @@ html .container .element {
   border-top-right-radius: 5px;
   width: 300px;
   height: 185.41409px;
-  transition: 1s;
   object-fit: cover;
-  animation: maximizePicture_Default ease-in-out 0.3s forwards;
+  animation: maximizePicture_Default ease-in-out 0.2s forwards;
 }
 
 .card.prin_5_ft .picture {
@@ -368,7 +366,7 @@ html .container .element {
   line-height: 1.618rem;
   color: #6b6b6b;
   overflow: hidden;
-  animation: hideDescription ease-in-out 0.25s forwards;
+  animation: hideDescription ease-in-out 0.2s forwards;
 }
 
 .card .bottom .description-container .description {
@@ -407,11 +405,11 @@ html .container .element {
 
 .card:hover .picture {
   object-fit: cover;
-  animation: minimizePicture_Default ease-in-out 0.3s forwards;
+  animation: minimizePicture_Default ease-in-out 0.2s forwards;
 }
 
 .card:hover .bottom .description-container {
-  animation: showDescription ease-in-out 0.3s forwards;
+  animation: showDescription ease-in-out 0.2s forwards;
 }
 
 @keyframes minimizePicture_Prin_5_FT {
