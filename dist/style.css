@@ -136,16 +136,10 @@ html .container .element {
 @keyframes enableSwitch_Prin_1 {
   0% {
   }
-  10% {
-  }
   50% {
     width: 28px;
     height: 14px;
     top: 6px;
-  }
-  50% {
-  }
-  70% {
   }
   100% {
     left: 32px;
@@ -178,10 +172,10 @@ html .container .element {
     left: 13px;
   }
   50% {
-    left: 37px;
+    left: 35px;
   }
   70% {
-    left: 27px;
+    left: 29px;
   }
   100% {
     left: 32px;
@@ -193,10 +187,10 @@ html .container .element {
     left: 32px;
   }
   50% {
-    left: 8px;
+    left: 10px;
   }
   70% {
-    left: 18px;
+    left: 16px;
   }
   100% {
     left: 13px;

@@ -101,24 +101,15 @@ $position-unchecked: $dot-width / 2 + $dot-padding;
   }
 }
 
-// only squash and stretch 200ms
-
 @keyframes enableSwitch_Prin_1 {
   0% {
-  }
-  10% {
   }
   50% {
     width: $dot-width + 8px;
     height: $dot-height - 6px;
     top: $dot-padding + 3px;
   }
-  50% {
-  }
-  70% {
-  }
   100% {
-    // left: $switch-width / 2 + $dot-width / 2;
     left: $position-checked;
     width: $dot-width;
   }
@@ -144,18 +135,17 @@ $position-unchecked: $dot-width / 2 + $dot-padding;
   }
 }
 
-// squash and stretch and follow through 400ms
 @keyframes enableSwitch_Prin_5_FT {
   0% {
     left: $position-unchecked;
   }
   50% {
     // Der Punkt bewegt sich ein Stück rechts über das Ziel hinaus
-    left: $position-checked + 5px;
+    left: $position-checked + 3px;
   }
   70% {
     // Der Punkt bewegt sich ein Stück über den linken Rand hinaus
-    left: $position-checked - 5px;
+    left: $position-checked - 3px;
   }
   100% {
     left: $position-checked;
@@ -167,10 +157,10 @@ $position-unchecked: $dot-width / 2 + $dot-padding;
     left: $position-checked;
   }
   50% {
-    left: $position-unchecked - 5px;
+    left: $position-unchecked - 3px;
   }
   70% {
-    left: $position-unchecked + 5px;
+    left: $position-unchecked + 3px;
   }
   100% {
     left: $position-unchecked;
