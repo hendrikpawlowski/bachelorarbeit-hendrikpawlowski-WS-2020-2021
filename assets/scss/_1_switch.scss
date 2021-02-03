@@ -1,6 +1,10 @@
-$switch-width: 60px;
-$switch-height: 34px;
-$dot-width: 26px;
+$switch-width: 45px;
+$dot-width: 20px;
+$dot-height: $dot-width;
+$dot-padding: 3px;
+$switch-height: $dot-height + $dot-padding * 2;
+$position-checked: $switch-width - ($dot-width / 2) - $dot-padding;
+$position-unchecked: $dot-width / 2 + $dot-padding;
 
 .switch {
   position: relative;
@@ -41,8 +45,8 @@ $dot-width: 26px;
     &:after {
       content: "";
       position: absolute;
-      left: 17px;
-      top: 4px;
+      left: $dot-width / 2 + $dot-padding;
+      top: $dot-padding;
       width: $dot-width;
       height: $dot-width;
       background-color: white;
@@ -105,65 +109,70 @@ $dot-width: 26px;
   10% {
   }
   50% {
-    width: 34px;
-    height: 20px;
-    top: 7px;
+    width: $dot-width + 8px;
+    height: $dot-height - 6px;
+    top: $dot-padding + 3px;
   }
   50% {
   }
   70% {
   }
   100% {
-    left: 43px;
-    width: 26px;
+    // left: $switch-width / 2 + $dot-width / 2;
+    left: $position-checked;
+    width: $dot-width;
   }
 }
 
 @keyframes disableSwitch_Prin_1 {
   0% {
   }
+  10% {
+  }
   50% {
-    width: 34px;
-    height: 20px;
-    top: 7px;
+    width: $dot-width + 8px;
+    height: $dot-height - 6px;
+    top: $dot-padding + 3px;
+  }
+  50% {
+  }
+  70% {
   }
   100% {
-    left: 43px;
-    width: 26px;
+    left: $position-checked;
+    width: $dot-width;
   }
 }
 
 // squash and stretch and follow through 400ms
 @keyframes enableSwitch_Prin_5_FT {
   0% {
-    left: 17px;
+    left: $position-unchecked;
   }
   50% {
-    left: 48px;
-    // width: 26px;
+    // Der Punkt bewegt sich ein Stück rechts über das Ziel hinaus
+    left: $position-checked + 5px;
   }
   70% {
-    left: 38px;
+    // Der Punkt bewegt sich ein Stück über den linken Rand hinaus
+    left: $position-checked - 5px;
   }
   100% {
-    left: 43px;
-    // width: 26px;
+    left: $position-checked;
   }
 }
 
 @keyframes disableSwitch_Prin_5_FT {
   0% {
-    left: 43px;
+    left: $position-checked;
   }
   50% {
-    left: 12px;
-    // width: 26px;
+    left: $position-unchecked - 5px;
   }
   70% {
-    left: 22px;
+    left: $position-unchecked + 5px;
   }
   100% {
-    left: 17px;
-    // width: 26px;
+    left: $position-unchecked;
   }
 }
