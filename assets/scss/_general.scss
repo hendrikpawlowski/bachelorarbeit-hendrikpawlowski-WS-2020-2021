@@ -29,7 +29,7 @@ $card-line-height: $card-font * 1.618;
 *,
 *:before,
 *:after {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 html {
@@ -59,6 +59,7 @@ html {
     position: relative;
     padding: 12px 32px;
     border: none;
+    display: block;
     outline: none;
     border-radius: 5px;
     background: $primary;
@@ -72,13 +73,5 @@ html {
   .card {
     transition: 200ms;
     box-sizing: border-box;
-  }
-
-  .container {
-    padding: 64px 20%;
-
-    .element {
-      margin-bottom: 128px;
-    }
   }
 }
