@@ -80,6 +80,7 @@ html .card {
   width: 45px;
   height: 26px;
   background-color: #cecece;
+  transition: 200ms;
   border-radius: 100px;
   z-index: 1;
 }

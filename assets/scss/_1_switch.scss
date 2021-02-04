@@ -37,6 +37,7 @@ $position-unchecked: $dot-width / 2 + $dot-padding;
       width: $switch-width;
       height: $switch-height;
       background-color: $grey-light;
+      transition: 200ms;
       border-radius: 100px;
       z-index: 1;
     }
