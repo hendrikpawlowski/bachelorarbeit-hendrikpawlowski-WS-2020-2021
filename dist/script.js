@@ -14,7 +14,6 @@ const initButton = function () {
     buttonList.forEach(button => {
         button.addEventListener("mouseup", animateBubbles);
         button.addEventListener("animationend", stopAnimations);
-        console.log(button);
     });
 }
 
