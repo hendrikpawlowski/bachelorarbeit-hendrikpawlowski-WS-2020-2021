@@ -113,24 +113,20 @@ html .container .element {
 }
 
 .switch.prin_5_ft .switch__label:after {
-  animation: ease-in-out disableSwitch_Prin_5_FT 300ms;
-  animation-fill-mode: forwards;
+  animation: disableSwitch_Prin_5_FT ease-in-out 300ms forwards;
 }
 
 .switch.prin_5_ft .switch__input:checked + .switch__label:after {
-  animation: ease-in-out enableSwitch_Prin_5_FT 300ms;
-  animation-fill-mode: forwards;
+  animation: enableSwitch_Prin_5_FT ease-in-out 300ms forwards;
 }
 
 .switch.prin_1 .switch__label:after {
-  animation: ease-in-out disableSwitch_Prin_1 200ms;
-  animation-fill-mode: forwards;
+  animation: disableSwitch_Prin_1 ease-in-out 200ms forwards;
   animation-direction: reverse;
 }
 
 .switch.prin_1 .switch__input:checked + .switch__label:after {
-  animation: ease-in-out enableSwitch_Prin_1 200ms;
-  animation-fill-mode: forwards;
+  animation: enableSwitch_Prin_1 ease-in-out 200ms forwards;
 }
 
 @keyframes enableSwitch_Prin_1 {

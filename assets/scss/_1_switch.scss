@@ -71,15 +71,13 @@ $position-unchecked: $dot-width / 2 + $dot-padding;
 .switch.prin_5_ft {
   .switch__label {
     &:after {
-      animation: ease-in-out disableSwitch_Prin_5_FT 300ms;
-      animation-fill-mode: forwards;
+      animation: disableSwitch_Prin_5_FT ease-in-out 300ms forwards;
     }
   }
 
   .switch__input:checked + .switch__label {
     &:after {
-      animation: ease-in-out enableSwitch_Prin_5_FT 300ms;
-      animation-fill-mode: forwards;
+      animation: enableSwitch_Prin_5_FT ease-in-out 300ms forwards;
     }
   }
 }
@@ -87,16 +85,14 @@ $position-unchecked: $dot-width / 2 + $dot-padding;
 .switch.prin_1 {
   .switch__label {
     &:after {
-      animation: ease-in-out disableSwitch_Prin_1 200ms;
-      animation-fill-mode: forwards;
+      animation: disableSwitch_Prin_1 ease-in-out 200ms forwards;
       animation-direction: reverse;
     }
   }
 
   .switch__input:checked + .switch__label {
     &:after {
-      animation: ease-in-out enableSwitch_Prin_1 200ms;
-      animation-fill-mode: forwards;
+      animation: enableSwitch_Prin_1 ease-in-out 200ms forwards;
     }
   }
 }
