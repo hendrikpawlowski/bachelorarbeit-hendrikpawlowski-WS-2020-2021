@@ -41,6 +41,7 @@ $position-unchecked: $dot-width / 2 + $dot-padding;
       z-index: 1;
     }
 
+    // :after ist der Punkt der anzeigt, ob der Switch Button an oder aus ist
     &:after {
       content: "";
       position: absolute;
@@ -62,22 +63,6 @@ $position-unchecked: $dot-width / 2 + $dot-padding;
   &__input:checked + &__label {
     &:before {
       background-color: $primary-light;
-    }
-  }
-}
-
-// Prinzip 5 Follow Through
-
-.switch.prin_5_ft {
-  .switch__label {
-    &:after {
-      animation: disableSwitch_Prin_5_FT ease-in-out 300ms forwards;
-    }
-  }
-
-  .switch__input:checked + .switch__label {
-    &:after {
-      animation: enableSwitch_Prin_5_FT ease-in-out 300ms forwards;
     }
   }
 }
@@ -111,6 +96,22 @@ $position-unchecked: $dot-width / 2 + $dot-padding;
   .switch__input:checked + .switch__label {
     &:after {
       animation: enableSwitch_Prin_1 ease-in-out 200ms forwards;
+    }
+  }
+}
+
+// Prinzip 5 Follow Through
+
+.switch.prin_5_ft {
+  .switch__label {
+    &:after {
+      animation: disableSwitch_Prin_5_FT ease-in-out 300ms forwards;
+    }
+  }
+
+  .switch__input:checked + .switch__label {
+    &:after {
+      animation: enableSwitch_Prin_5_FT ease-in-out 300ms forwards;
     }
   }
 }
@@ -239,7 +240,7 @@ $position-unchecked: $dot-width / 2 + $dot-padding;
     left: $position-checked + 2px;
   }
   75% {
-    // Der Punkt bewegt sich ein Stück über den linken Rand hinaus
+    // Der Punkt bewegt sich ein Stück links über das Ziel hinaus
     left: $position-checked - 1px;
   }
   100% {
@@ -252,9 +253,11 @@ $position-unchecked: $dot-width / 2 + $dot-padding;
     left: $position-checked;
   }
   50% {
+    // Der Punkt bewegt sich ein Stück links über das Ziel hinaus
     left: $position-unchecked - 2px;
   }
   75% {
+    // Der Punkt bewegt sich ein Stück rechts über das Ziel hinaus
     left: $position-unchecked + 1px;
   }
   100% {

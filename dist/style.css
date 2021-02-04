@@ -110,14 +110,6 @@ html .container .element {
   background-color: #dca2f7;
 }
 
-.switch.prin_5_ft .switch__label:after {
-  animation: disableSwitch_Prin_5_FT ease-in-out 300ms forwards;
-}
-
-.switch.prin_5_ft .switch__input:checked + .switch__label:after {
-  animation: enableSwitch_Prin_5_FT ease-in-out 300ms forwards;
-}
-
 .switch .switch__label:after {
   left: 13px;
 }
@@ -132,6 +124,14 @@ html .container .element {
 
 .switch.prin_1 .switch__input:checked + .switch__label:after {
   animation: enableSwitch_Prin_1 ease-in-out 200ms forwards;
+}
+
+.switch.prin_5_ft .switch__label:after {
+  animation: disableSwitch_Prin_5_FT ease-in-out 300ms forwards;
+}
+
+.switch.prin_5_ft .switch__input:checked + .switch__label:after {
+  animation: enableSwitch_Prin_5_FT ease-in-out 300ms forwards;
 }
 
 .switch.prin_5_ft.prin_1 .switch__label:after {
