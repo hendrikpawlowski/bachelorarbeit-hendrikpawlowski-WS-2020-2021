@@ -51,7 +51,6 @@ html .card {
 .switch {
   position: relative;
   height: 26px;
-  margin-bottom: 60px;
   display: flex;
   align-items: center;
 }

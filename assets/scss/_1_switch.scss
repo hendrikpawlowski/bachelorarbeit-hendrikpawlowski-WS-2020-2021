@@ -9,8 +9,6 @@ $position-unchecked: $dot-width / 2 + $dot-padding;
 .switch {
   position: relative;
   height: $switch-height;
-  margin-bottom: 60px;
-
   display: flex;
   align-items: center;
 
