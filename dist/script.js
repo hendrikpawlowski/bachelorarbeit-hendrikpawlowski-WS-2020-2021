@@ -19,9 +19,10 @@ const initButton = function () {
 }
 
 const initCard = function () {
-    let description = document.querySelector("[js-description]");
-    console.log(description);
-    description.innerHTML = description.innerHTML.substr(0, 110);
+    let cardListDescription = document.querySelectorAll("[js-description]");
+    cardListDescription.forEach(description => {
+        description.innerHTML = description.innerHTML.substr(0, 110);
+    });
 }
 
 initButton();
