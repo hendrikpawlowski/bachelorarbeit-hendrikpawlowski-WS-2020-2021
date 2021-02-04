@@ -143,11 +143,11 @@ html .container .element {
 }
 
 .switch.prin_8 .switch__label:after {
-  animation: disableSwitch_Prin_8 ease-in-out 400ms forwards;
+  animation: disableSwitch_Prin_8 ease-in-out 200ms forwards;
 }
 
 .switch.prin_8 .switch__input:checked + .switch__label:after {
-  animation: enableSwitch_Prin_8 ease-in-out 400ms forwards;
+  animation: enableSwitch_Prin_8 ease-in-out 200ms forwards;
 }
 
 @keyframes enableSwitch_Prin_1_AND_Prin_5_FT {
@@ -258,6 +258,36 @@ html .container .element {
     left: 16px;
   }
   100% {
+    left: 13px;
+  }
+}
+
+@keyframes enableSwitch_Prin_8 {
+  0% {
+    left: 13px;
+  }
+  50% {
+  }
+  75% {
+  }
+  100% {
+    left: 32px;
+  }
+}
+
+@keyframes disableSwitch_Prin_8 {
+  0% {
+    left: 32px;
+    box-shadow: 0 0 0 0px #9313ce;
+  }
+  50% {
+  }
+  75% {
+  }
+  90% {
+  }
+  100% {
+    box-shadow: 0 0 0 20px 10px #9313ce;
     left: 13px;
   }
 }

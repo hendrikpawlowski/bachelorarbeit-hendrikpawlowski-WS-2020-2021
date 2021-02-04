@@ -39,7 +39,6 @@ $position-unchecked: $dot-width / 2 + $dot-padding;
       background-color: $grey-light;
       border-radius: 100px;
       z-index: 1;
-      // transition: background-color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     &:after {
@@ -137,13 +136,13 @@ $position-unchecked: $dot-width / 2 + $dot-padding;
 .switch.prin_8 {
   .switch__label {
     &:after {
-      animation: disableSwitch_Prin_8 ease-in-out 400ms forwards;
+      animation: disableSwitch_Prin_8 ease-in-out 200ms forwards;
     }
   }
 
   .switch__input:checked + .switch__label {
     &:after {
-      animation: enableSwitch_Prin_8 ease-in-out 400ms forwards;
+      animation: enableSwitch_Prin_8 ease-in-out 200ms forwards;
     }
   }
 }
@@ -260,5 +259,42 @@ $position-unchecked: $dot-width / 2 + $dot-padding;
   }
   100% {
     left: $position-unchecked;
+  }
+}
+
+@keyframes enableSwitch_Prin_8 {
+  0% {
+    left: $position-unchecked;
+  }
+  50% {
+    // Der Punkt bewegt sich ein Stück rechts über das Ziel hinaus
+    // left: $position-checked + 3px;
+  }
+  75% {
+    // Der Punkt bewegt sich ein Stück über den linken Rand hinaus
+    // left: $position-checked - 3px;
+  }
+  100% {
+    left: $position-checked;
+  }
+}
+
+@keyframes disableSwitch_Prin_8 {
+  0% {
+    left: $position-checked;
+    box-shadow: 0 0 0 0px $primary;
+  }
+  50% {
+    // left: $position-unchecked - 3px;
+  }
+  75% {
+    // left: $position-unchecked + 3px;
+  }
+  90% {
+  }
+  100% {
+    box-shadow: 0 0 0 20px 10px $primary;
+    left: $position-unchecked;
+    // box-shadow: 0 0 0 0px red;
   }
 }
