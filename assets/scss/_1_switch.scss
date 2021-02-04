@@ -136,13 +136,13 @@ $position-unchecked: $dot-width / 2 + $dot-padding;
 .switch.prin_8 {
   .switch__label {
     &:after {
-      animation: disableSwitch_Prin_8 ease-in-out 200ms forwards;
+      animation: disableSwitch_Prin_8 ease-in-out 300ms forwards 50ms;
     }
   }
 
   .switch__input:checked + .switch__label {
     &:after {
-      animation: enableSwitch_Prin_8 ease-in-out 200ms forwards;
+      animation: enableSwitch_Prin_8 ease-in-out 300ms forwards 50ms;
     }
   }
 }
@@ -236,11 +236,11 @@ $position-unchecked: $dot-width / 2 + $dot-padding;
   }
   50% {
     // Der Punkt bewegt sich ein Stück rechts über das Ziel hinaus
-    left: $position-checked + 3px;
+    left: $position-checked + 2px;
   }
   75% {
     // Der Punkt bewegt sich ein Stück über den linken Rand hinaus
-    left: $position-checked - 3px;
+    left: $position-checked - 1px;
   }
   100% {
     left: $position-checked;
@@ -252,10 +252,10 @@ $position-unchecked: $dot-width / 2 + $dot-padding;
     left: $position-checked;
   }
   50% {
-    left: $position-unchecked - 3px;
+    left: $position-unchecked - 2px;
   }
   75% {
-    left: $position-unchecked + 3px;
+    left: $position-unchecked + 1px;
   }
   100% {
     left: $position-unchecked;
@@ -263,38 +263,27 @@ $position-unchecked: $dot-width / 2 + $dot-padding;
 }
 
 @keyframes enableSwitch_Prin_8 {
-  0% {
-    left: $position-unchecked;
+  from {
+    box-shadow: 0 0 0 0px transparentize($color: $primary, $amount: 0),
+      0 0 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+      0 1px 5px 0 rgba(0, 0, 0, 0.12);
   }
-  50% {
-    // Der Punkt bewegt sich ein Stück rechts über das Ziel hinaus
-    // left: $position-checked + 3px;
-  }
-  75% {
-    // Der Punkt bewegt sich ein Stück über den linken Rand hinaus
-    // left: $position-checked - 3px;
-  }
-  100% {
-    left: $position-checked;
+  to {
+    box-shadow: 0 0 0 7px transparentize($color: $primary, $amount: 1),
+      0 0 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+      0 1px 5px 0 rgba(0, 0, 0, 0.12);
   }
 }
 
 @keyframes disableSwitch_Prin_8 {
-  0% {
-    left: $position-checked;
-    box-shadow: 0 0 0 0px $primary;
+  from {
+    box-shadow: 0 0 0 0px transparentize($color: $primary, $amount: 0),
+      0 0 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+      0 1px 5px 0 rgba(0, 0, 0, 0.12);
   }
-  50% {
-    // left: $position-unchecked - 3px;
-  }
-  75% {
-    // left: $position-unchecked + 3px;
-  }
-  90% {
-  }
-  100% {
-    box-shadow: 0 0 0 20px 10px $primary;
-    left: $position-unchecked;
-    // box-shadow: 0 0 0 0px red;
+  to {
+    box-shadow: 0 0 0 7px transparentize($color: $primary, $amount: 1),
+      0 0 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+      0 1px 5px 0 rgba(0, 0, 0, 0.12);
   }
 }

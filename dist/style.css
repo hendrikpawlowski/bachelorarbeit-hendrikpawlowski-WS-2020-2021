@@ -143,11 +143,11 @@ html .container .element {
 }
 
 .switch.prin_8 .switch__label:after {
-  animation: disableSwitch_Prin_8 ease-in-out 200ms forwards;
+  animation: disableSwitch_Prin_8 ease-in-out 300ms forwards 50ms;
 }
 
 .switch.prin_8 .switch__input:checked + .switch__label:after {
-  animation: enableSwitch_Prin_8 ease-in-out 200ms forwards;
+  animation: enableSwitch_Prin_8 ease-in-out 300ms forwards 50ms;
 }
 
 @keyframes enableSwitch_Prin_1_AND_Prin_5_FT {
@@ -237,10 +237,10 @@ html .container .element {
     left: 13px;
   }
   50% {
-    left: 35px;
+    left: 34px;
   }
   75% {
-    left: 29px;
+    left: 31px;
   }
   100% {
     left: 32px;
@@ -252,10 +252,10 @@ html .container .element {
     left: 32px;
   }
   50% {
-    left: 10px;
+    left: 11px;
   }
   75% {
-    left: 16px;
+    left: 14px;
   }
   100% {
     left: 13px;
@@ -263,32 +263,20 @@ html .container .element {
 }
 
 @keyframes enableSwitch_Prin_8 {
-  0% {
-    left: 13px;
+  from {
+    box-shadow: 0 0 0 0px #9313ce, 0 0 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
   }
-  50% {
-  }
-  75% {
-  }
-  100% {
-    left: 32px;
+  to {
+    box-shadow: 0 0 0 7px rgba(147, 19, 206, 0), 0 0 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
   }
 }
 
 @keyframes disableSwitch_Prin_8 {
-  0% {
-    left: 32px;
-    box-shadow: 0 0 0 0px #9313ce;
+  from {
+    box-shadow: 0 0 0 0px #9313ce, 0 0 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
   }
-  50% {
-  }
-  75% {
-  }
-  90% {
-  }
-  100% {
-    box-shadow: 0 0 0 20px 10px #9313ce;
-    left: 13px;
+  to {
+    box-shadow: 0 0 0 7px rgba(147, 19, 206, 0), 0 0 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
   }
 }
 
