@@ -122,11 +122,68 @@ html .container .element {
 
 .switch.prin_1 .switch__label:after {
   animation: disableSwitch_Prin_1 ease-in-out 200ms forwards;
-  animation-direction: reverse;
 }
 
 .switch.prin_1 .switch__input:checked + .switch__label:after {
   animation: enableSwitch_Prin_1 ease-in-out 200ms forwards;
+}
+
+.switch.prin_5_ft.prin_1 .switch__label:after {
+  animation: disableSwitch_Prin_1_AND_Prin_5_FT ease-in-out 400ms forwards;
+}
+
+.switch.prin_5_ft.prin_1 .switch__input:checked + .switch__label:after {
+  animation: enableSwitch_Prin_1_AND_Prin_5_FT ease-in-out 400ms forwards;
+}
+
+@keyframes enableSwitch_Prin_1_AND_Prin_5_FT {
+  0% {
+  }
+  20% {
+    width: 28px;
+    height: 14px;
+    top: 6px;
+  }
+  40% {
+    width: 20px;
+    height: 20px;
+    top: 3px;
+  }
+  50% {
+    left: 34px;
+  }
+  75% {
+    left: 31px;
+  }
+  100% {
+    left: 32px;
+    width: 20px;
+  }
+}
+
+@keyframes disableSwitch_Prin_1_AND_Prin_5_FT {
+  0% {
+    left: 32px;
+  }
+  20% {
+    width: 28px;
+    height: 14px;
+    top: 6px;
+  }
+  40% {
+    width: 20px;
+    height: 20px;
+    top: 3px;
+  }
+  50% {
+    left: 11px;
+  }
+  75% {
+    left: 14px;
+  }
+  100% {
+    left: 13px;
+  }
 }
 
 @keyframes enableSwitch_Prin_1 {
@@ -145,6 +202,7 @@ html .container .element {
 
 @keyframes disableSwitch_Prin_1 {
   0% {
+    left: 32px;
   }
   10% {
   }
@@ -153,13 +211,8 @@ html .container .element {
     height: 14px;
     top: 6px;
   }
-  50% {
-  }
-  70% {
-  }
   100% {
-    left: 32px;
-    width: 20px;
+    left: 13px;
   }
 }
 
@@ -170,7 +223,7 @@ html .container .element {
   50% {
     left: 35px;
   }
-  70% {
+  75% {
     left: 29px;
   }
   100% {
@@ -185,7 +238,7 @@ html .container .element {
   50% {
     left: 10px;
   }
-  70% {
+  75% {
     left: 16px;
   }
   100% {

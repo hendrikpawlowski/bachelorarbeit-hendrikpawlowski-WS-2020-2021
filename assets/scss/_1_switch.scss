@@ -68,6 +68,8 @@ $position-unchecked: $dot-width / 2 + $dot-padding;
   }
 }
 
+// Prinzip 5 Follow Through
+
 .switch.prin_5_ft {
   .switch__label {
     &:after {
@@ -82,11 +84,13 @@ $position-unchecked: $dot-width / 2 + $dot-padding;
   }
 }
 
+// Prinzip 1 Squash and Stretch
+
 .switch.prin_1 {
   .switch__label {
     &:after {
       animation: disableSwitch_Prin_1 ease-in-out 200ms forwards;
-      animation-direction: reverse;
+      // animation-direction: reverse;
     }
   }
 
@@ -94,6 +98,73 @@ $position-unchecked: $dot-width / 2 + $dot-padding;
     &:after {
       animation: enableSwitch_Prin_1 ease-in-out 200ms forwards;
     }
+  }
+}
+
+// Prinzip 5 Follow Through AND Prinzip 1 Squash and Stretch
+
+.switch.prin_5_ft.prin_1 {
+  .switch__label {
+    &:after {
+      animation: disableSwitch_Prin_1_AND_Prin_5_FT ease-in-out 400ms forwards;
+    }
+  }
+
+  .switch__input:checked + .switch__label {
+    &:after {
+      animation: enableSwitch_Prin_1_AND_Prin_5_FT ease-in-out 400ms forwards;
+    }
+  }
+}
+
+@keyframes enableSwitch_Prin_1_AND_Prin_5_FT {
+  0% {
+  }
+  20% {
+    width: $dot-width + 8px;
+    height: $dot-height - 6px;
+    top: $dot-padding + 3px;
+  }
+  40% {
+    width: $dot-width;
+    height: $dot-height;
+    top: $dot-padding;
+  }
+  50% {
+    left: $position-checked + 2px;
+  }
+  75% {
+    left: $position-checked - 1px;
+  }
+  100% {
+    left: $position-checked;
+    width: $dot-width;
+  }
+}
+
+@keyframes disableSwitch_Prin_1_AND_Prin_5_FT {
+  0% {
+    left: $position-checked;
+  }
+  20% {
+    width: $dot-width + 8px;
+    height: $dot-height - 6px;
+    top: $dot-padding + 3px;
+  }
+  40% {
+    width: $dot-width;
+    height: $dot-height;
+    top: $dot-padding;
+  }
+  50% {
+    left: $position-unchecked - 2px;
+  }
+  75% {
+    left: $position-unchecked + 1px;
+  }
+  100% {
+    left: $position-unchecked;
+    // width: $dot-width;
   }
 }
 
@@ -113,6 +184,7 @@ $position-unchecked: $dot-width / 2 + $dot-padding;
 
 @keyframes disableSwitch_Prin_1 {
   0% {
+    left: $position-checked;
   }
   10% {
   }
@@ -121,13 +193,9 @@ $position-unchecked: $dot-width / 2 + $dot-padding;
     height: $dot-height - 6px;
     top: $dot-padding + 3px;
   }
-  50% {
-  }
-  70% {
-  }
   100% {
-    left: $position-checked;
-    width: $dot-width;
+    left: $position-unchecked;
+    // width: $dot-width;
   }
 }
 
@@ -139,7 +207,7 @@ $position-unchecked: $dot-width / 2 + $dot-padding;
     // Der Punkt bewegt sich ein Stück rechts über das Ziel hinaus
     left: $position-checked + 3px;
   }
-  70% {
+  75% {
     // Der Punkt bewegt sich ein Stück über den linken Rand hinaus
     left: $position-checked - 3px;
   }
@@ -155,7 +223,7 @@ $position-unchecked: $dot-width / 2 + $dot-padding;
   50% {
     left: $position-unchecked - 3px;
   }
-  70% {
+  75% {
     left: $position-unchecked + 3px;
   }
   100% {
