@@ -39,7 +39,7 @@ $position-unchecked: $dot-width / 2 + $dot-padding;
       background-color: $grey-light;
       border-radius: 100px;
       z-index: 1;
-      transition: background-color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+      // transition: background-color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     &:after {
@@ -54,8 +54,9 @@ $position-unchecked: $dot-width / 2 + $dot-padding;
       box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.14),
         0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
       z-index: 2;
-      transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-      transition-property: left, background-color;
+      // transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+      // transition: 200ms;
+      // transition-property: left, background-color;
       transform: translate(-50%);
     }
   }
@@ -80,6 +81,22 @@ $position-unchecked: $dot-width / 2 + $dot-padding;
   .switch__input:checked + .switch__label {
     &:after {
       animation: enableSwitch_Prin_5_FT ease-in-out 300ms forwards;
+    }
+  }
+}
+
+// Default
+
+.switch {
+  .switch__label {
+    &:after {
+      left: $position-unchecked;
+    }
+  }
+
+  .switch__input:checked + .switch__label {
+    &:after {
+      left: $position-checked;
     }
   }
 }
@@ -117,8 +134,25 @@ $position-unchecked: $dot-width / 2 + $dot-padding;
   }
 }
 
+// Prinzip 8 Secondary Animation
+
+.switch.prin_8 {
+  .switch__label {
+    &:after {
+      animation: disableSwitch_Prin_8 ease-in-out 400ms forwards;
+    }
+  }
+
+  .switch__input:checked + .switch__label {
+    &:after {
+      animation: enableSwitch_Prin_8 ease-in-out 400ms forwards;
+    }
+  }
+}
+
 @keyframes enableSwitch_Prin_1_AND_Prin_5_FT {
   0% {
+    left: $position-unchecked;
   }
   20% {
     width: $dot-width + 8px;
@@ -170,6 +204,7 @@ $position-unchecked: $dot-width / 2 + $dot-padding;
 
 @keyframes enableSwitch_Prin_1 {
   0% {
+    left: $position-unchecked;
   }
   50% {
     width: $dot-width + 8px;
@@ -195,7 +230,6 @@ $position-unchecked: $dot-width / 2 + $dot-padding;
   }
   100% {
     left: $position-unchecked;
-    // width: $dot-width;
   }
 }
 
