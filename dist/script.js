@@ -19,7 +19,8 @@ const initButton = function () {
 }
 
 const initCard = function () {
-    let description = document.querySelectorAll("[js-description]");
+    let description = document.querySelector("[js-description]");
+    console.log(description);
     description.innerHTML = description.innerHTML.substr(0, 110);
 }
 
