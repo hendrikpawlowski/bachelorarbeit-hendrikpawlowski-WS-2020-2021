@@ -39,9 +39,9 @@ $position-unchecked: $dot-width / 2 + $dot-padding;
       background-color: $grey-light;
       border-radius: 100px;
       z-index: 1;
-      transition: background-color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
+    // :after ist der Punkt der anzeigt, ob der Switch Button an oder aus ist
     &:after {
       content: "";
       position: absolute;
@@ -50,12 +50,11 @@ $position-unchecked: $dot-width / 2 + $dot-padding;
       width: $dot-width;
       height: $dot-width;
       background-color: white;
+      transition: 150ms;
       border-radius: 14px;
       box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.14),
         0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
       z-index: 2;
-      transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-      transition-property: left, background-color;
       transform: translate(-50%);
     }
   }
@@ -68,57 +67,149 @@ $position-unchecked: $dot-width / 2 + $dot-padding;
   }
 }
 
-.switch.prin_5_ft {
+// Default
+
+.switch {
   .switch__label {
     &:after {
-      animation: ease-in-out disableSwitch_Prin_5_FT 300ms;
-      animation-fill-mode: forwards;
+      left: $position-unchecked;
     }
   }
 
   .switch__input:checked + .switch__label {
     &:after {
-      animation: ease-in-out enableSwitch_Prin_5_FT 300ms;
-      animation-fill-mode: forwards;
+      left: $position-checked;
     }
   }
 }
+
+// Prinzip 1 Squash and Stretch
 
 .switch.prin_1 {
   .switch__label {
     &:after {
-      animation: ease-in-out disableSwitch_Prin_1 200ms;
-      animation-fill-mode: forwards;
-      animation-direction: reverse;
+      animation: disableSwitch_Prin_1 ease-in-out 200ms forwards;
+      // animation-direction: reverse;
     }
   }
 
   .switch__input:checked + .switch__label {
     &:after {
-      animation: ease-in-out enableSwitch_Prin_1 200ms;
-      animation-fill-mode: forwards;
+      animation: enableSwitch_Prin_1 ease-in-out 200ms forwards;
     }
   }
 }
 
-// only squash and stretch 200ms
+// Prinzip 5 Follow Through
+
+.switch.prin_5_ft {
+  .switch__label {
+    &:after {
+      animation: disableSwitch_Prin_5_FT ease-in-out 300ms forwards;
+    }
+  }
+
+  .switch__input:checked + .switch__label {
+    &:after {
+      animation: enableSwitch_Prin_5_FT ease-in-out 300ms forwards;
+    }
+  }
+}
+
+// Prinzip 5 Follow Through AND Prinzip 1 Squash and Stretch
+
+.switch.prin_5_ft.prin_1 {
+  .switch__label {
+    &:after {
+      animation: disableSwitch_Prin_1_AND_Prin_5_FT ease-in-out 400ms forwards;
+    }
+  }
+
+  .switch__input:checked + .switch__label {
+    &:after {
+      animation: enableSwitch_Prin_1_AND_Prin_5_FT ease-in-out 400ms forwards;
+    }
+  }
+}
+
+// Prinzip 8 Secondary Animation
+
+.switch.prin_8 {
+  .switch__label {
+    &:after {
+      animation: disableSwitch_Prin_8 ease-in-out 300ms forwards 50ms;
+    }
+  }
+
+  .switch__input:checked + .switch__label {
+    &:after {
+      animation: enableSwitch_Prin_8 ease-in-out 300ms forwards 50ms;
+    }
+  }
+}
+
+@keyframes enableSwitch_Prin_1_AND_Prin_5_FT {
+  0% {
+    left: $position-unchecked;
+  }
+  20% {
+    width: $dot-width + 8px;
+    height: $dot-height - 6px;
+    top: $dot-padding + 3px;
+  }
+  40% {
+    width: $dot-width;
+    height: $dot-height;
+    top: $dot-padding;
+  }
+  50% {
+    left: $position-checked + 2px;
+  }
+  75% {
+    left: $position-checked - 1px;
+  }
+  100% {
+    left: $position-checked;
+    width: $dot-width;
+  }
+}
+
+@keyframes disableSwitch_Prin_1_AND_Prin_5_FT {
+  0% {
+    left: $position-checked;
+  }
+  20% {
+    width: $dot-width + 8px;
+    height: $dot-height - 6px;
+    top: $dot-padding + 3px;
+  }
+  40% {
+    width: $dot-width;
+    height: $dot-height;
+    top: $dot-padding;
+  }
+  50% {
+    left: $position-unchecked - 2px;
+  }
+  75% {
+    left: $position-unchecked + 1px;
+  }
+  100% {
+    left: $position-unchecked;
+    // width: $dot-width;
+  }
+}
 
 @keyframes enableSwitch_Prin_1 {
   0% {
-  }
-  10% {
+    left: $position-unchecked;
   }
   50% {
     width: $dot-width + 8px;
     height: $dot-height - 6px;
     top: $dot-padding + 3px;
   }
-  50% {
-  }
-  70% {
-  }
   100% {
-    // left: $switch-width / 2 + $dot-width / 2;
     left: $position-checked;
     width: $dot-width;
   }
@@ -126,6 +217,7 @@ $position-unchecked: $dot-width / 2 + $dot-padding;
 
 @keyframes disableSwitch_Prin_1 {
   0% {
+    left: $position-checked;
   }
   10% {
   }
@@ -134,28 +226,22 @@ $position-unchecked: $dot-width / 2 + $dot-padding;
     height: $dot-height - 6px;
     top: $dot-padding + 3px;
   }
-  50% {
-  }
-  70% {
-  }
   100% {
-    left: $position-checked;
-    width: $dot-width;
+    left: $position-unchecked;
   }
 }
 
-// squash and stretch and follow through 400ms
 @keyframes enableSwitch_Prin_5_FT {
   0% {
     left: $position-unchecked;
   }
   50% {
     // Der Punkt bewegt sich ein Stück rechts über das Ziel hinaus
-    left: $position-checked + 5px;
+    left: $position-checked + 2px;
   }
-  70% {
-    // Der Punkt bewegt sich ein Stück über den linken Rand hinaus
-    left: $position-checked - 5px;
+  75% {
+    // Der Punkt bewegt sich ein Stück links über das Ziel hinaus
+    left: $position-checked - 1px;
   }
   100% {
     left: $position-checked;
@@ -167,12 +253,40 @@ $position-unchecked: $dot-width / 2 + $dot-padding;
     left: $position-checked;
   }
   50% {
-    left: $position-unchecked - 5px;
+    // Der Punkt bewegt sich ein Stück links über das Ziel hinaus
+    left: $position-unchecked - 2px;
   }
-  70% {
-    left: $position-unchecked + 5px;
+  75% {
+    // Der Punkt bewegt sich ein Stück rechts über das Ziel hinaus
+    left: $position-unchecked + 1px;
   }
   100% {
     left: $position-unchecked;
+  }
+}
+
+@keyframes enableSwitch_Prin_8 {
+  from {
+    box-shadow: 0 0 0 0px transparentize($color: $primary, $amount: 0),
+      0 0 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+      0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  }
+  to {
+    box-shadow: 0 0 0 7px transparentize($color: $primary, $amount: 1),
+      0 0 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+      0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  }
+}
+
+@keyframes disableSwitch_Prin_8 {
+  from {
+    box-shadow: 0 0 0 0px transparentize($color: $primary, $amount: 0),
+      0 0 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+      0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  }
+  to {
+    box-shadow: 0 0 0 7px transparentize($color: $primary, $amount: 1),
+      0 0 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+      0 1px 5px 0 rgba(0, 0, 0, 0.12);
   }
 }

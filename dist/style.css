@@ -89,7 +89,6 @@ html .container .element {
   background-color: #cecece;
   border-radius: 100px;
   z-index: 1;
-  transition: background-color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .switch__label:after {
@@ -100,11 +99,10 @@ html .container .element {
   width: 20px;
   height: 20px;
   background-color: white;
+  transition: 150ms;
   border-radius: 14px;
   box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
   z-index: 2;
-  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-  transition-property: left, background-color;
   transform: translate(-50%);
 }
 
@@ -112,40 +110,105 @@ html .container .element {
   background-color: #dca2f7;
 }
 
-.switch.prin_5_ft .switch__label:after {
-  animation: ease-in-out disableSwitch_Prin_5_FT 300ms;
-  animation-fill-mode: forwards;
+.switch .switch__label:after {
+  left: 13px;
 }
 
-.switch.prin_5_ft .switch__input:checked + .switch__label:after {
-  animation: ease-in-out enableSwitch_Prin_5_FT 300ms;
-  animation-fill-mode: forwards;
+.switch .switch__input:checked + .switch__label:after {
+  left: 32px;
 }
 
 .switch.prin_1 .switch__label:after {
-  animation: ease-in-out disableSwitch_Prin_1 200ms;
-  animation-fill-mode: forwards;
-  animation-direction: reverse;
+  animation: disableSwitch_Prin_1 ease-in-out 200ms forwards;
 }
 
 .switch.prin_1 .switch__input:checked + .switch__label:after {
-  animation: ease-in-out enableSwitch_Prin_1 200ms;
-  animation-fill-mode: forwards;
+  animation: enableSwitch_Prin_1 ease-in-out 200ms forwards;
+}
+
+.switch.prin_5_ft .switch__label:after {
+  animation: disableSwitch_Prin_5_FT ease-in-out 300ms forwards;
+}
+
+.switch.prin_5_ft .switch__input:checked + .switch__label:after {
+  animation: enableSwitch_Prin_5_FT ease-in-out 300ms forwards;
+}
+
+.switch.prin_5_ft.prin_1 .switch__label:after {
+  animation: disableSwitch_Prin_1_AND_Prin_5_FT ease-in-out 400ms forwards;
+}
+
+.switch.prin_5_ft.prin_1 .switch__input:checked + .switch__label:after {
+  animation: enableSwitch_Prin_1_AND_Prin_5_FT ease-in-out 400ms forwards;
+}
+
+.switch.prin_8 .switch__label:after {
+  animation: disableSwitch_Prin_8 ease-in-out 300ms forwards 50ms;
+}
+
+.switch.prin_8 .switch__input:checked + .switch__label:after {
+  animation: enableSwitch_Prin_8 ease-in-out 300ms forwards 50ms;
+}
+
+@keyframes enableSwitch_Prin_1_AND_Prin_5_FT {
+  0% {
+    left: 13px;
+  }
+  20% {
+    width: 28px;
+    height: 14px;
+    top: 6px;
+  }
+  40% {
+    width: 20px;
+    height: 20px;
+    top: 3px;
+  }
+  50% {
+    left: 34px;
+  }
+  75% {
+    left: 31px;
+  }
+  100% {
+    left: 32px;
+    width: 20px;
+  }
+}
+
+@keyframes disableSwitch_Prin_1_AND_Prin_5_FT {
+  0% {
+    left: 32px;
+  }
+  20% {
+    width: 28px;
+    height: 14px;
+    top: 6px;
+  }
+  40% {
+    width: 20px;
+    height: 20px;
+    top: 3px;
+  }
+  50% {
+    left: 11px;
+  }
+  75% {
+    left: 14px;
+  }
+  100% {
+    left: 13px;
+  }
 }
 
 @keyframes enableSwitch_Prin_1 {
   0% {
-  }
-  10% {
+    left: 13px;
   }
   50% {
     width: 28px;
     height: 14px;
     top: 6px;
-  }
-  50% {
-  }
-  70% {
   }
   100% {
     left: 32px;
@@ -155,6 +218,7 @@ html .container .element {
 
 @keyframes disableSwitch_Prin_1 {
   0% {
+    left: 32px;
   }
   10% {
   }
@@ -163,13 +227,8 @@ html .container .element {
     height: 14px;
     top: 6px;
   }
-  50% {
-  }
-  70% {
-  }
   100% {
-    left: 32px;
-    width: 20px;
+    left: 13px;
   }
 }
 
@@ -178,10 +237,10 @@ html .container .element {
     left: 13px;
   }
   50% {
-    left: 37px;
+    left: 34px;
   }
-  70% {
-    left: 27px;
+  75% {
+    left: 31px;
   }
   100% {
     left: 32px;
@@ -193,13 +252,31 @@ html .container .element {
     left: 32px;
   }
   50% {
-    left: 8px;
+    left: 11px;
   }
-  70% {
-    left: 18px;
+  75% {
+    left: 14px;
   }
   100% {
     left: 13px;
+  }
+}
+
+@keyframes enableSwitch_Prin_8 {
+  from {
+    box-shadow: 0 0 0 0px #9313ce, 0 0 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  }
+  to {
+    box-shadow: 0 0 0 7px rgba(147, 19, 206, 0), 0 0 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  }
+}
+
+@keyframes disableSwitch_Prin_8 {
+  from {
+    box-shadow: 0 0 0 0px #9313ce, 0 0 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  }
+  to {
+    box-shadow: 0 0 0 7px rgba(147, 19, 206, 0), 0 0 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
   }
 }
 
