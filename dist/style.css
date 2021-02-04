@@ -223,7 +223,7 @@ html .container .element {
   box-shadow: none;
 }
 
-.button.prin_8:before, .button.prin_8:after {
+.button.prin_8_variation_1:before, .button.prin_8_variation_1:after {
   position: absolute;
   content: "";
   display: block;
@@ -235,28 +235,32 @@ html .container .element {
   background-repeat: no-repeat;
 }
 
-.button.prin_8:before {
+.button.prin_8_variation_1:before {
   display: none;
   top: -75%;
   background-image: radial-gradient(circle, #dca2f7 20%, transparent 20%), radial-gradient(circle, #dca2f7 20%, transparent 20%), radial-gradient(circle, #dca2f7 20%, transparent 20%), radial-gradient(circle, #dca2f7 20%, transparent 20%), radial-gradient(circle, #dca2f7 20%, transparent 20%);
   background-size: 15% 15%, 15% 15%, 15% 15%;
 }
 
-.button.prin_8:after {
+.button.prin_8_variation_1:after {
   display: none;
   bottom: -75%;
   background-image: radial-gradient(circle, #dca2f7 20%, transparent 20%), radial-gradient(circle, #dca2f7 20%, transparent 20%), radial-gradient(circle, #dca2f7 20%, transparent 20%), radial-gradient(circle, #dca2f7 20%, transparent 20%), radial-gradient(circle, #dca2f7 20%, transparent 20%);
   background-size: 15% 15%, 15% 15%, 15% 15%;
 }
 
-.button.animate:before {
+.button.animate.prin_8_variation_1:before {
   display: block;
   animation: topBubbles ease-out 0.3s forwards;
 }
 
-.button.animate:after {
+.button.animate.prin_8_variation_1:after {
   display: block;
   animation: bottomBubbles ease-out 0.3s forwards;
+}
+
+.button.animate.prin_8_variation_2 {
+  animation: ease-in-out buttonShadowAnimation 300ms;
 }
 
 @keyframes topBubbles {
@@ -282,6 +286,15 @@ html .container .element {
   100% {
     background-position: -2% 25%, 24% 48%, 50% 57%, 76% 52%, 102% 25%;
     opacity: 0;
+  }
+}
+
+@keyframes buttonShadowAnimation {
+  from {
+    box-shadow: 0 0 1px 0px #dca2f7;
+  }
+  to {
+    box-shadow: 0 0 1px 12px rgba(220, 162, 247, 0), 0px 0px 4px #e7c4f7, 0px 8px 16px #e7c4f7;
   }
 }
 

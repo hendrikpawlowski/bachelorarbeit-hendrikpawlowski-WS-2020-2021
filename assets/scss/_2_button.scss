@@ -17,10 +17,11 @@
   &.prin_1:active {
     transform: scale(0.95, 0.95);
     box-shadow: none;
+    // animation: ease-in-out buttonShadowAnimation 400ms;
   }
 
-  &.prin_8:before,
-  &.prin_8:after {
+  &.prin_8_variation_1:before,
+  &.prin_8_variation_1:after {
     position: absolute;
     content: "";
     display: block;
@@ -32,7 +33,7 @@
     background-repeat: no-repeat;
   }
 
-  &.prin_8:before {
+  &.prin_8_variation_1:before {
     display: none;
     top: -75%;
     background-image: radial-gradient(
@@ -48,7 +49,7 @@
     //background-position: 0% 80%, -5% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 85% 30%;
   }
 
-  &.prin_8:after {
+  &.prin_8_variation_1:after {
     display: none;
     bottom: -75%;
     background-image: radial-gradient(
@@ -64,7 +65,7 @@
     //background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
   }
 
-  &.animate {
+  &.animate.prin_8_variation_1 {
     &:before {
       display: block;
       animation: topBubbles ease-out 0.3s forwards;
@@ -73,6 +74,10 @@
       display: block;
       animation: bottomBubbles ease-out 0.3s forwards;
     }
+  }
+
+  &.animate.prin_8_variation_2 {
+    animation: ease-in-out buttonShadowAnimation 300ms;
   }
 }
 
@@ -103,5 +108,16 @@
   100% {
     background-position: -2% 25%, 24% 48%, 50% 57%, 76% 52%, 102% 25%;
     opacity: 0;
+  }
+}
+
+@keyframes buttonShadowAnimation {
+  from {
+    box-shadow: 0 0 1px 0px transparentize($color: $primary-light, $amount: 0);
+  }
+  to {
+    box-shadow: 0 0 1px 12px transparentize($color: $primary-light, $amount: 1),
+      0px 0px 4px $primary-shadow, 0px 8px 16px $primary-shadow;
+    // box-shadow: 0px 0px 4px $primary-shadow, 0px 8px 16px $primary-shadow;
   }
 }

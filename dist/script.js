@@ -9,13 +9,17 @@ const initButton = function () {
         this.classList.add("animate")
     }
 
-    let button = document.querySelector(".button.prin_8");
-    button.addEventListener("mouseup", animateBubbles);
-    button.addEventListener("animationend", stopAnimations);
+    let buttonList = document.querySelectorAll(".button");
+
+    buttonList.forEach(button => {
+        button.addEventListener("mouseup", animateBubbles);
+        button.addEventListener("animationend", stopAnimations);
+        console.log(button);
+    });
 }
 
 const initCard = function () {
-    let description = document.querySelector("[js-description]");
+    let description = document.querySelectorAll("[js-description]");
     description.innerHTML = description.innerHTML.substr(0, 110);
 }
 
