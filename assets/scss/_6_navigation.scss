@@ -1,18 +1,77 @@
 .nav-container {
-  .nav-list {
-    &.open {
-      background: red;
-      width: 100px;
-      transition: 300ms cubic-bezier(0.61, 1.71, 0.57, 0.78);
+  .nav-toggle {
+    margin-bottom: 20px;
+    padding: 18px;
+    box-shadow: 0px 0px 2px #ccc, 0px 1px 2px #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 100ms;
+
+    &:hover {
+      box-shadow: 0px 0px 4px #ccc, 0px 2px 4px #ccc;
+      transition: 100ms;
     }
 
-    &.close {
+    .bar {
+      width: 32px;
+      height: 3px;
+      background: $text-color;
+      margin-bottom: 6px;
+      border-radius: 10px;
+
+      &:last-child {
+        margin-bottom: 0;
+        width: 24px;
+      }
+    }
+  }
+
+  .link {
+    display: block;
+    overflow-x: hidden;
+    margin-bottom: 20px;
+  }
+
+  .nav-list {
+    border-radius: 4px;
+    //   border: 1px solid $primary;
+    box-shadow: 0px 0px 4px #ccc, 0px 4px 4px #ccc;
+    // box-shadow: 0 0 4px $primary;
+    // background: red;
+    padding: 64px 0 64px 0;
+    width: 200px;
+    transition: 300ms cubic-bezier(0.61, 1.71, 0.57, 0.78);
+
+    .link {
+      margin-left: 64px;
+    }
+  }
+
+  &.open {
+    .nav-toggle {
+      //   .one {
+      //     transform: rotate(-45deg);
+      //     // width: 20px;
+      //     margin-left: -1px;
+      //     margin-bottom: 1px;
+      //   }
+      //   .two {
+      //     margin-bottom: 1px;
+      //     display: none;
+      //   }
+      //   .three {
+      //     transform: rotate(45deg);
+      //     // width: 20px;
+      //     margin-left: -1px;
+      //     // margin-bottom: 1px;
+      //   }
+    }
+  }
+
+  &.close {
+    .nav-list {
       transition: 200ms;
       width: 0px;
-    }
-    .link {
-      display: block;
-      overflow-x: hidden;
     }
   }
 }

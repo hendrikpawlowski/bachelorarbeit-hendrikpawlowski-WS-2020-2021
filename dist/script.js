@@ -37,12 +37,12 @@ const initNavigation = function () {
         navToggle.addEventListener("click", function () {
 
             // Hier wird geschaut, ob die Navigation offen oder geschlossen ist
-            if (nav.classList.contains("close")) {
-                nav.classList.remove("close");
-                nav.classList.add("open");
-            } else if (nav.classList.contains("open")) {
-                nav.classList.remove("open");
-                nav.classList.add("close");
+            if (navContainer.classList.contains("close")) {
+                navContainer.classList.remove("close");
+                navContainer.classList.add("open");
+            } else if (navContainer.classList.contains("open")) {
+                navContainer.classList.remove("open");
+                navContainer.classList.add("close");
             }
         });
     });

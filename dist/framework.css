@@ -11,6 +11,12 @@ html {
   color: #3b3b3b;
 }
 
+html a {
+  text-decoration: none;
+  color: #3b3b3b;
+  font-weight: 600;
+}
+
 html h1 {
   font-size: 4.2358rem;
 }
@@ -29,6 +35,14 @@ html h4 {
 }
 
 html button {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+html .button {
   font-size: 24px;
   font-family: "Montserrat", sans-serif;
   position: relative;
@@ -586,18 +600,52 @@ html .card {
   }
 }
 
-.nav-container .nav-list.open {
-  background: red;
-  width: 100px;
+.nav-container .nav-toggle {
+  margin-bottom: 20px;
+  padding: 18px;
+  box-shadow: 0px 0px 2px #ccc, 0px 1px 2px #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 100ms;
+}
+
+.nav-container .nav-toggle:hover {
+  box-shadow: 0px 0px 4px #ccc, 0px 2px 4px #ccc;
+  transition: 100ms;
+}
+
+.nav-container .nav-toggle .bar {
+  width: 32px;
+  height: 3px;
+  background: #3b3b3b;
+  margin-bottom: 6px;
+  border-radius: 10px;
+}
+
+.nav-container .nav-toggle .bar:last-child {
+  margin-bottom: 0;
+  width: 24px;
+}
+
+.nav-container .link {
+  display: block;
+  overflow-x: hidden;
+  margin-bottom: 20px;
+}
+
+.nav-container .nav-list {
+  border-radius: 4px;
+  box-shadow: 0px 0px 4px #ccc, 0px 4px 4px #ccc;
+  padding: 64px 0 64px 0;
+  width: 200px;
   transition: 300ms cubic-bezier(0.61, 1.71, 0.57, 0.78);
 }
 
-.nav-container .nav-list.close {
-  transition: 200ms;
-  width: 0px;
+.nav-container .nav-list .link {
+  margin-left: 64px;
 }
 
-.nav-container .nav-list .link {
-  display: block;
-  overflow-x: hidden;
+.nav-container.close .nav-list {
+  transition: 200ms;
+  width: 0px;
 }
