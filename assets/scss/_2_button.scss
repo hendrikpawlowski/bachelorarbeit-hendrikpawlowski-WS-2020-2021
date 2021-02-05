@@ -7,7 +7,6 @@
   &:active {
     background: $primary-dark;
     transition: 100ms;
-    // box-shadow: 0px 0px 4px $primary-shadow, 0px 4px 4px $primary-shadow;
     box-shadow: none;
   }
 
@@ -19,7 +18,6 @@
   &.prin_1:active {
     transform: scale(0.95, 0.95);
     box-shadow: none;
-    // animation: ease-in-out buttonShadowAnimation 400ms;
   }
 
   &.prin_8_variation_1:before,
@@ -48,7 +46,6 @@
       radial-gradient(circle, $primary-light 20%, transparent 20%),
       radial-gradient(circle, $primary-light 20%, transparent 20%);
     background-size: 15% 15%, 15% 15%, 15% 15%;
-    //background-position: 0% 80%, -5% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 85% 30%;
   }
 
   &.prin_8_variation_1:after {
@@ -64,7 +61,6 @@
       radial-gradient(circle, $primary-light 20%, transparent 20%),
       radial-gradient(circle, $primary-light 20%, transparent 20%);
     background-size: 15% 15%, 15% 15%, 15% 15%;
-    //background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
   }
 
   &.animate.prin_8_variation_1 {
@@ -89,13 +85,10 @@
   }
   90% {
     background-position: -2% 75%, 24% 48%, 50% 43%, 76% 48%, 102% 75%;
-    // opacity: 0;
-    // background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
   }
   100% {
     background-position: -2% 75%, 24% 48%, 50% 43%, 76% 48%, 102% 75%;
     opacity: 0;
-    // background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
   }
 }
 
@@ -105,7 +98,6 @@
   }
   90% {
     background-position: -2% 25%, 24% 48%, 50% 57%, 76% 52%, 102% 25%;
-    // opacity: 0;
   }
   100% {
     background-position: -2% 25%, 24% 48%, 50% 57%, 76% 52%, 102% 25%;
@@ -120,6 +112,5 @@
   to {
     box-shadow: 0 0 1px 12px transparentize($color: $primary-light, $amount: 1),
       0px 0px 4px $primary-shadow, 0px 8px 16px $primary-shadow;
-    // box-shadow: 0px 0px 4px $primary-shadow, 0px 8px 16px $primary-shadow;
   }
 }
