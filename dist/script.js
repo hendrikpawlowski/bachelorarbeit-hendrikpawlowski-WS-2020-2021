@@ -1,6 +1,5 @@
 
 const initButton = function () {
-
     const stopAnimations = function () {
         this.classList.remove("animate");
     }
@@ -20,7 +19,7 @@ const initButton = function () {
 const initCard = function () {
     let cardListDescription = document.querySelectorAll("[js-description]");
     cardListDescription.forEach(description => {
-        description.innerHTML = description.innerHTML.substr(0, 110);
+        description.innerHTML = description.innerHTML.substr(0, 100);
     });
 }
 
