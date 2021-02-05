@@ -585,3 +585,17 @@ html .card {
     white-space: nowrap;
   }
 }
+
+.nav-container .nav-list.open {
+  background: red;
+  width: 100px;
+}
+
+.nav-container .nav-list.close {
+  width: 0px;
+}
+
+.nav-container .nav-list .link {
+  display: block;
+  overflow-x: hidden;
+}

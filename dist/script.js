@@ -23,5 +23,32 @@ const initCard = function () {
     });
 }
 
+const initNavigation = function () {
+
+    const toggleNav = function () {
+
+    }
+
+    let listOfNavContainer = document.querySelectorAll("[js-nav-container]");
+    listOfNavContainer.forEach(navContainer => {
+        let navToggle = navContainer.querySelector("[js-toggle-nav]");
+        let nav = navContainer.querySelector("[js-nav]");
+
+        navToggle.addEventListener("click", function () {
+
+            // Hier wird geschaut, ob die Navigation offen oder geschlossen ist
+            if (nav.classList.contains("close")) {
+                nav.classList.remove("close");
+                nav.classList.add("open");
+            } else if (nav.classList.contains("open")) {
+                nav.classList.remove("open");
+                nav.classList.add("close");
+            }
+        });
+    });
+
+}
+
 initButton();
 initCard();
+initNavigation();

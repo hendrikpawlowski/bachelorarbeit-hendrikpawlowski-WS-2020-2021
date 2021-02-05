@@ -1,0 +1,16 @@
+.nav-container {
+  .nav-list {
+    &.open {
+      background: red;
+      width: 100px;
+    }
+
+    &.close {
+      width: 0px;
+    }
+    .link {
+      display: block;
+      overflow-x: hidden;
+    }
+  }
+}
