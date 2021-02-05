@@ -138,13 +138,13 @@ $position-unchecked: $dot-width / 2 + $dot-padding;
 .switch.prin_8 {
   .switch__label {
     &:after {
-      animation: disableSwitch_Prin_8 ease-in-out 300ms forwards 50ms;
+      animation: disableSwitch_Prin_8 ease-in-out 400ms forwards 10ms;
     }
   }
 
   .switch__input:checked + .switch__label {
     &:after {
-      animation: enableSwitch_Prin_8 ease-in-out 300ms forwards 50ms;
+      animation: enableSwitch_Prin_8 ease-in-out 400ms forwards 10ms;
     }
   }
 }
