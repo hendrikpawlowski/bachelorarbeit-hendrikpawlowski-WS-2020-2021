@@ -3,9 +3,11 @@
     &.open {
       background: red;
       width: 100px;
+      transition: 300ms cubic-bezier(0.61, 1.71, 0.57, 0.78);
     }
 
     &.close {
+      transition: 200ms;
       width: 0px;
     }
     .link {
