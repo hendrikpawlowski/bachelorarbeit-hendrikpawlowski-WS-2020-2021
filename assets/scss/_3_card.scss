@@ -29,7 +29,7 @@ $picture-height-minimized: 50px;
   }
 
   &:active {
-    box-shadow: $defalt-shadow-pressed;
+    box-shadow: $default-shadow-pressed;
   }
 
   &.prin_1:hover {
@@ -39,7 +39,7 @@ $picture-height-minimized: 50px;
 
   &.prin_1:active {
     transform: scale(0.95, 0.95);
-    // box-shadow: $defalt-shadow-pressed;
+    // box-shadow: $default-shadow-pressed;
   }
 
   .picture {
