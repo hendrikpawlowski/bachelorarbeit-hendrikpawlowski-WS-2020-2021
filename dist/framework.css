@@ -282,6 +282,7 @@ html .card {
 .button:active {
   background: #880cc2;
   transition: 100ms;
+  box-shadow: none;
 }
 
 .button.prin_1:hover {
