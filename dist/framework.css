@@ -390,6 +390,10 @@ html .card {
   animation: showTitle ease-in-out 0.2s forwards;
 }
 
+.card:active {
+  box-shadow: 0px 0px 4px #ccc, 0px 4px 4px #ccc;
+}
+
 .card.prin_1:hover {
   transform: scale(1.02, 1.02);
   transition: 200ms;
