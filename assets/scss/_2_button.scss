@@ -1,13 +1,13 @@
 .button {
   &:hover {
     cursor: pointer;
-    box-shadow: 0px 0px 4px $primary-shadow, 0px 8px 16px $primary-shadow;
+    box-shadow: $default-shadow-primary-hover;
   }
 
   &:active {
     background: $primary-dark;
     transition: 100ms;
-    box-shadow: none;
+    box-shadow: $default-shadow-pressed;
   }
 
   &.prin_1:hover {
@@ -17,7 +17,7 @@
 
   &.prin_1:active {
     transform: scale(0.95, 0.95);
-    box-shadow: none;
+    box-shadow: $default-shadow-pressed;
   }
 
   &.prin_8_variation_1:before,

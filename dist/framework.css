@@ -52,7 +52,7 @@ html .button {
   outline: none;
   border-radius: 5px;
   background: #9313ce;
-  box-shadow: 0px 0px 4px #e7c4f7, 0px 4px 4px #e7c4f7;
+  box-shadow: 0px 0px 2px #e7c4f7, 0px 1px 2px #e7c4f7;
   color: white;
   transition: 200ms;
 }
@@ -290,7 +290,7 @@ html .card {
 
 .button:hover {
   cursor: pointer;
-  box-shadow: 0px 0px 4px #e7c4f7, 0px 8px 16px #e7c4f7;
+  box-shadow: 0px 0px 4px #e7c4f7, 0px 4px 8px #e7c4f7;
 }
 
 .button:active {
@@ -393,11 +393,11 @@ html .card {
   cursor: pointer;
   padding-bottom: 16px;
   border-radius: 5px;
-  box-shadow: 0px 0px 4px #ccc, 0px 4px 4px #ccc;
+  box-shadow: 0px 0px 2px #ccc, 0px 1px 2px #ccc;
 }
 
 .card:hover {
-  box-shadow: 0px 0px 4px #ccc, 0px 8px 16px #ccc;
+  box-shadow: 0px 0px 4px #ccc, 0px 4px 4px #ccc;
 }
 
 .card:hover .bottom .title {

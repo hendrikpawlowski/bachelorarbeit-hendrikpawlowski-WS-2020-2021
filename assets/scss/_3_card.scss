@@ -14,11 +14,11 @@ $picture-height-minimized: 50px;
   cursor: pointer;
   padding-bottom: $card-margin;
   border-radius: $card-border-radius;
-  box-shadow: 0px 0px 4px #ccc, 0px 4px 4px #ccc;
+  box-shadow: $default-shadow;
   // transition: 0.5s;
 
   &:hover {
-    box-shadow: 0px 0px 4px #ccc, 0px 8px 16px #ccc;
+    box-shadow: $default-shadow-hover;
 
     .bottom {
       .title {
@@ -29,7 +29,7 @@ $picture-height-minimized: 50px;
   }
 
   &:active {
-    box-shadow: 0px 0px 4px #ccc, 0px 4px 4px #ccc;
+    box-shadow: $defalt-shadow-pressed;
   }
 
   &.prin_1:hover {
@@ -39,7 +39,7 @@ $picture-height-minimized: 50px;
 
   &.prin_1:active {
     transform: scale(0.95, 0.95);
-    box-shadow: none;
+    // box-shadow: $defalt-shadow-pressed;
   }
 
   .picture {

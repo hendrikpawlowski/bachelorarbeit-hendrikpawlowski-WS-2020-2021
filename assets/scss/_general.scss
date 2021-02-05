@@ -24,6 +24,14 @@ $xxl-line-height: $xxl-font * 1.618;
 $card-font: $m-font * 1.25;
 $card-line-height: $card-font * 1.618;
 
+$default-shadow: 0px 0px 2px #ccc, 0px 1px 2px #ccc;
+$default-shadow-hover: 0px 0px 4px #ccc, 0px 4px 4px #ccc;
+$defalt-shadow-pressed: none;
+$default-shadow-primary: 0px 0px 2px $primary-shadow,
+  0px 1px 2px $primary-shadow;
+$default-shadow-primary-hover: 0px 0px 4px $primary-shadow,
+  0px 4px 8px $primary-shadow;
+
 // General Layout
 
 *,
@@ -78,7 +86,8 @@ html {
     border-radius: 5px;
     background: $primary;
     // box-shadow: 0px 0px 2px $primary-shadow, 0px 4px 2px $primary-shadow;
-    box-shadow: 0px 0px 4px $primary-shadow, 0px 4px 4px $primary-shadow;
+    // box-shadow: 0px 0px 4px $primary-shadow, 0px 4px 4px $primary-shadow;
+    box-shadow: $default-shadow-primary;
     // box-shadow: 0px 0px 8px $primary-shadow, 0px 8px 8px $primary-shadow;
     color: white;
     transition: 200ms;
