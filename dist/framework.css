@@ -609,7 +609,6 @@ html .card {
 
 .nav-container .nav-toggle {
   margin-bottom: 20px;
-  border-radius: 5px;
   cursor: pointer;
 }
 
@@ -628,6 +627,7 @@ html .card {
   border-radius: 4px;
   box-shadow: 0px 0px 4px #ccc, 0px 4px 4px #ccc;
   width: 200px;
+  transition: 300ms cubic-bezier(0.61, 1.71, 0.57, 0.78);
   transition: 200ms;
   display: flex;
   justify-content: center;
