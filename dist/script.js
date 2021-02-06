@@ -32,15 +32,16 @@ const initNavigation = function () {
     let listOfNavContainer = document.querySelectorAll("[js-nav-container]");
     listOfNavContainer.forEach(navContainer => {
         let navToggle = navContainer.querySelector("[js-toggle-nav]");
-        let nav = navContainer.querySelector("[js-nav]");
 
         navToggle.addEventListener("click", function () {
 
             // Hier wird geschaut, ob die Navigation offen oder geschlossen ist
             if (navContainer.classList.contains("close")) {
+                // navIcon.src = "./icons/arrow-left-icon.svg";
                 navContainer.classList.remove("close");
                 navContainer.classList.add("open");
             } else if (navContainer.classList.contains("open")) {
+                // navIcon.src = "./icons/menu-icon.svg";
                 navContainer.classList.remove("open");
                 navContainer.classList.add("close");
             }
