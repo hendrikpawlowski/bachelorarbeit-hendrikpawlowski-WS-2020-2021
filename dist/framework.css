@@ -627,8 +627,7 @@ html .card {
   border-radius: 4px;
   box-shadow: 0px 0px 4px #ccc, 0px 4px 4px #ccc;
   width: 200px;
-  transition: 300ms cubic-bezier(0.61, 1.71, 0.57, 0.78);
-  transition: 200ms;
+  transition: 250ms cubic-bezier(0.61, 1.71, 0.57, 0.78);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -668,7 +667,7 @@ html .card {
 }
 
 .nav-container.open .nav-toggle .line.two {
-  width: 30px;
+  width: 28px;
   margin-left: 10px;
 }
 
@@ -690,6 +689,7 @@ html .card {
 }
 
 .nav-container.close .nav {
-  transform: scale(0, 1);
-  transform-origin: left;
+  transform: scale(0, 0.3);
+  transform-origin: left top;
+  transition: 200ms ease-out;
 }
