@@ -25,23 +25,38 @@ const initCard = function () {
 
 const initNavigation = function () {
 
-    const toggleNav = function () {
-
-    }
 
     let listOfNavContainer = document.querySelectorAll("[js-nav-container]");
     listOfNavContainer.forEach(navContainer => {
         let navToggle = navContainer.querySelector("[js-toggle-nav]");
 
+        // handle CSS classes
+        const close = function (element) {
+            element.classList.remove("open");
+            element.classList.add("close");
+        }
+
+        const open = function (element) {
+            element.classList.remove("close");
+            element.classList.add("open");
+        }
+
+        document.addEventListener("click", function () {
+            close(navContainer);
+        });
+
+        // Wenn irgendwo außerhalb der Nav geklickt wird, wird die Navigation geschlossen
+        navContainer.addEventListener("click", function (event) {
+            event.stopPropagation();
+        });
+
         navToggle.addEventListener("click", function () {
 
             // Hier wird geschaut, ob die Navigation offen oder geschlossen ist
             if (navContainer.classList.contains("close")) {
-                navContainer.classList.remove("close");
-                navContainer.classList.add("open");
+                open(navContainer);
             } else if (navContainer.classList.contains("open")) {
-                navContainer.classList.remove("open");
-                navContainer.classList.add("close");
+                close(navContainer);
             }
         });
     });
