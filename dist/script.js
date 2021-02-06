@@ -37,11 +37,9 @@ const initNavigation = function () {
 
             // Hier wird geschaut, ob die Navigation offen oder geschlossen ist
             if (navContainer.classList.contains("close")) {
-                // navIcon.src = "./icons/arrow-left-icon.svg";
                 navContainer.classList.remove("close");
                 navContainer.classList.add("open");
             } else if (navContainer.classList.contains("open")) {
-                // navIcon.src = "./icons/menu-icon.svg";
                 navContainer.classList.remove("open");
                 navContainer.classList.add("close");
             }
