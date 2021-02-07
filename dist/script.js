@@ -23,8 +23,47 @@ const initCard = function () {
     });
 }
 
-const initNavigation = function () {
+const initDropdown = function () {
 
+    let listOfDropdownContainer = document.querySelectorAll("[js-dropdown-container]");
+    listOfDropdownContainer.forEach(dropdownContainer => {
+        let dropdownToggle = dropdownContainer.querySelector("[js-toggle-dropdown]");
+
+        // handle CSS classes
+        const close = function (element) {
+            element.classList.remove("is-open");
+            // element.classList.add("close");
+        }
+
+        const open = function (element) {
+            // element.classList.remove("close");
+            element.classList.add("is-open");
+        }
+
+        document.addEventListener("click", function () {
+            close(dropdownContainer);
+        });
+
+        // Wenn irgendwo außerhalb der Nav geklickt wird, wird die Navigation geschlossen
+        dropdownContainer.addEventListener("click", function (event) {
+            event.stopPropagation();
+        });
+
+        dropdownToggle.addEventListener("click", function () {
+
+            // Hier wird geschaut, ob die Navigation offen oder geschlossen ist
+            if (!dropdownContainer.classList.contains("is-open")) {
+                console.log("NOT is-open");
+                open(dropdownContainer);
+            } else if (dropdownContainer.classList.contains("is-open")) {
+                console.log("is-open");
+                close(dropdownContainer);
+            }
+        });
+    });
+}
+
+const initNavigation = function () {
 
     let listOfNavContainer = document.querySelectorAll("[js-nav-container]");
     listOfNavContainer.forEach(navContainer => {
@@ -60,9 +99,9 @@ const initNavigation = function () {
             }
         });
     });
-
 }
 
 initButton();
 initCard();
+initDropdown();
 initNavigation();

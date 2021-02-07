@@ -1,0 +1,74 @@
+.dropdown-container {
+  display: inline-block;
+
+  .dropdown-toggle {
+    margin-bottom: 20px;
+    cursor: pointer;
+
+    &:active {
+      box-shadow: $default-shadow-pressed;
+    }
+  }
+
+  .dropdown-list {
+    border-radius: 5px;
+    box-shadow: 0px 0px 4px #ccc, 0px 4px 4px #ccc;
+    width: 200px;
+    background: white;
+
+    transform: scale(1, 0);
+    transform-origin: left top;
+    transition: 150ms ease-in-out;
+
+    padding: 0;
+    margin: 0;
+    width: 100%;
+
+    .list-item {
+      .link {
+        width: 100%;
+        padding: 12px 24px;
+        display: block;
+        overflow: hidden;
+        font-size: $link-font;
+        // transition: 200ms;
+        font-weight: inherit;
+        transition: padding-left 200ms $ease-bounce,
+          background 100ms ease-in-out;
+
+        &:hover {
+          background: $grey-extra-light;
+          transition: 200ms;
+        }
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &.is-open {
+    .dropdown-list {
+      transform: scale(1, 1);
+      transition: 150ms ease-in-out;
+    }
+  }
+}
+
+// Prinzip 1 Squash and Stretch
+
+.dropdown-container.prin_1 {
+  .dropdown-list {
+    transition: 350ms $ease-bounce;
+
+    .list-item {
+      .link {
+        &:hover {
+          transition: padding-left 200ms $ease-bounce,
+            background 100ms ease-in-out;
+          padding-left: 38px;
+        }
+      }
+    }
+  }
+}
