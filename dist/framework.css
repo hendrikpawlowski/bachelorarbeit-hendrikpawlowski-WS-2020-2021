@@ -693,8 +693,17 @@ html .card {
   transition: 150ms ease-in-out;
 }
 
+.dropdown-container .button .button-icon {
+  transition: transform 300ms cubic-bezier(0.5, 1.94, 0.42, 0.74);
+}
+
+.dropdown-container.is-open .button .button-icon {
+  transform: rotate(180deg);
+  transition: transform 300ms cubic-bezier(0.5, 1.94, 0.42, 0.74);
+}
+
 .dropdown-container.is-open .dropdown-list.prin_5_ft {
-  transition: 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74);
+  transition: 250ms cubic-bezier(0.5, 1.94, 0.42, 0.74);
 }
 
 .dropdown-container.is-open .dropdown-list.prin_5_ft .list-item .link:hover {

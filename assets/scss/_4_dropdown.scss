@@ -70,10 +70,23 @@
 // Prinzip 5 Follow Through
 
 .dropdown-container {
+  .button {
+    .button-icon {
+      transition: transform 300ms $ease-bounce;
+    }
+  }
+
   &.is-open {
+    .button {
+      .button-icon {
+        transform: rotate(180deg);
+        transition: transform 300ms $ease-bounce;
+      }
+    }
+
     .dropdown-list {
       &.prin_5_ft {
-        transition: 200ms $ease-bounce;
+        transition: 250ms $ease-bounce;
 
         .list-item {
           .link {
