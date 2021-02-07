@@ -127,7 +127,7 @@
         @for $i from 1 through $n {
           .list-item:nth-child(#{$i}) {
             .link {
-              transition: padding-left 250ms $ease-bounce $i * 30ms;
+              transition: padding-left 250ms $ease-bounce $i * 0ms;
             }
           }
         }
