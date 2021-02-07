@@ -2,6 +2,15 @@
   display: flex;
   align-items: center;
 
+  &.with-icon {
+    padding-right: 22px;
+  }
+
+  .button-icon {
+    margin-left: 12px;
+    // margin-right: -8px;
+  }
+
   &.ghost {
     background: none;
     color: $primary;
