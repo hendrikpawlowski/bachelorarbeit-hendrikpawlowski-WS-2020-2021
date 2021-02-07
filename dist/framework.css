@@ -434,7 +434,7 @@ html .card {
 
 .card:hover .bottom .title {
   white-space: normal;
-  animation: showTitle ease-in-out 0.2s forwards;
+  height: 4.045rem;
 }
 
 .card:active {
@@ -467,7 +467,8 @@ html .card {
   font-size: 1.25rem;
   line-height: 2.0225rem;
   margin-top: 16px;
-  animation: hideTitle ease-in-out 0.2s forwards;
+  white-space: nowrap;
+  height: 2.0225rem;
 }
 
 .card .bottom .subtitle {
@@ -535,7 +536,7 @@ html .card {
 
 .card:hover.prin_5_ft .picture {
   height: 50px;
-  transition: height 300ms cubic-bezier(0.5, 1.94, 0.42, 0.74);
+  transition: height 300ms cubic-bezier(0.51, 1.79, 0.56, 0.75);
 }
 
 .card:hover.prin_5_ft .bottom .description-container {
@@ -550,26 +551,6 @@ html .card {
 .card.prin_5_ft .bottom .description-container {
   height: 0px;
   transition: height 200ms;
-}
-
-@keyframes showTitle {
-  from {
-    height: 2.0225rem;
-  }
-  to {
-    height: 4.045rem;
-  }
-}
-
-@keyframes hideTitle {
-  from {
-    height: 4.045rem;
-    white-space: normal;
-  }
-  to {
-    height: 2.0225rem;
-    white-space: nowrap;
-  }
 }
 
 .dropdown-container {
@@ -657,43 +638,43 @@ html .card {
 }
 
 .dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(1) .link {
-  transition: padding-left 250ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 30ms;
+  transition: padding-left 250ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 0ms;
 }
 
 .dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(2) .link {
-  transition: padding-left 250ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 60ms;
+  transition: padding-left 250ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 0ms;
 }
 
 .dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(3) .link {
-  transition: padding-left 250ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 90ms;
+  transition: padding-left 250ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 0ms;
 }
 
 .dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(4) .link {
-  transition: padding-left 250ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 120ms;
+  transition: padding-left 250ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 0ms;
 }
 
 .dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(5) .link {
-  transition: padding-left 250ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 150ms;
+  transition: padding-left 250ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 0ms;
 }
 
 .dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(6) .link {
-  transition: padding-left 250ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 180ms;
+  transition: padding-left 250ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 0ms;
 }
 
 .dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(7) .link {
-  transition: padding-left 250ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 210ms;
+  transition: padding-left 250ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 0ms;
 }
 
 .dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(8) .link {
-  transition: padding-left 250ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 240ms;
+  transition: padding-left 250ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 0ms;
 }
 
 .dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(9) .link {
-  transition: padding-left 250ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 270ms;
+  transition: padding-left 250ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 0ms;
 }
 
 .dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(10) .link {
-  transition: padding-left 250ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 300ms;
+  transition: padding-left 250ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 0ms;
 }
 
 .nav-container {

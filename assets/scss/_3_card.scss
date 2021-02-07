@@ -1,11 +1,11 @@
-.card {
-  $card-width: 300px;
-  $card-height: 260px;
-  $card-margin: 16px;
-  $card-border-radius: 5px;
-  $picture-height: $card-width / 1.618;
-  $picture-height-minimized: 50px;
+$card-width: 300px;
+$card-height: 260px;
+$card-margin: 16px;
+$card-border-radius: 5px;
+$picture-height: $card-width / 1.618;
+$picture-height-minimized: 50px;
 
+.card {
   width: $card-width;
   color: $text-color;
   text-decoration: none;
@@ -141,7 +141,7 @@
   &:hover.prin_5_ft {
     .picture {
       height: $picture-height-minimized;
-      transition: height 300ms $ease-bounce;
+      transition: height 300ms $ease-card-bounce;
     }
 
     .bottom {
