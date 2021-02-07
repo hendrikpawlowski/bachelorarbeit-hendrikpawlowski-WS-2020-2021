@@ -1,4 +1,19 @@
 .button {
+  &.ghost {
+    background: none;
+    color: $primary;
+    border: 2px solid $primary;
+    box-shadow: none;
+
+    &:hover {
+      box-shadow: none;
+    }
+
+    &:active {
+      background: none;
+    }
+  }
+
   &:hover {
     cursor: pointer;
     box-shadow: $default-shadow-primary-hover;
@@ -110,7 +125,6 @@
     box-shadow: 0 0 1px 0px transparentize($color: $primary-light, $amount: 0);
   }
   to {
-    box-shadow: 0 0 1px 12px transparentize($color: $primary-light, $amount: 1),
-      0px 0px 4px $primary-shadow, 0px 8px 16px $primary-shadow;
+    box-shadow: 0 0 1px 12px transparentize($color: $primary-light, $amount: 1);
   }
 }
