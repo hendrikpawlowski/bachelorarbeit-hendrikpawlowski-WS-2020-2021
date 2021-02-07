@@ -23,7 +23,7 @@ $picture-height-minimized: 50px;
       .title {
         white-space: normal;
         height: $card-line-height * 2;
-        transition: height 2000ms;
+        transition: height 200ms;
       }
     }
   }
@@ -60,21 +60,20 @@ $picture-height-minimized: 50px;
       height: $card-line-height;
       margin-top: $card-margin;
       white-space: nowrap;
-      height: $card-line-height;
-      transition: 5000ms;
+      transition: 200ms;
     }
 
     .subtitle {
       margin-top: 4px;
       font-size: $m-font;
-      line-height: $m-font * 1.618;
+      // line-height: $m-font * 1.618;
       color: $primary;
     }
 
     .description-container {
       margin-bottom: $card-margin;
       margin-top: 8px;
-      line-height: $m-font * 1.618;
+      height: $m-font * 1.618;
       color: $text-color-light;
       overflow: hidden;
       height: 0px;

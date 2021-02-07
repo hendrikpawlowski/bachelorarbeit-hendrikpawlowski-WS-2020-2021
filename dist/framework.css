@@ -435,7 +435,7 @@ html .card {
 .card:hover .bottom .title {
   white-space: normal;
   height: 4.045rem;
-  transition: height 2000ms;
+  transition: height 200ms;
 }
 
 .card:active {
@@ -469,21 +469,19 @@ html .card {
   height: 2.0225rem;
   margin-top: 16px;
   white-space: nowrap;
-  height: 2.0225rem;
-  transition: 5000ms;
+  transition: 200ms;
 }
 
 .card .bottom .subtitle {
   margin-top: 4px;
   font-size: 1rem;
-  line-height: 1.618rem;
   color: #9313ce;
 }
 
 .card .bottom .description-container {
   margin-bottom: 16px;
   margin-top: 8px;
-  line-height: 1.618rem;
+  height: 1.618rem;
   color: #6b6b6b;
   overflow: hidden;
   height: 0px;
