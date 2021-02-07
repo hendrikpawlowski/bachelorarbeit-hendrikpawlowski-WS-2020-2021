@@ -10,7 +10,8 @@
     }
 
     &:active {
-      background: none;
+      background: $primary-dark;
+      color: white;
     }
   }
 

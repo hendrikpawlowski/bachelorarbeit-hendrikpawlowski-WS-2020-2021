@@ -304,7 +304,8 @@ html .card {
 }
 
 .button.ghost:active {
-  background: none;
+  background: #880cc2;
+  color: white;
 }
 
 .button:hover {
