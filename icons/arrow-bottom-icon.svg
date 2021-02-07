@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-Zeichenfläche_6">
+      <rect width="24" height="24" />
+    </clipPath>
+  </defs>
+  <g id="Zeichenfläche_6" data-name="Zeichenfläche – 6" clip-path="url(#clip-Zeichenfläche_6)">
+    <rect width="24" height="24" fill="rgba(255,255,255,0)" />
+    <path id="Pfad_11" data-name="Pfad 11" d="M248.432,333.7l7.049,7.049,7.049-7.049" transform="translate(-243.481 -325.22)" fill="none" stroke="#9313ce" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+  </g>
+</svg>
