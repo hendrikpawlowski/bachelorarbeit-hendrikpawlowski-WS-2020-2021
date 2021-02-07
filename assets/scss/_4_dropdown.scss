@@ -1,9 +1,13 @@
 .dropdown-container {
   display: inline-block;
 
-  .dropdown-toggle {
+  .button {
     margin-bottom: 20px;
     cursor: pointer;
+
+    .button-icon {
+      transition: transform 200ms;
+    }
 
     &:active {
       box-shadow: $default-shadow-pressed;
@@ -16,13 +20,14 @@
     width: 200px;
     background: white;
 
-    transform: scale(1, 0);
+    transform: scale(0.5, 0);
     transform-origin: left top;
     transition: 150ms ease-in-out;
 
     padding: 0;
     margin: 0;
     width: 100%;
+    // border: 2px solid $primary;
 
     .list-item {
       .link {
@@ -38,6 +43,7 @@
 
         &:hover {
           background: $grey-extra-light;
+          padding-left: 32px;
           transition: 200ms;
         }
       }
@@ -48,6 +54,13 @@
   }
 
   &.is-open {
+    .button {
+      .button-icon {
+        transform: rotate(180deg);
+        transition: transform 200ms;
+      }
+    }
+
     .dropdown-list {
       transform: scale(1, 1);
       transition: 150ms ease-in-out;
@@ -57,18 +70,18 @@
 
 // Prinzip 1 Squash and Stretch
 
-.dropdown-container.prin_1 {
-  .dropdown-list {
-    transition: 350ms $ease-bounce;
+// .dropdown-container.prin_1 {
+//   .dropdown-list {
+//     transition: 350ms $ease-bounce;
 
-    .list-item {
-      .link {
-        &:hover {
-          transition: padding-left 200ms $ease-bounce,
-            background 100ms ease-in-out;
-          padding-left: 38px;
-        }
-      }
-    }
-  }
-}
+//     .list-item {
+//       .link {
+//         &:hover {
+//           transition: padding-left 200ms $ease-bounce,
+//             background 100ms ease-in-out;
+//           padding-left: 38px;
+//         }
+//       }
+//     }
+//   }
+// }
