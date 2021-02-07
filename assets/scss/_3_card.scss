@@ -23,6 +23,7 @@ $picture-height-minimized: 50px;
       .title {
         white-space: normal;
         height: $card-line-height * 2;
+        transition: height 2000ms;
       }
     }
   }
@@ -56,10 +57,11 @@ $picture-height-minimized: 50px;
 
     .title {
       font-size: $card-font;
-      line-height: $card-line-height;
+      height: $card-line-height;
       margin-top: $card-margin;
       white-space: nowrap;
       height: $card-line-height;
+      transition: 5000ms;
     }
 
     .subtitle {

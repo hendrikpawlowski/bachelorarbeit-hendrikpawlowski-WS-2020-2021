@@ -435,6 +435,7 @@ html .card {
 .card:hover .bottom .title {
   white-space: normal;
   height: 4.045rem;
+  transition: height 2000ms;
 }
 
 .card:active {
@@ -465,10 +466,11 @@ html .card {
 
 .card .bottom .title {
   font-size: 1.25rem;
-  line-height: 2.0225rem;
+  height: 2.0225rem;
   margin-top: 16px;
   white-space: nowrap;
   height: 2.0225rem;
+  transition: 5000ms;
 }
 
 .card .bottom .subtitle {
