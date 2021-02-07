@@ -694,7 +694,7 @@ html .card {
 }
 
 .nav-container.close .nav-toggle:hover .three {
-  transform: translateY(4px);
+  transform: translateY(2px);
 }
 
 .nav-container.close .nav {
