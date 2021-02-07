@@ -1,5 +1,7 @@
 .nav-container {
   display: inline-block;
+  // padding: 0px;
+  overflow: hidden;
 
   .nav-toggle {
     margin-bottom: 20px;
@@ -19,13 +21,13 @@
 
   .nav {
     border-radius: 4px;
-    box-shadow: 0px 0px 4px #ccc, 0px 4px 4px #ccc;
+    // box-shadow: 0px 0px 4px #ccc, 0px 4px 4px #ccc;
+    background: $grey-extra-light;
     width: 200px;
     transition: 200ms ease-out;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: white;
 
     .nav-list {
       padding: 0;
@@ -57,6 +59,10 @@
   }
 
   &.open {
+    // overflow: inherit;
+    opacity: 1;
+    // transition: 200ms;
+
     .nav-toggle {
       .line {
         transition: 200ms;
@@ -78,6 +84,10 @@
   }
 
   &.close {
+    // opacity: 0;
+    // transition: 200ms;
+    // overflow: hidden;
+
     .nav-toggle {
       .line {
         transition: 100ms;
@@ -101,9 +111,9 @@
       }
     }
     .nav {
-      transform: scale(0, 0.3);
-      transform-origin: left top;
+      transform: translateX(-110%);
       transition: 200ms ease-in;
+      transform-origin: top !important;
 
       .nav-list {
         .list-item {
@@ -139,7 +149,8 @@
 
   &.close {
     .nav {
-      transition: 200ms ease-in;
+      // transform-origin: left top;
+      // transition: 2000ms ease-in;
     }
   }
 }
