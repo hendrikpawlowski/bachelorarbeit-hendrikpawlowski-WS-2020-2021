@@ -627,10 +627,11 @@ html .card {
   border-radius: 4px;
   box-shadow: 0px 0px 4px #ccc, 0px 4px 4px #ccc;
   width: 200px;
-  transition: 250ms cubic-bezier(0.61, 1.71, 0.57, 0.78);
+  transition: 200ms ease-out;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: white;
 }
 
 .nav-container .nav .nav-list {
@@ -645,8 +646,8 @@ html .card {
   display: block;
   overflow: hidden;
   font-size: 20px;
-  transition: 200ms;
   font-weight: inherit;
+  transition: padding-left 200ms cubic-bezier(0.4, 1.69, 0.52, 0.9), background 100ms ease-in-out;
 }
 
 .nav-container .nav .nav-list .list-item .link:hover {
@@ -680,16 +681,47 @@ html .card {
 }
 
 .nav-container.close .nav-toggle .line.two {
-  width: 32px;
+  width: 20px;
   margin-left: 6px;
 }
 
 .nav-container.close .nav-toggle .line.three {
-  width: 20px;
+  width: 12px;
+}
+
+.nav-container.close .nav-toggle:hover .one {
+  transform: translateY(-2px);
+}
+
+.nav-container.close .nav-toggle:hover .three {
+  transform: translateY(4px);
 }
 
 .nav-container.close .nav {
   transform: scale(0, 0.3);
   transform-origin: left top;
-  transition: 200ms ease-out;
+  transition: 200ms ease-in;
+}
+
+.nav-container.prin_1 .nav {
+  transition: 350ms cubic-bezier(0.4, 1.69, 0.52, 0.9);
+}
+
+.nav-container.prin_1 .nav .nav-list .list-item .link:hover {
+  transition: padding-left 200ms cubic-bezier(0.4, 1.69, 0.52, 0.9), background 100ms ease-in-out;
+  padding-left: 38px;
+}
+
+.nav-container.prin_1.close .nav {
+  transition: 200ms ease-in;
+}
+
+@keyframes bounceListItem {
+  0% {
+  }
+  50% {
+    padding-left: 32px;
+  }
+  100% {
+  }
 }

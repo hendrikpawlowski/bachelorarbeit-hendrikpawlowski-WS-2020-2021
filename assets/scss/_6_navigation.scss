@@ -12,9 +12,6 @@
       margin: 6px;
     }
 
-    &:hover {
-    }
-
     &:active {
       box-shadow: $default-shadow-pressed;
     }
@@ -24,10 +21,11 @@
     border-radius: 4px;
     box-shadow: 0px 0px 4px #ccc, 0px 4px 4px #ccc;
     width: 200px;
-    transition: 250ms cubic-bezier(0.61, 1.71, 0.57, 0.78);
+    transition: 200ms ease-out;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: white;
 
     .nav-list {
       padding: 0;
@@ -41,8 +39,10 @@
           display: block;
           overflow: hidden;
           font-size: $link-font;
-          transition: 200ms;
+          // transition: 200ms;
           font-weight: inherit;
+          transition: padding-left 200ms $ease-bounce,
+            background 100ms ease-in-out;
 
           &:hover {
             background: $grey-extra-light;
@@ -82,24 +82,74 @@
       .line {
         transition: 200ms;
         &.two {
-          width: 32px;
+          width: 20px;
           margin-left: 6px;
         }
 
         &.three {
-          width: 20px;
+          width: 12px;
+        }
+      }
+
+      &:hover {
+        .one {
+          transform: translateY(-2px);
+        }
+        .three {
+          transform: translateY(4px);
         }
       }
     }
     .nav {
       transform: scale(0, 0.3);
       transform-origin: left top;
-      transition: 200ms ease-out;
+      transition: 200ms ease-in;
 
       .nav-list {
         .list-item {
         }
       }
     }
+  }
+}
+
+// Prinzip 1 Squash and Stretch
+
+.nav-container.prin_1 {
+  .nav {
+    transition: 350ms $ease-bounce;
+
+    .nav-list {
+      .list-item {
+        .link {
+          &:hover {
+            transition: padding-left 200ms $ease-bounce,
+              background 100ms ease-in-out;
+            // transition: background 200ms ease-in-out;
+            // animation: bounceListItem 200ms ease-in-out forwards;
+            // transition-timing-function: $ease-bounce;
+            // transform: translateX(8px);
+            // transition: 1000ms $ease-bounce;
+            padding-left: 38px;
+          }
+        }
+      }
+    }
+  }
+
+  &.close {
+    .nav {
+      transition: 200ms ease-in;
+    }
+  }
+}
+
+@keyframes bounceListItem {
+  0% {
+  }
+  50% {
+    padding-left: 32px;
+  }
+  100% {
   }
 }
