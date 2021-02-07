@@ -1,11 +1,11 @@
-$card-width: 300px;
-$card-height: 260px;
-$card-margin: 16px;
-$card-border-radius: 5px;
-$picture-height: $card-width / 1.618;
-$picture-height-minimized: 50px;
-
 .card {
+  $card-width: 300px;
+  $card-height: 260px;
+  $card-margin: 16px;
+  $card-border-radius: 5px;
+  $picture-height: $card-width / 1.618;
+  $picture-height-minimized: 50px;
+
   width: $card-width;
   color: $text-color;
   text-decoration: none;
@@ -22,7 +22,7 @@ $picture-height-minimized: 50px;
     .bottom {
       .title {
         white-space: normal;
-        animation: showTitle ease-in-out 0.2s forwards;
+        height: $card-line-height * 2;
       }
     }
   }
@@ -35,9 +35,9 @@ $picture-height-minimized: 50px;
     border-top-left-radius: $card-border-radius;
     border-top-right-radius: $card-border-radius;
     width: $card-width;
-    height: $card-width / 1.618;
+    height: $picture-height;
     object-fit: cover;
-    animation: maximizePicture_Default ease-in-out 0.2s forwards;
+    transition: height 200ms;
   }
 
   .bottom {
@@ -58,7 +58,8 @@ $picture-height-minimized: 50px;
       font-size: $card-font;
       line-height: $card-line-height;
       margin-top: $card-margin;
-      animation: hideTitle ease-in-out 0.2s forwards;
+      white-space: nowrap;
+      height: $card-line-height;
     }
 
     .subtitle {
@@ -74,7 +75,8 @@ $picture-height-minimized: 50px;
       line-height: $m-font * 1.618;
       color: $text-color-light;
       overflow: hidden;
-      animation: hideDescription ease-in-out 0.2s forwards;
+      height: 0px;
+      transition: height 200ms;
 
       .description {
         margin: 0;
@@ -106,12 +108,14 @@ $picture-height-minimized: 50px;
   &:hover {
     .picture {
       object-fit: cover;
-      animation: minimizePicture_Default ease-in-out 0.2s forwards;
+      height: $picture-height-minimized;
+      transition: height 200ms;
     }
 
     .bottom {
       .description-container {
-        animation: showDescription ease-in-out 0.2s forwards;
+        height: $m-line-height * 4 !important;
+        transition: height 200ms;
       }
     }
   }
@@ -128,7 +132,6 @@ $picture-height-minimized: 50px;
 
   &.prin_1:active {
     transform: scale(0.95, 0.95);
-    // box-shadow: $default-shadow-pressed;
   }
 }
 
@@ -137,12 +140,14 @@ $picture-height-minimized: 50px;
 .card {
   &:hover.prin_5_ft {
     .picture {
-      animation: minimizePicture_Prin_5_FT ease-in-out 0.4s forwards;
+      height: $picture-height-minimized;
+      transition: height 300ms $ease-bounce;
     }
 
     .bottom {
       .description-container {
-        animation: showDescription ease-in-out 0.2s forwards;
+        height: $m-line-height * 4 !important;
+        transition: height 200ms;
       }
     }
   }
@@ -156,94 +161,9 @@ $picture-height-minimized: 50px;
   &.prin_5_ft {
     .bottom {
       .description-container {
-        animation: hideDescription ease-in-out 0.2s forwards;
+        height: 0px;
+        transition: height 200ms;
       }
     }
-  }
-}
-
-@keyframes minimizePicture_Prin_5_FT {
-  0% {
-  }
-  50% {
-    height: $picture-height-minimized - 8px;
-  }
-  75% {
-    height: $picture-height-minimized + 4px;
-  }
-  100% {
-    height: $picture-height-minimized;
-  }
-}
-
-@keyframes minimizePicture_Default {
-  0% {
-  }
-  100% {
-    height: $picture-height-minimized;
-  }
-}
-
-@keyframes maximizePicture_Prin_5_FT {
-  0% {
-    height: $picture-height-minimized;
-  }
-  50% {
-    height: $picture-height + 8px;
-  }
-  75% {
-    height: $picture-height - 4px;
-  }
-  100% {
-    height: $picture-height;
-  }
-}
-
-@keyframes maximizePicture_Default {
-  0% {
-    height: $picture-height-minimized;
-  }
-  100% {
-    height: $picture-height;
-  }
-}
-
-@keyframes showDescription {
-  from {
-    height: 0px;
-  }
-  to {
-    height: $m-line-height * 4;
-  }
-}
-
-@keyframes hideDescription {
-  from {
-    height: $m-line-height * 4;
-    opacity: 1;
-  }
-  to {
-    height: 0px;
-    // width: 0px;
-  }
-}
-
-@keyframes showTitle {
-  from {
-    height: $card-line-height;
-  }
-  to {
-    height: $card-line-height * 2;
-  }
-}
-
-@keyframes hideTitle {
-  from {
-    height: $card-line-height * 2;
-    white-space: normal;
-  }
-  to {
-    height: $card-line-height;
-    white-space: nowrap;
   }
 }
