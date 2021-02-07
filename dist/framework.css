@@ -677,7 +677,7 @@ html .card {
 }
 
 .nav-container.close .nav-toggle .line {
-  transition: 200ms;
+  transition: 100ms;
 }
 
 .nav-container.close .nav-toggle .line.two {
