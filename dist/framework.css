@@ -52,7 +52,7 @@ html .button {
   position: relative;
   padding: 12px 32px;
   border: none;
-  display: block;
+  display: flex;
   outline: none;
   border-radius: 5px;
   background: #9313ce;
@@ -292,6 +292,19 @@ html .card {
   }
 }
 
+.button {
+  display: flex;
+  align-items: center;
+}
+
+.button.with-icon {
+  padding-right: 22px;
+}
+
+.button .button-icon {
+  margin-left: 12px;
+}
+
 .button.ghost {
   background: none;
   color: #9313ce;
@@ -304,8 +317,7 @@ html .card {
 }
 
 .button.ghost:active {
-  background: #880cc2;
-  color: white;
+  background: #fbf2ff;
 }
 
 .button:hover {
@@ -332,7 +344,7 @@ html .card {
 .button.prin_8_variation_1:before, .button.prin_8_variation_1:after {
   position: absolute;
   content: "";
-  display: block;
+  display: flex;
   width: 140%;
   height: 100%;
   left: -20%;
@@ -356,12 +368,12 @@ html .card {
 }
 
 .button.animate.prin_8_variation_1:before {
-  display: block;
+  display: flex;
   animation: topBubbles ease-out 0.3s forwards;
 }
 
 .button.animate.prin_8_variation_1:after {
-  display: block;
+  display: flex;
   animation: bottomBubbles ease-out 0.3s forwards;
 }
 
@@ -623,12 +635,16 @@ html .card {
   display: inline-block;
 }
 
-.dropdown-container .dropdown-toggle {
+.dropdown-container .button {
   margin-bottom: 20px;
   cursor: pointer;
 }
 
-.dropdown-container .dropdown-toggle:active {
+.dropdown-container .button .button-icon {
+  transition: transform 200ms;
+}
+
+.dropdown-container .button:active {
   box-shadow: none;
 }
 
@@ -637,7 +653,7 @@ html .card {
   box-shadow: 0px 0px 4px #ccc, 0px 4px 4px #ccc;
   width: 200px;
   background: white;
-  transform: scale(1, 0);
+  transform: scale(0.5, 0);
   transform-origin: left top;
   transition: 150ms ease-in-out;
   padding: 0;
@@ -657,6 +673,7 @@ html .card {
 
 .dropdown-container .dropdown-list .list-item .link:hover {
   background: #f5f5f5;
+  padding-left: 32px;
   transition: 200ms;
 }
 
@@ -664,18 +681,14 @@ html .card {
   margin-bottom: 0;
 }
 
+.dropdown-container.is-open .button .button-icon {
+  transform: rotate(180deg);
+  transition: transform 200ms;
+}
+
 .dropdown-container.is-open .dropdown-list {
   transform: scale(1, 1);
   transition: 150ms ease-in-out;
-}
-
-.dropdown-container.prin_1 .dropdown-list {
-  transition: 350ms cubic-bezier(0.4, 1.69, 0.52, 0.9);
-}
-
-.dropdown-container.prin_1 .dropdown-list .list-item .link:hover {
-  transition: padding-left 200ms cubic-bezier(0.4, 1.69, 0.52, 0.9), background 100ms ease-in-out;
-  padding-left: 38px;
 }
 
 .nav-container {
