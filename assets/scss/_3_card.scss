@@ -43,31 +43,17 @@ $picture-height-minimized: 50px;
 
   .bottom {
     .title,
-    .description-container,
-    .subtitle {
+    .description-container {
       margin: 0 $card-margin 0 $card-margin;
-    }
-
-    .title,
-    .subtitle {
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden;
     }
 
     .title {
       font-size: $card-font;
       height: $card-line-height;
+      line-height: $card-line-height;
       margin-top: $card-margin;
       white-space: nowrap;
       transition: 200ms;
-    }
-
-    .subtitle {
-      margin-top: 4px;
-      font-size: $m-font;
-      // line-height: $m-font * 1.618;
-      color: $primary;
     }
 
     .description-container {

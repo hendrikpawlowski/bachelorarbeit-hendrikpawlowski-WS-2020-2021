@@ -452,30 +452,17 @@ html .card {
 }
 
 .card .bottom .title,
-.card .bottom .description-container,
-.card .bottom .subtitle {
+.card .bottom .description-container {
   margin: 0 16px 0 16px;
-}
-
-.card .bottom .title,
-.card .bottom .subtitle {
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
 }
 
 .card .bottom .title {
   font-size: 1.25rem;
   height: 2.0225rem;
+  line-height: 2.0225rem;
   margin-top: 16px;
   white-space: nowrap;
   transition: 200ms;
-}
-
-.card .bottom .subtitle {
-  margin-top: 4px;
-  font-size: 1rem;
-  color: #9313ce;
 }
 
 .card .bottom .description-container {
