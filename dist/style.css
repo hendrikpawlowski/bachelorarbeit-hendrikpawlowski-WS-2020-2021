@@ -6,6 +6,10 @@
   margin-bottom: 128px;
 }
 
+.element.large-margin {
+  margin-bottom: 384px;
+}
+
 .element-headline {
   margin-bottom: 128px;
 }
