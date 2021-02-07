@@ -1,4 +1,7 @@
 .button {
+  display: flex;
+  align-items: center;
+
   &.ghost {
     background: none;
     color: $primary;
@@ -40,7 +43,7 @@
   &.prin_8_variation_1:after {
     position: absolute;
     content: "";
-    display: block;
+    display: flex;
     width: 140%;
     height: 100%;
     left: -20%;
@@ -81,11 +84,11 @@
 
   &.animate.prin_8_variation_1 {
     &:before {
-      display: block;
+      display: flex;
       animation: topBubbles ease-out 0.3s forwards;
     }
     &:after {
-      display: block;
+      display: flex;
       animation: bottomBubbles ease-out 0.3s forwards;
     }
   }
