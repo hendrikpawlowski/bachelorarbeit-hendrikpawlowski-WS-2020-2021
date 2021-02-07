@@ -441,15 +441,6 @@ html .card {
   box-shadow: none;
 }
 
-.card.prin_1:hover {
-  transform: scale(1.02, 1.02);
-  transition: 200ms;
-}
-
-.card.prin_1:active {
-  transform: scale(0.95, 0.95);
-}
-
 .card .picture {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -457,14 +448,6 @@ html .card {
   height: 185.41409px;
   object-fit: cover;
   animation: maximizePicture_Default ease-in-out 0.2s forwards;
-}
-
-.card.prin_5_ft .picture {
-  animation: maximizePicture_Prin_5_FT ease-in-out 0.4s forwards;
-}
-
-.card.prin_5_ft .bottom .description-container {
-  animation: hideDescription ease-in-out 0.2s forwards;
 }
 
 .card .bottom .title,
@@ -529,6 +512,24 @@ html .card {
   margin: 0 16px 0 16px;
 }
 
+.card:hover .picture {
+  object-fit: cover;
+  animation: minimizePicture_Default ease-in-out 0.2s forwards;
+}
+
+.card:hover .bottom .description-container {
+  animation: showDescription ease-in-out 0.2s forwards;
+}
+
+.card.prin_1:hover {
+  transform: scale(1.02, 1.02);
+  transition: 200ms;
+}
+
+.card.prin_1:active {
+  transform: scale(0.95, 0.95);
+}
+
 .card:hover.prin_5_ft .picture {
   animation: minimizePicture_Prin_5_FT ease-in-out 0.4s forwards;
 }
@@ -537,13 +538,12 @@ html .card {
   animation: showDescription ease-in-out 0.2s forwards;
 }
 
-.card:hover .picture {
-  object-fit: cover;
-  animation: minimizePicture_Default ease-in-out 0.2s forwards;
+.card.prin_5_ft .picture {
+  animation: maximizePicture_Prin_5_FT ease-in-out 0.4s forwards;
 }
 
-.card:hover .bottom .description-container {
-  animation: showDescription ease-in-out 0.2s forwards;
+.card.prin_5_ft .bottom .description-container {
+  animation: hideDescription ease-in-out 0.2s forwards;
 }
 
 @keyframes minimizePicture_Prin_5_FT {

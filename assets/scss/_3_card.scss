@@ -15,7 +15,6 @@ $picture-height-minimized: 50px;
   padding-bottom: $card-margin;
   border-radius: $card-border-radius;
   box-shadow: $default-shadow;
-  // transition: 0.5s;
 
   &:hover {
     box-shadow: $default-shadow-hover;
@@ -32,38 +31,13 @@ $picture-height-minimized: 50px;
     box-shadow: $default-shadow-pressed;
   }
 
-  &.prin_1:hover {
-    transform: scale(1.02, 1.02);
-    transition: 200ms;
-  }
-
-  &.prin_1:active {
-    transform: scale(0.95, 0.95);
-    // box-shadow: $default-shadow-pressed;
-  }
-
   .picture {
     border-top-left-radius: $card-border-radius;
     border-top-right-radius: $card-border-radius;
     width: $card-width;
     height: $card-width / 1.618;
-    // transition: 1s;
     object-fit: cover;
     animation: maximizePicture_Default ease-in-out 0.2s forwards;
-  }
-
-  &.prin_5_ft {
-    .picture {
-      animation: maximizePicture_Prin_5_FT ease-in-out 0.4s forwards;
-    }
-  }
-
-  &.prin_5_ft {
-    .bottom {
-      .description-container {
-        animation: hideDescription ease-in-out 0.2s forwards;
-      }
-    }
   }
 
   .bottom {
@@ -129,6 +103,38 @@ $picture-height-minimized: 50px;
     }
   }
 
+  &:hover {
+    .picture {
+      object-fit: cover;
+      animation: minimizePicture_Default ease-in-out 0.2s forwards;
+    }
+
+    .bottom {
+      .description-container {
+        animation: showDescription ease-in-out 0.2s forwards;
+      }
+    }
+  }
+}
+
+// Prinzip Squash and Stretch
+
+// Das Card Element vergrößert sich bei einem Hover
+.card {
+  &.prin_1:hover {
+    transform: scale(1.02, 1.02);
+    transition: 200ms;
+  }
+
+  &.prin_1:active {
+    transform: scale(0.95, 0.95);
+    // box-shadow: $default-shadow-pressed;
+  }
+}
+
+// Prinzip Follow Through
+
+.card {
   &:hover.prin_5_ft {
     .picture {
       animation: minimizePicture_Prin_5_FT ease-in-out 0.4s forwards;
@@ -141,15 +147,16 @@ $picture-height-minimized: 50px;
     }
   }
 
-  &:hover {
+  &.prin_5_ft {
     .picture {
-      object-fit: cover;
-      animation: minimizePicture_Default ease-in-out 0.2s forwards;
+      animation: maximizePicture_Prin_5_FT ease-in-out 0.4s forwards;
     }
+  }
 
+  &.prin_5_ft {
     .bottom {
       .description-container {
-        animation: showDescription ease-in-out 0.2s forwards;
+        animation: hideDescription ease-in-out 0.2s forwards;
       }
     }
   }
