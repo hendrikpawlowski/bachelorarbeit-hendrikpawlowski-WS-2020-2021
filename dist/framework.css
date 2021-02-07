@@ -693,20 +693,20 @@ html .card {
   transition: 150ms ease-in-out;
 }
 
-.dropdown-container .button .button-icon {
+.dropdown-container.prin_5_ft .button .button-icon {
   transition: transform 300ms cubic-bezier(0.5, 1.94, 0.42, 0.74);
 }
 
-.dropdown-container.is-open .button .button-icon {
+.dropdown-container.prin_5_ft.is-open .button .button-icon {
   transform: rotate(180deg);
   transition: transform 300ms cubic-bezier(0.5, 1.94, 0.42, 0.74);
 }
 
-.dropdown-container.is-open .dropdown-list.prin_5_ft {
+.dropdown-container.prin_5_ft.is-open .dropdown-list {
   transition: 250ms cubic-bezier(0.5, 1.94, 0.42, 0.74);
 }
 
-.dropdown-container.is-open .dropdown-list.prin_5_ft .list-item .link:hover {
+.dropdown-container.prin_5_ft.is-open .dropdown-list .list-item .link:hover {
   transition: padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74), background 100ms ease-in-out;
 }
 
