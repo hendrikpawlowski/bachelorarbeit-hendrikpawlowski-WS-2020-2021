@@ -32,6 +32,7 @@
       .link {
         width: 100%;
         padding: 12px 24px;
+        padding-left: 48px;
         display: block;
         overflow: hidden;
         font-size: $link-font;
@@ -63,28 +64,44 @@
     .dropdown-list {
       transform: scale(1, 1);
       transition: 150ms ease-in-out;
+
+      .list-item {
+        .link {
+          padding-left: 12px;
+        }
+      }
     }
   }
 }
 
 // Prinzip 5 Follow Through
 
+// Das Icon wird mit einem Bounce versehen
 .dropdown-container {
-  &.prin_5_ft {
-    .button {
-      .button-icon {
+  .button {
+    .button-icon {
+      &.prin_5_ft {
         transition: transform 300ms $ease-bounce;
       }
     }
+  }
 
-    &.is-open {
-      .button {
-        .button-icon {
+  &.is-open {
+    .button {
+      .button-icon {
+        &.prin_5_ft {
           transform: rotate(180deg);
           transition: transform 300ms $ease-bounce;
         }
       }
+    }
+  }
+}
 
+// Die gesamte Liste wird mit einem Bounce Effekt versehen
+.dropdown-container {
+  &.prin_5_ft {
+    &.is-open {
       .dropdown-list {
         transition: 250ms $ease-bounce;
 
@@ -93,7 +110,24 @@
             &:hover {
               transition: padding-left 200ms $ease-bounce,
                 background 100ms ease-in-out;
-              // padding-left: ;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Die einzelnen Listenelemente werden mit einem Offset von rechts nach links animiert
+.dropdown-container {
+  &.is-open {
+    .dropdown-list {
+      &.prin_5_ft {
+        $n: 10;
+        @for $i from 1 through $n {
+          .list-item:nth-child(#{$i}) {
+            .link {
+              transition: padding-left 200ms $ease-bounce $i * 30ms + 40ms;
             }
           }
         }
