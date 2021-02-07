@@ -633,43 +633,43 @@ html .card {
 }
 
 .dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(1) .link {
-  transition: padding-left 250ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 0ms;
+  transition: padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 70ms;
 }
 
 .dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(2) .link {
-  transition: padding-left 250ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 0ms;
+  transition: padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 100ms;
 }
 
 .dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(3) .link {
-  transition: padding-left 250ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 0ms;
+  transition: padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 130ms;
 }
 
 .dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(4) .link {
-  transition: padding-left 250ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 0ms;
+  transition: padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 160ms;
 }
 
 .dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(5) .link {
-  transition: padding-left 250ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 0ms;
+  transition: padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 190ms;
 }
 
 .dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(6) .link {
-  transition: padding-left 250ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 0ms;
+  transition: padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 220ms;
 }
 
 .dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(7) .link {
-  transition: padding-left 250ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 0ms;
+  transition: padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 250ms;
 }
 
 .dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(8) .link {
-  transition: padding-left 250ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 0ms;
+  transition: padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 280ms;
 }
 
 .dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(9) .link {
-  transition: padding-left 250ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 0ms;
+  transition: padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 310ms;
 }
 
 .dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(10) .link {
-  transition: padding-left 250ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 0ms;
+  transition: padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 340ms;
 }
 
 .nav-container {
