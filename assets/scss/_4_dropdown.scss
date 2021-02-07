@@ -1,5 +1,6 @@
 .dropdown-container {
   display: inline-block;
+  position: relative;
 
   .button {
     margin-bottom: 20px;
@@ -15,13 +16,14 @@
   }
 
   .dropdown-list {
+    position: absolute;
     border-radius: 5px;
     box-shadow: 0px 0px 4px #ccc, 0px 4px 4px #ccc;
     width: 200px;
     background: white;
 
     transform: scale(0.5, 0);
-    transform-origin: left top;
+    transform-origin: right top;
     transition: 150ms ease-in-out;
 
     padding: 0;
