@@ -55,6 +55,11 @@ html {
   font-weight: 400;
   color: $text-color;
 
+  p {
+    font-size: $m-font;
+    line-height: $m-line-height;
+  }
+
   a {
     text-decoration: none;
     color: $text-color;
@@ -75,6 +80,11 @@ html {
   h4 {
     font-size: $m-font;
     line-height: $l-line-height;
+  }
+  h5 {
+    font-size: $m-font;
+    line-height: $l-line-height;
+    font-weight: 600;
   }
 
   button {

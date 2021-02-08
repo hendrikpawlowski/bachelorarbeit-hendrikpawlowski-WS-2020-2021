@@ -15,6 +15,11 @@ html {
   color: #3b3b3b;
 }
 
+html p {
+  font-size: 1rem;
+  line-height: 1.618rem;
+}
+
 html a {
   text-decoration: none;
   color: #3b3b3b;
@@ -36,6 +41,12 @@ html h3 {
 html h4 {
   font-size: 1rem;
   line-height: 2.61792rem;
+}
+
+html h5 {
+  font-size: 1rem;
+  line-height: 2.61792rem;
+  font-weight: 600;
 }
 
 html button {
@@ -670,6 +681,43 @@ html .card {
 
 .dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(10) .link {
   transition: padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 340ms;
+}
+
+.carousel-container {
+  width: 400px;
+  overflow: hidden;
+}
+
+.carousel-container .carousel-inner {
+  position: relative;
+  height: 400px;
+}
+
+.carousel-container .carousel-inner .item {
+  width: 400px;
+  flex-shrink: 0;
+  position: absolute;
+  left: 0;
+}
+
+.carousel-container .carousel-inner .item .image {
+  width: 400px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.carousel-container .carousel-inner .item.left {
+  transition: 200ms;
+  left: -400px;
+}
+
+.carousel-container .carousel-inner .item.active {
+  transition: 200ms;
+}
+
+.carousel-container .carousel-inner .item.right {
+  transition: 200ms;
+  left: 400px;
 }
 
 .nav-container {

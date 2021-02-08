@@ -8,9 +8,9 @@ const initButton = function () {
         this.classList.add("animate")
     }
 
-    let buttonList = document.querySelectorAll(".button");
+    let listOfButtons = document.querySelectorAll(".button");
 
-    buttonList.forEach(button => {
+    listOfButtons.forEach(button => {
         button.addEventListener("mouseup", animateBubbles);
         button.addEventListener("animationend", stopAnimations);
     });
@@ -63,6 +63,66 @@ const initDropdown = function () {
     });
 }
 
+const initCarousel = function () {
+    let listOfCarouselContainer = document.querySelectorAll("[js-carousel-container]");
+    // console.log(listOfarouselContainer);
+
+    listOfCarouselContainer.forEach(carouselContainer => {
+        // console.log(carouselContainer);
+        let slideIndex = 0;
+        let listOfItems = carouselContainer.querySelectorAll("[js-item]");
+        let prevBtn = carouselContainer.querySelector("[js-prev]");
+        let nextBtn = carouselContainer.querySelector("[js-next]");
+
+        const updateSlideIndex = function (n) {
+            if (slideIndex === listOfItems.length - 1) return slideIndex;
+            if (slideIndex === 0) slideIndex;
+            slideIndex += n;
+            return slideIndex;
+        }
+
+        const getPrevItem = function (slideIndex) {
+            if (slideIndex === 0) return listOfItems[listOfItems.length - 1];
+            // if (slideIndex === listOfItems.length - 1) return listOfItems[0];
+
+            return listOfItems[slideIndex - 1];
+        }
+
+        const getCurrentItem = function (slideIndex) {
+            return listOfItems[slideIndex];
+        }
+
+        const getNextItem = function (slideIndex) {
+            // if (slideIndex === 0) return listOfItems[listOfItems.length - 1];
+            if (slideIndex === listOfItems.length - 1) return listOfItems[0];
+
+            return listOfItems[slideIndex + 1];
+        }
+
+        const changeSlide = function (n) {
+            getPrevItem(slideIndex).classList.remove("left");
+            getCurrentItem(slideIndex).classList.remove("active");
+            getNextItem(slideIndex).classList.remove("right");
+
+            slideIndex = updateSlideIndex(n);
+
+            getPrevItem(slideIndex).classList.add("left");
+            getCurrentItem(slideIndex).classList.add("active");
+            getNextItem(slideIndex).classList.add("right");
+        }
+
+        getPrevItem(slideIndex).classList.add("left");
+        getNextItem(slideIndex).classList.add("right");
+
+        prevBtn.addEventListener("click", () => {
+            changeSlide(-1);
+        });
+        nextBtn.addEventListener("click", () => {
+            changeSlide(1);
+        });
+    });
+}
+
 const initNavigation = function () {
 
     let listOfNavContainer = document.querySelectorAll("[js-nav-container]");
@@ -104,4 +164,5 @@ const initNavigation = function () {
 initButton();
 initCard();
 initDropdown();
+initCarousel();
 initNavigation();

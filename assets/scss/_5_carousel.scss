@@ -1,0 +1,45 @@
+// $image-width: 100%;
+// $image-height: 100% / 1.618;
+
+.carousel-container {
+  width: 400px;
+  overflow: hidden;
+
+  .carousel-inner {
+    position: relative;
+    height: 400px;
+    // display: flex;
+    // overflow-x: auto;
+    // width: 100%;
+    // display: flex;
+
+    .item {
+      width: 400px;
+      flex-shrink: 0;
+      position: absolute;
+      left: 0;
+
+      .image {
+        width: 400px;
+        height: 200px;
+        object-fit: cover;
+      }
+      //   display: none;
+
+      &.left {
+        transition: 200ms;
+        // margin-right: 400px;
+        left: -400px;
+      }
+      &.active {
+        // display: block;
+        transition: 200ms;
+      }
+      &.right {
+        transition: 200ms;
+        //   float: right;
+        left: 400px;
+      }
+    }
+  }
+}
