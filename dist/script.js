@@ -65,25 +65,24 @@ const initDropdown = function () {
 
 const initCarousel = function () {
     let listOfCarouselContainer = document.querySelectorAll("[js-carousel-container]");
-    // console.log(listOfarouselContainer);
 
     listOfCarouselContainer.forEach(carouselContainer => {
-        // console.log(carouselContainer);
         let slideIndex = 0;
         let listOfItems = carouselContainer.querySelectorAll("[js-item]");
         let prevBtn = carouselContainer.querySelector("[js-prev]");
         let nextBtn = carouselContainer.querySelector("[js-next]");
 
         const updateSlideIndex = function (n) {
-            if (slideIndex === listOfItems.length - 1) return slideIndex;
-            if (slideIndex === 0) slideIndex;
             slideIndex += n;
+
+            if (slideIndex === listOfItems.length) slideIndex = 0;
+            if (slideIndex === -1) slideIndex = listOfItems.length - 1;
+            console.log(slideIndex);
             return slideIndex;
         }
 
         const getPrevItem = function (slideIndex) {
             if (slideIndex === 0) return listOfItems[listOfItems.length - 1];
-            // if (slideIndex === listOfItems.length - 1) return listOfItems[0];
 
             return listOfItems[slideIndex - 1];
         }
@@ -93,7 +92,6 @@ const initCarousel = function () {
         }
 
         const getNextItem = function (slideIndex) {
-            // if (slideIndex === 0) return listOfItems[listOfItems.length - 1];
             if (slideIndex === listOfItems.length - 1) return listOfItems[0];
 
             return listOfItems[slideIndex + 1];
