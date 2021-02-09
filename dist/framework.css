@@ -684,40 +684,30 @@ html .card {
 }
 
 .carousel-container {
-  width: 400px;
+  width: 600px;
   overflow: hidden;
 }
 
 .carousel-container .carousel-inner {
   position: relative;
-  height: 400px;
+  height: 300px;
+  width: 100%;
 }
 
 .carousel-container .carousel-inner .item {
-  width: 400px;
   flex-shrink: 0;
   position: absolute;
-  display: none;
   left: 0;
 }
 
 .carousel-container .carousel-inner .item .image {
-  width: 400px;
+  width: 600px;
   height: 200px;
   object-fit: cover;
 }
 
-.carousel-container .carousel-inner .item.left {
-  display: none;
-}
-
 .carousel-container .carousel-inner .item.active {
-  display: block;
-}
-
-.carousel-container .carousel-inner .item.right {
-  transition: 200ms;
-  left: 400px;
+  z-index: 10;
 }
 
 .carousel-container .carousel-inner .item.move-left {
