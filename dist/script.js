@@ -105,3 +105,15 @@ initButton();
 initCard();
 initDropdown();
 initNavigation();
+
+let element = document.querySelector("#carousel-inner");
+
+element.scrollLeft = 0;
+
+let next = document.querySelector("[js-next]").addEventListener("click", () => {
+    console.log("CLICKED");
+    element.scrollLeft += 100;
+
+    console.log(element.scrollLeft);
+
+})
