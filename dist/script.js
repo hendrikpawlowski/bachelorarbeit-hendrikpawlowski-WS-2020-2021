@@ -68,56 +68,107 @@ const initCarousel = function () {
 
     listOfCarouselContainer.forEach(carouselContainer => {
         let slideIndex = 0;
+        let movingDirection;
         let listOfItems = carouselContainer.querySelectorAll("[js-item]");
         let prevBtn = carouselContainer.querySelector("[js-prev]");
         let nextBtn = carouselContainer.querySelector("[js-next]");
 
+        listOfItems.forEach(item => {
+            item.addEventListener("animationend", () => {
+
+                if (item.classList.contains("move-right") || item.classList.contains("move-left")) {
+                    item.classList.remove("active");
+                    item.classList.remove("move-right");
+                    item.classList.remove("move-left");
+                }
+                item.classList.remove("enter-from-right");
+                item.classList.remove("enter-from-left");
+
+                prevBtn.addEventListener("click", changeSlideLeft);
+                nextBtn.addEventListener("click", changeSlideRight);
+            })
+        });
+
         const updateSlideIndex = function (n) {
             slideIndex += n;
-
             if (slideIndex === listOfItems.length) slideIndex = 0;
             if (slideIndex === -1) slideIndex = listOfItems.length - 1;
-            console.log(slideIndex);
             return slideIndex;
         }
 
-        const getPrevItem = function (slideIndex) {
-            if (slideIndex === 0) return listOfItems[listOfItems.length - 1];
+        // const getPrevItem = function (slideIndex) {
+        //     if (slideIndex === 0) return listOfItems[listOfItems.length - 1];
 
-            return listOfItems[slideIndex - 1];
-        }
+        //     return listOfItems[slideIndex - 1];
+        // }
 
         const getCurrentItem = function (slideIndex) {
             return listOfItems[slideIndex];
         }
 
-        const getNextItem = function (slideIndex) {
-            if (slideIndex === listOfItems.length - 1) return listOfItems[0];
+        // const getNextItem = function (slideIndex) {
+        //     if (slideIndex === listOfItems.length - 1) return listOfItems[0];
 
-            return listOfItems[slideIndex + 1];
+        //     return listOfItems[slideIndex + 1];
+        // }
+
+        const getMovingDirection = function (n) {
+            if (n === -1) movingDirection = "right";
+            if (n === 1) movingDirection = "left";
+            return movingDirection;
+        }
+
+        const changeSlideLeft = function () {
+            console.log("changeSlideLeft");
+            changeSlide(-1);
+        }
+
+        const changeSlideRight = function () {
+            console.log("changeSlideRight");
+            changeSlide(1);
         }
 
         const changeSlide = function (n) {
-            getPrevItem(slideIndex).classList.remove("left");
-            getCurrentItem(slideIndex).classList.remove("active");
-            getNextItem(slideIndex).classList.remove("right");
+            console.log("changeSlide");
+            prevBtn.removeEventListener("click", changeSlideLeft);
+            nextBtn.removeEventListener("click", changeSlideRight);
+            // prevBtn.removeEventListener("click");
+            // getCurrentItem(slideIndex).classList.remove("active");
 
-            slideIndex = updateSlideIndex(n);
+            if (getMovingDirection(n) === "right") {
+                console.log("move right");
+                getCurrentItem(slideIndex).classList.add("move-right");
+                updateSlideIndex(n);
+                getCurrentItem(slideIndex).classList.add("enter-from-left");
+            }
 
-            getPrevItem(slideIndex).classList.add("left");
+            if (getMovingDirection(n) === "left") {
+                console.log("move left");
+                getCurrentItem(slideIndex).classList.add("move-left");
+                updateSlideIndex(n);
+                getCurrentItem(slideIndex).classList.add("enter-from-right");
+            }
+
             getCurrentItem(slideIndex).classList.add("active");
-            getNextItem(slideIndex).classList.add("right");
+            // getCurrentItem(slideIndex).classList.add("move-right");
+            // getPrevItem(slideIndex).classList.remove("left");
+            // getCurrentItem(slideIndex).classList.remove("active");
+            // getNextItem(slideIndex).classList.remove("right");
+
+            // slideIndex = updateSlideIndex(n);
+
+            // getPrevItem(slideIndex).classList.add("left");
+            // getCurrentItem(slideIndex).classList.add("active");
+            // getNextItem(slideIndex).classList.add("right");
+            // prevBtn.addEventListener("click", changeSlideLeft);
+            // nextBtn.addEventListener("click", changeSlideRight);
         }
 
-        getPrevItem(slideIndex).classList.add("left");
-        getNextItem(slideIndex).classList.add("right");
+        // getPrevItem(slideIndex).classList.add("left");
+        // getNextItem(slideIndex).classList.add("right");
 
-        prevBtn.addEventListener("click", () => {
-            changeSlide(-1);
-        });
-        nextBtn.addEventListener("click", () => {
-            changeSlide(1);
-        });
+        prevBtn.addEventListener("click", changeSlideLeft);
+        nextBtn.addEventListener("click", changeSlideRight);
     });
 }
 
