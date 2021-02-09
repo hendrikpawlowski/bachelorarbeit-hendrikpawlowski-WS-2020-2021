@@ -672,6 +672,29 @@ html .card {
   transition: padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 340ms;
 }
 
+.carousel-container {
+  width: 600px;
+}
+
+.carousel-container .carousel-inner {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  transition: 200ms;
+}
+
+.carousel-container .carousel-inner .item {
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+
+.carousel-container .carousel-inner .item .image {
+  width: 600px;
+  height: 300px;
+  object-fit: cover;
+}
+
 .nav-container {
   display: inline-block;
 }

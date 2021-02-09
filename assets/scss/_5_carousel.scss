@@ -1,2 +1,30 @@
 .carousel-container {
+  width: 600px;
+
+  .carousel-inner {
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    // scroll-snap-type: x mandatory;
+    // scroll-behavior: smooth;
+    transition: 200ms;
+
+    .item {
+      flex-shrink: 0;
+      scroll-snap-align: start;
+
+      .image {
+        width: 600px;
+        height: 300px;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .indicator-container {
+  }
+
+  .carousel-controls {
+  }
 }
