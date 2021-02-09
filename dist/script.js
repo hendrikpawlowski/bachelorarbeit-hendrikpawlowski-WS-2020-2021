@@ -94,6 +94,7 @@ const initCarousel = function () {
         let itemWidth = firstItem.getBoundingClientRect().width;
         let prev = carouselContainer.querySelector("[js-prev]");
         let next = carouselContainer.querySelector("[js-next]");
+        let listOfIndicator = carouselContainer.querySelectorAll("[js-indicator]");
 
         const updateIndicator = function () {
 
