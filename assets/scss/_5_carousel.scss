@@ -1,7 +1,7 @@
 .carousel-container {
   $max-item-width: 800px;
   $max-image-height: $max-item-width / 2;
-  $indicator-width: 12px;
+  $indicator-width: 10px;
   $indicator-height: $indicator-width;
   $dark-background-height: 60px;
 
@@ -23,7 +23,7 @@
       scroll-snap-align: start;
       height: $max-image-height;
       position: relative;
-      transition: 200ms;
+      transition: 400ms;
       // margin-right: 200px;
 
       .image {
@@ -80,7 +80,7 @@
       .indicator {
         width: $indicator-width;
         height: $indicator-height;
-        background: $grey-light;
+        background: $grey-extra-light;
         opacity: 0.7;
         border-radius: 10px;
         margin-right: 16px;
@@ -98,7 +98,50 @@
   }
 
   .carousel-controls {
+    width: 100%;
+    height: 100%;
     position: absolute;
     top: 0;
+    // transform: translate(0, -50%);
+
+    .icon {
+      width: 50px;
+    }
+
+    .control {
+      &.prev {
+        position: absolute;
+        height: 100%;
+        width: 50%;
+        left: 0;
+
+        .icon {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%) rotate(90deg);
+          left: 0;
+        }
+      }
+
+      &.next {
+        position: absolute;
+        width: 50%;
+        height: 100%;
+        right: 0;
+
+        .icon {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%) rotate(-90deg);
+          right: 0;
+        }
+      }
+
+      &:active {
+        background: $grey-extra-light;
+        opacity: 0.1;
+        transition: 100ms;
+      }
+    }
   }
 }
