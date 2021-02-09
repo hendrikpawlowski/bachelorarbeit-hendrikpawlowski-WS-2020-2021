@@ -63,6 +63,59 @@ const initDropdown = function () {
     });
 }
 
+const initCarousel = function () {
+    // let listOfElements = document.querySelectorAll("[js-item]");
+    // console.log(listOfElements);
+
+    // // element.scrollLeft = 0;
+
+    // let next = document.querySelector("[js-next]").addEventListener("click", () => {
+    //     console.log("CLICKED");
+    //     // console.log(listOfElements[0].style.marginLeft);
+    //     let margin = listOfElements[0].getBoundingClientRect();
+    //     console.log(margin);
+    //     let width = listOfElements[0].getBoundingClientRect().width;
+    //     let newMargin = margin + width * -1;
+    //     console.log(newMargin);
+    //     listOfElements[0].style.marginLeft = newMargin + "px";
+
+    //     // console.log(element.scrollLeft);
+
+    // })
+
+    let listOfCarouselContainer = document.querySelectorAll("[js-carousel-container]");
+
+    listOfCarouselContainer.forEach(carouselContainer => {
+
+        let marginIndex = 0;
+        let slideIndex = 0;
+        let listOfItem = carouselContainer.querySelectorAll("[js-item]");
+        let firstItem = listOfItem[0];
+        let itemWidth = firstItem.getBoundingClientRect().width;
+        let prev = carouselContainer.querySelector("[js-prev]");
+        let next = carouselContainer.querySelector("[js-next]");
+
+        const updateIndicator = function () {
+
+        }
+
+        prev.addEventListener("click", () => {
+            if (slideIndex !== 0) {
+                marginIndex += itemWidth;
+                slideIndex -= 1;
+                firstItem.style.marginLeft = marginIndex + "px";
+            }
+        });
+        next.addEventListener("click", () => {
+            if (slideIndex !== listOfItem.length - 1) {
+                marginIndex -= itemWidth;
+                slideIndex += 1;
+                firstItem.style.marginLeft = marginIndex + "px";
+            }
+        });
+    });
+}
+
 const initNavigation = function () {
 
     let listOfNavContainer = document.querySelectorAll("[js-nav-container]");
@@ -104,16 +157,5 @@ const initNavigation = function () {
 initButton();
 initCard();
 initDropdown();
+initCarousel();
 initNavigation();
-
-let element = document.querySelector("#carousel-inner");
-
-element.scrollLeft = 0;
-
-let next = document.querySelector("[js-next]").addEventListener("click", () => {
-    console.log("CLICKED");
-    element.scrollLeft += 100;
-
-    console.log(element.scrollLeft);
-
-})
