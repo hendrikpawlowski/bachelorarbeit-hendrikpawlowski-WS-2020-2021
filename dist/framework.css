@@ -5,7 +5,8 @@
   box-sizing: border-box;
 }
 
-ul {
+ul,
+ol {
   list-style: none;
 }
 
@@ -35,7 +36,17 @@ html h3 {
 
 html h4 {
   font-size: 1rem;
-  line-height: 2.61792rem;
+  line-height: 1.618rem;
+}
+
+html h5 {
+  font-size: 1rem;
+  line-height: 1.618rem;
+}
+
+html p {
+  font-size: 1rem;
+  line-height: 1.618rem;
 }
 
 html button {
@@ -673,26 +684,94 @@ html .card {
 }
 
 .carousel-container {
-  width: 600px;
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  height: auto;
 }
 
 .carousel-container .carousel-inner {
-  width: 100%;
   display: flex;
   overflow: hidden;
   -webkit-overflow-scrolling: touch;
   transition: 200ms;
+  position: relative;
 }
 
 .carousel-container .carousel-inner .item {
+  width: 100%;
   flex-shrink: 0;
   scroll-snap-align: start;
+  height: 400px;
+  position: relative;
+  transition: 200ms;
 }
 
 .carousel-container .carousel-inner .item .image {
-  width: 600px;
-  height: 300px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+}
+
+.carousel-container .carousel-inner .item .text {
+  position: absolute;
+  top: 50%;
+  background: white;
+  padding: 16px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+}
+
+.carousel-container .carousel-inner .item .text .headline {
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-container .carousel-inner .item .text .description {
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-container .dark-background {
+  width: 100%;
+  height: 60px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  bottom: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.carousel-container .dark-background .indicator-container {
+  display: flex;
+  align-items: flex-end;
+  padding: 0;
+  margin: 0 0 16px 0;
+  height: auto;
+}
+
+.carousel-container .dark-background .indicator-container .indicator {
+  width: 12px;
+  height: 12px;
+  background: #cecece;
+  opacity: 0.7;
+  border-radius: 10px;
+  margin-right: 16px;
+}
+
+.carousel-container .dark-background .indicator-container .indicator.active {
+  background: #9313ce;
+  opacity: 1;
+}
+
+.carousel-container .dark-background .indicator-container .indicator:last-child {
+  margin-right: 0;
+}
+
+.carousel-container .carousel-controls {
+  position: absolute;
+  top: 0;
 }
 
 .nav-container {
