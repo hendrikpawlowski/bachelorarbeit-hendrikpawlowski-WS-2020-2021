@@ -261,32 +261,32 @@
         <h3 class="element-headline">Carousel</h3>
         <div class="element">
           <div js-carousel-container class="carousel-container">
-            <ol class="indicator-container">
-              <li class="indicator"></li>
-              <li class="indicator"></li>
-              <li class="indicator"></li>
-            </ol>
-            <div class="carousel-inner">
-              <div js-item class="item active">
+            <div id="carousel-inner" class="carousel-inner">
+              <div id="slide-1" js-item class="item active">
                 <img class="image" src="./assets/images/carousel-1.jpg" alt="">
                 <!-- <h5>Item 1 Lorem, ipsum dolor.</h5>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus quasi aspernatur itaque saepe
-                  assumenda.</p> -->
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus quasi aspernatur itaque saepe
+                    assumenda.</p> -->
               </div>
-              <div js-item class="item">
+              <div id="slide-2" js-item class="item">
                 <img class="image active" src="./assets/images/carousel-2.jpg" alt="">
                 <!-- <h5>Item 2 elit. Minima, amet?</h5>
-                <p>Temporibus eius quo aut delectus sit commodi
-                  architecto laudantium eaque laborum.</p> -->
+                      <p>Temporibus eius quo aut delectus sit commodi
+                        architecto laudantium eaque laborum.</p> -->
               </div>
-              <div js-item class="item">
+              <div id="slide-3" js-item class="item">
                 <img class="image" src="./assets/images/carousel-3.jpg" alt="">
                 <!-- <h5>Item 3 magni minima voluptas expedita asperiores</h5>
-                <p>Suscipit aliquam molestias recusandae, tempore, mollitia ab autem
-                  debitis corrupti. Voluptas cupiditate maxime reiciendis? Praesentium pariatur alias maiores cupiditate
-                  qui!</p> -->
+                          <p>Suscipit aliquam molestias recusandae, tempore, mollitia ab autem
+                            debitis corrupti. Voluptas cupiditate maxime reiciendis? Praesentium pariatur alias maiores cupiditate
+                            qui!</p> -->
               </div>
             </div>
+            <ol class="indicator-container">
+              <li class="indicator"><a href="#slide-1">Link</a></li>
+              <li class="indicator"><a href="#slide-2">Link</a></li>
+              <li class="indicator"><a href="#slide-3">Link</a></li>
+            </ol>
             <div class="carousel-controls">
               <a js-prev class="prev">Prev</a>
               <a js-next class="next">Next</a>
