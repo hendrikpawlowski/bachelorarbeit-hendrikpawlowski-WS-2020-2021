@@ -13,6 +13,7 @@
       width: 400px;
       flex-shrink: 0;
       position: absolute;
+      display: none;
       left: 0;
 
       .image {
@@ -23,19 +24,74 @@
       //   display: none;
 
       &.left {
-        transition: 200ms;
+        display: none;
+        // transition: 200ms;
         // margin-right: 400px;
-        left: -400px;
+        // left: -400px;
       }
       &.active {
-        // display: block;
-        transition: 200ms;
+        // transition: 200ms;
+        display: block;
       }
       &.right {
         transition: 200ms;
         //   float: right;
         left: 400px;
       }
+
+      &.move-left {
+        animation: moveLeft 400ms forwards;
+      }
+
+      &.move-right {
+        animation: moveRight 400ms forwards;
+      }
+
+      &.enter-from-left {
+        animation: enterFromLeft 400ms forwards;
+        display: block;
+      }
+
+      &.enter-from-right {
+        animation: enterFromRight 400ms forwards;
+        display: block;
+      }
     }
+  }
+}
+
+@keyframes moveLeft {
+  from {
+    margin-left: 0px;
+  }
+  to {
+    margin-left: -400px;
+  }
+}
+
+@keyframes moveRight {
+  from {
+    margin-left: 0px;
+  }
+  to {
+    margin-left: 400px;
+  }
+}
+
+@keyframes enterFromLeft {
+  from {
+    margin-left: -400px;
+  }
+  to {
+    margin-left: 0px;
+  }
+}
+
+@keyframes enterFromRight {
+  from {
+    margin-left: 400px;
+  }
+  to {
+    margin-left: 0px;
   }
 }

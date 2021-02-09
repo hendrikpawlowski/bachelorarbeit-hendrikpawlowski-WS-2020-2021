@@ -697,6 +697,7 @@ html .card {
   width: 400px;
   flex-shrink: 0;
   position: absolute;
+  display: none;
   left: 0;
 }
 
@@ -707,17 +708,70 @@ html .card {
 }
 
 .carousel-container .carousel-inner .item.left {
-  transition: 200ms;
-  left: -400px;
+  display: none;
 }
 
 .carousel-container .carousel-inner .item.active {
-  transition: 200ms;
+  display: block;
 }
 
 .carousel-container .carousel-inner .item.right {
   transition: 200ms;
   left: 400px;
+}
+
+.carousel-container .carousel-inner .item.move-left {
+  animation: moveLeft 400ms forwards;
+}
+
+.carousel-container .carousel-inner .item.move-right {
+  animation: moveRight 400ms forwards;
+}
+
+.carousel-container .carousel-inner .item.enter-from-left {
+  animation: enterFromLeft 400ms forwards;
+  display: block;
+}
+
+.carousel-container .carousel-inner .item.enter-from-right {
+  animation: enterFromRight 400ms forwards;
+  display: block;
+}
+
+@keyframes moveLeft {
+  from {
+    margin-left: 0px;
+  }
+  to {
+    margin-left: -400px;
+  }
+}
+
+@keyframes moveRight {
+  from {
+    margin-left: 0px;
+  }
+  to {
+    margin-left: 400px;
+  }
+}
+
+@keyframes enterFromLeft {
+  from {
+    margin-left: -400px;
+  }
+  to {
+    margin-left: 0px;
+  }
+}
+
+@keyframes enterFromRight {
+  from {
+    margin-left: 400px;
+  }
+  to {
+    margin-left: 0px;
+  }
 }
 
 .nav-container {
