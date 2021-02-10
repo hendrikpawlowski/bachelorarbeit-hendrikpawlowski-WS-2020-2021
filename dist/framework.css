@@ -791,6 +791,14 @@ html .card {
 
 .carousel-container .carousel-controls .control {
   cursor: pointer;
+  position: absolute;
+  height: 100%;
+  width: 50%;
+}
+
+.carousel-container .carousel-controls .control .icon {
+  position: absolute;
+  top: 50%;
 }
 
 .carousel-container .carousel-controls .control .icon:hover {
@@ -798,42 +806,32 @@ html .card {
 }
 
 .carousel-container .carousel-controls .control.prev {
-  position: absolute;
-  height: 100%;
-  width: 50%;
   left: 0;
 }
 
 .carousel-container .carousel-controls .control.prev .icon {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%) rotate(90deg);
   transition: 100ms;
+  transform: translateY(-50%) rotate(90deg);
   left: 0;
 }
 
 .carousel-container .carousel-controls .control.next {
-  position: absolute;
-  width: 50%;
-  height: 100%;
   right: 0;
 }
 
 .carousel-container .carousel-controls .control.next .icon {
-  position: absolute;
-  top: 50%;
   transform: translateY(-50%) rotate(-90deg);
   transition: 100ms;
   right: 0;
 }
 
 .carousel-container .carousel-controls .control:active.prev .icon {
-  transform: translateY(-50%) rotate(90deg) scale(1.3);
+  transform: translateY(-50%) rotate(90deg) scale(0.8);
   transition: 100ms;
 }
 
 .carousel-container .carousel-controls .control:active.next .icon {
-  transform: translateY(-50%) rotate(-90deg) scale(1.3);
+  transform: translateY(-50%) rotate(-90deg) scale(0.8);
   transition: 100ms;
 }
 
