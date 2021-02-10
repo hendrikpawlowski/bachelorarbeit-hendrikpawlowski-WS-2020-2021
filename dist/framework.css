@@ -763,7 +763,7 @@ html .card {
 .carousel-container .indicator-container .indicator {
   width: 10px;
   height: 10px;
-  background: #f5f5f5;
+  background: white;
   opacity: 0.7;
   border-radius: 10px;
   margin-right: 16px;
@@ -796,7 +796,7 @@ html .card {
   position: absolute;
   width: 50px;
   top: 50%;
-  opacity: 0.5;
+  opacity: 0.7;
   transition: 100ms;
 }
 
