@@ -91,10 +91,12 @@ const initCarousel = function () {
         let slideIndex = 0;
         let listOfItem = carouselContainer.querySelectorAll("[js-item]");
         let firstItem = listOfItem[0];
+        let marginBetweenItems = parseInt(getComputedStyle(firstItem).marginRight);
         let itemWidth = firstItem.getBoundingClientRect().width;
         let prev = carouselContainer.querySelector("[js-prev]");
         let next = carouselContainer.querySelector("[js-next]");
         let listOfIndicator = carouselContainer.querySelectorAll("[js-indicator]");
+        // console.log(`margin: ${parseInt(getComputedStyle(firstItem).marginRight)}`);
 
         const updateIndicator = function () {
 
@@ -102,14 +104,14 @@ const initCarousel = function () {
 
         prev.addEventListener("click", () => {
             if (slideIndex !== 0) {
-                marginIndex += itemWidth;
+                marginIndex += itemWidth + marginBetweenItems;
                 slideIndex -= 1;
                 firstItem.style.marginLeft = marginIndex + "px";
             }
         });
         next.addEventListener("click", () => {
             if (slideIndex !== listOfItem.length - 1) {
-                marginIndex -= itemWidth;
+                marginIndex -= itemWidth + marginBetweenItems;
                 slideIndex += 1;
                 firstItem.style.marginLeft = marginIndex + "px";
             }
