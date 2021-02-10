@@ -96,42 +96,69 @@ const initCarousel = function () {
         let itemWidth = firstItem.getBoundingClientRect().width;
         let prev = carouselContainer.querySelector("[js-prev]");
         let next = carouselContainer.querySelector("[js-next]");
+        let pressed;
         let indicatorContainer = carouselContainer.querySelector("[js-indicator-container]");
         let listOfIndicator = indicatorContainer.querySelectorAll("[js-indicator]");
         // console.log(`margin: ${parseInt(getComputedStyle(firstItem).marginRight)}`);
 
+        const fun = function () {
+            console.log("transitionend");
+            console.log(pressed);
+            if (pressed === "next") {
+                listOfIndicator[slideIndex - 1].classList.remove("move-right");
+                indicatorContainer.insertBefore(listOfIndicator[slideIndex - 1], listOfIndicator[slideIndex + 1]);
+                listOfIndicator[slideIndex].classList.remove("move-left");
+                listOfIndicator = carouselContainer.querySelectorAll("[js-indicator]");
+                // console.log(listOfIndicator);
+                // console.log("this");
+            } else if (pressed === "prev") {
+                console.log("prev ended");
+                listOfIndicator[slideIndex + 1].classList.remove("move-left");
+                listOfIndicator[slideIndex].classList.remove("move-right");
+                indicatorContainer.insertBefore(listOfIndicator[slideIndex + 1], listOfIndicator[slideIndex]);
+                listOfIndicator = carouselContainer.querySelectorAll("[js-indicator]");
 
-        const updateIndicator = function (indicatorIndex) {
-            console.log("updateContainer");
-            console.log(listOfIndicator[0]);
+                // indicatorContainer.insertBefore(listOfIndicator[slideIndex - 1], listOfIndicator[slideIndex + 1]);
+                // listOfIndicator = carouselContainer.querySelectorAll("[js-indicator]");
+            }
+            // console.log(this);
+        }
+        listOfIndicator.forEach(indicator => {
+            indicator.addEventListener("transitionend", fun);
+        });
 
-            console.log(slideIndex);
-            if (indicatorIndex === 1) {
-                console.log("indicator next");
+
+        const updateIndicator = function (n) {
+
+            pressed = n;
+
+            if (pressed === "next") {
+                // indicatorContainer.insertBefore(listOfIndicator[slideIndex - 1], listOfIndicator[slideIndex + 1]);
+                // listOfIndicator = carouselContainer.querySelectorAll("[js-indicator]");
                 listOfIndicator[slideIndex - 1].classList.add("move-right");
                 listOfIndicator[slideIndex].classList.add("move-left");
 
-                // indicatorContainer.insertBefore(listOfIndicator[slideIndex - 1], listOfIndicator[slideIndex + 1]);
-
             }
-            else if (indicatorIndex === -1) {
-                console.log("indicator prev");
-                indicatorContainer.insertBefore(listOfIndicator[slideIndex + 1], listOfIndicator[slideIndex]);
+            else if (pressed === "prev") {
+                // console.log("indicator prev");
+                // indicatorContainer.insertBefore(listOfIndicator[slideIndex + 1], listOfIndicator[slideIndex]);
+                // listOfIndicator = carouselContainer.querySelectorAll("[js-indicator]");
+
+
+                listOfIndicator[slideIndex + 1].classList.add("move-left");
+                listOfIndicator[slideIndex].classList.add("move-right");
 
             }
 
             // Update listOfIndicator
-            listOfIndicator = carouselContainer.querySelectorAll("[js-indicator]");
         }
-
-        updateIndicator();
 
         prev.addEventListener("click", () => {
             if (slideIndex !== 0) {
                 marginIndex += itemWidth + marginBetweenItems;
                 slideIndex -= 1;
                 firstItem.style.marginLeft = marginIndex + "px";
-                updateIndicator(-1, slideIndex);
+                updateIndicator("prev");
             }
         });
         next.addEventListener("click", () => {
@@ -139,7 +166,7 @@ const initCarousel = function () {
                 marginIndex -= itemWidth + marginBetweenItems;
                 slideIndex += 1;
                 firstItem.style.marginLeft = marginIndex + "px";
-                updateIndicator(1, slideIndex);
+                updateIndicator("next");
             }
         });
     });
