@@ -162,3 +162,7 @@ initCard();
 initDropdown();
 initCarousel();
 initNavigation();
+
+window.addEventListener('resize', () => {
+    initCarousel();
+});
