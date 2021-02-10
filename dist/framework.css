@@ -785,10 +785,6 @@ html .card {
   top: 0;
 }
 
-.carousel-container .carousel-controls .icon {
-  width: 50px;
-}
-
 .carousel-container .carousel-controls .control {
   cursor: pointer;
   position: absolute;
@@ -798,7 +794,10 @@ html .card {
 
 .carousel-container .carousel-controls .control .icon {
   position: absolute;
+  width: 50px;
   top: 50%;
+  opacity: 0.5;
+  transition: 100ms;
 }
 
 .carousel-container .carousel-controls .control .icon:hover {
@@ -810,7 +809,6 @@ html .card {
 }
 
 .carousel-container .carousel-controls .control.prev .icon {
-  transition: 100ms;
   transform: translateY(-50%) rotate(90deg);
   left: 0;
 }
@@ -821,18 +819,19 @@ html .card {
 
 .carousel-container .carousel-controls .control.next .icon {
   transform: translateY(-50%) rotate(-90deg);
-  transition: 100ms;
   right: 0;
+}
+
+.carousel-container .carousel-controls .control:hover .icon {
+  opacity: 1;
 }
 
 .carousel-container .carousel-controls .control:active.prev .icon {
   transform: translateY(-50%) rotate(90deg) scale(0.8);
-  transition: 100ms;
 }
 
 .carousel-container .carousel-controls .control:active.next .icon {
   transform: translateY(-50%) rotate(-90deg) scale(0.8);
-  transition: 100ms;
 }
 
 .nav-container {

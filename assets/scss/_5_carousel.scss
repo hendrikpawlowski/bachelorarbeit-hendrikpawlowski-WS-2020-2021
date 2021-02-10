@@ -108,10 +108,6 @@
     position: absolute;
     top: 0;
 
-    .icon {
-      width: 50px;
-    }
-
     .control {
       cursor: pointer;
       position: absolute;
@@ -120,7 +116,11 @@
 
       .icon {
         position: absolute;
+        width: 50px;
         top: 50%;
+        opacity: 0.5;
+        transition: 100ms;
+
         &:hover {
           cursor: pointer;
         }
@@ -128,9 +128,7 @@
 
       &.prev {
         left: 0;
-
         .icon {
-          transition: 100ms;
           transform: translateY(-50%) rotate(90deg);
           left: 0;
         }
@@ -138,29 +136,28 @@
 
       &.next {
         right: 0;
-
         .icon {
           transform: translateY(-50%) rotate(-90deg);
-          transition: 100ms;
           right: 0;
         }
       }
 
+      &:hover {
+        .icon {
+          opacity: 1;
+        }
+      }
+
       &:active {
-        // background: $grey-extra-light;
-        // opacity: background 0.1;
-        // transition: 100ms;
         &.prev {
           .icon {
             transform: translateY(-50%) rotate(90deg) scale(0.8);
-            transition: 100ms;
           }
         }
 
         &.next {
           .icon {
             transform: translateY(-50%) rotate(-90deg) scale(0.8);
-            transition: 100ms;
           }
         }
       }
