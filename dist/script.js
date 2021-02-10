@@ -89,42 +89,38 @@ const initCarousel = function () {
 
         let marginIndex = 0;
         let slideIndex = 0;
+        let pressed;
+
+        // For Styling
         let listOfItem = carouselContainer.querySelectorAll("[js-item]");
         let firstItem = listOfItem[0];
         firstItem.style.marginLeft = marginIndex + "px";
         let marginBetweenItems = parseInt(getComputedStyle(firstItem).marginRight);
         let itemWidth = firstItem.getBoundingClientRect().width;
+
+        // Controls
         let prev = carouselContainer.querySelector("[js-prev]");
         let next = carouselContainer.querySelector("[js-next]");
-        let pressed;
+
+        // Indicator
         let indicatorContainer = carouselContainer.querySelector("[js-indicator-container]");
         let listOfIndicator = indicatorContainer.querySelectorAll("[js-indicator]");
-        // console.log(`margin: ${parseInt(getComputedStyle(firstItem).marginRight)}`);
 
-        const fun = function () {
-            console.log("transitionend");
-            console.log(pressed);
+        const eventHandlerIndicator = function () {
             if (pressed === "next") {
                 listOfIndicator[slideIndex - 1].classList.remove("move-right");
                 indicatorContainer.insertBefore(listOfIndicator[slideIndex - 1], listOfIndicator[slideIndex + 1]);
                 listOfIndicator[slideIndex].classList.remove("move-left");
                 listOfIndicator = carouselContainer.querySelectorAll("[js-indicator]");
-                // console.log(listOfIndicator);
-                // console.log("this");
             } else if (pressed === "prev") {
-                console.log("prev ended");
                 listOfIndicator[slideIndex + 1].classList.remove("move-left");
                 listOfIndicator[slideIndex].classList.remove("move-right");
                 indicatorContainer.insertBefore(listOfIndicator[slideIndex + 1], listOfIndicator[slideIndex]);
                 listOfIndicator = carouselContainer.querySelectorAll("[js-indicator]");
-
-                // indicatorContainer.insertBefore(listOfIndicator[slideIndex - 1], listOfIndicator[slideIndex + 1]);
-                // listOfIndicator = carouselContainer.querySelectorAll("[js-indicator]");
             }
-            // console.log(this);
         }
         listOfIndicator.forEach(indicator => {
-            indicator.addEventListener("transitionend", fun);
+            indicator.addEventListener("transitionend", eventHandlerIndicator);
         });
 
 
@@ -133,24 +129,13 @@ const initCarousel = function () {
             pressed = n;
 
             if (pressed === "next") {
-                // indicatorContainer.insertBefore(listOfIndicator[slideIndex - 1], listOfIndicator[slideIndex + 1]);
-                // listOfIndicator = carouselContainer.querySelectorAll("[js-indicator]");
                 listOfIndicator[slideIndex - 1].classList.add("move-right");
                 listOfIndicator[slideIndex].classList.add("move-left");
-
             }
             else if (pressed === "prev") {
-                // console.log("indicator prev");
-                // indicatorContainer.insertBefore(listOfIndicator[slideIndex + 1], listOfIndicator[slideIndex]);
-                // listOfIndicator = carouselContainer.querySelectorAll("[js-indicator]");
-
-
                 listOfIndicator[slideIndex + 1].classList.add("move-left");
                 listOfIndicator[slideIndex].classList.add("move-right");
-
             }
-
-            // Update listOfIndicator
         }
 
         prev.addEventListener("click", () => {
