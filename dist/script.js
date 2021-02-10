@@ -128,6 +128,7 @@ const initCarousel = function () {
                 updateIndicator("prev");
             }
         });
+
         next.addEventListener("click", () => {
             if (slideIndex !== listOfItem.length - 1) {
                 marginIndex -= itemWidth + marginBetweenItems;
@@ -183,6 +184,6 @@ initDropdown();
 initCarousel();
 initNavigation();
 
-window.addEventListener('resize', () => {
+window.addEventListener("resize", function () {
     initCarousel();
-});
+}); 
