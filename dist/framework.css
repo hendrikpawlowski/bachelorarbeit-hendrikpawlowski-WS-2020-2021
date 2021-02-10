@@ -760,13 +760,12 @@ html .card {
 }
 
 .carousel-container .indicator-container .indicator {
-  transition: 500ms cubic-bezier(0.5, 1.94, 0.42, 0.74);
   width: 10px;
   height: 10px;
   background: white;
   opacity: 0.7;
   border-radius: 10px;
-  margin-right: 16px;
+  margin-right: 10px;
 }
 
 .carousel-container .indicator-container .indicator.active {
@@ -775,23 +774,37 @@ html .card {
 }
 
 .carousel-container .indicator-container .indicator.active.move-right {
-  transform: translateX(26px);
+  transform: translateX(20px);
+  transition: 300ms ease-in-out;
 }
 
 .carousel-container .indicator-container .indicator.active.move-left {
-  transform: translateX(-26px);
+  transform: translateX(-20px);
+  transition: 300ms ease-in-out;
 }
 
 .carousel-container .indicator-container .indicator:last-child {
   margin-right: 0;
 }
 
-.carousel-container .indicator-container .indicator.move-right {
-  transform: translateX(26px);
+.carousel-container .indicator-container .indicator.not-active.move-right {
+  animation: moveRight 300ms ease-in-out forwards;
 }
 
-.carousel-container .indicator-container .indicator.move-left {
-  animation: moveLeft 400ms ease-in-out forwards;
+@keyframes moveRight {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    margin-bottom: 16px;
+  }
+  100% {
+    transform: translateX(20px);
+  }
+}
+
+.carousel-container .indicator-container .indicator.not-active.move-left {
+  animation: moveLeft 300ms ease-in-out forwards;
 }
 
 @keyframes moveLeft {
@@ -799,10 +812,10 @@ html .card {
     transform: translateX(0);
   }
   50% {
-    margin-bottom: 15px;
+    margin-bottom: 16px;
   }
   100% {
-    transform: translateX(-26px);
+    transform: translateX(-20px);
   }
 }
 

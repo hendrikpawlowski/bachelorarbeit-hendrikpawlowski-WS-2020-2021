@@ -3,7 +3,7 @@
   $max-image-height: $max-item-width / 2;
   $indicator-width: 10px;
   $indicator-height: $indicator-width;
-  $indicator-margin: 16px;
+  $indicator-margin: 10px;
   $dark-background-height: 60px;
 
   position: relative;
@@ -86,7 +86,7 @@
     z-index: 10;
 
     .indicator {
-      transition: 500ms $ease-bounce;
+      // transition: 500ms $ease-anticipation;
       width: $indicator-width;
       height: $indicator-height;
       background: white;
@@ -103,10 +103,12 @@
         &.move-right {
           // margin-left: 100px;
           transform: translateX($indicator-margin + $indicator-width);
+          transition: 300ms ease-in-out;
         }
 
         &.move-left {
           transform: translateX(-1 * ($indicator-margin + $indicator-width));
+          transition: 300ms ease-in-out;
         }
       }
 
@@ -114,21 +116,35 @@
         margin-right: 0;
       }
 
-      &.move-right {
-        transform: translateX($indicator-margin + $indicator-width);
+      &.not-active.move-right {
+        // transform: translateX($indicator-margin + $indicator-width);
+
+        animation: moveRight 300ms ease-in-out forwards;
+
+        @keyframes moveRight {
+          0% {
+            transform: translateX(0);
+          }
+          50% {
+            margin-bottom: 16px;
+          }
+          100% {
+            transform: translateX($indicator-margin + $indicator-width);
+          }
+        }
       }
 
-      &.move-left {
+      &.not-active.move-left {
         // transform: translateX(-1 * ($indicator-margin + $indicator-width))
         //   translateY(-20px);
-        animation: moveLeft 400ms ease-in-out forwards;
+        animation: moveLeft 300ms ease-in-out forwards;
 
         @keyframes moveLeft {
           0% {
             transform: translateX(0);
           }
           50% {
-            margin-bottom: 15px;
+            margin-bottom: 16px;
           }
           100% {
             transform: translateX(-1 * ($indicator-margin + $indicator-width));
