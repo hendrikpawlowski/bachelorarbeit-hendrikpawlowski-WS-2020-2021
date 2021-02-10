@@ -3,6 +3,7 @@
   $max-image-height: $max-item-width / 2;
   $indicator-width: 10px;
   $indicator-height: $indicator-width;
+  $indicator-margin: 16px;
   $dark-background-height: 60px;
 
   position: relative;
@@ -24,7 +25,7 @@
       height: $max-image-height;
       position: relative;
       transition: 400ms;
-      margin-right: 100px;
+      // margin-right: 100px;
 
       &:last-child {
         margin-right: 0;
@@ -80,24 +81,59 @@
     transform: translateX(-50%);
     padding: 0;
     height: 100px;
+    // transition: 1000ms;
+
     z-index: 10;
 
     .indicator {
+      transition: 500ms $ease-bounce;
       width: $indicator-width;
       height: $indicator-height;
       background: white;
       // background: green;
       opacity: 0.7;
       border-radius: 10px;
-      margin-right: 16px;
+      margin-right: $indicator-margin;
 
       &.active {
-        background: $primary;
+        // display: none;
+        background: $accent;
         opacity: 1;
+
+        &.move-right {
+          // margin-left: 100px;
+          transform: translateX($indicator-margin + $indicator-width);
+        }
+
+        &.move-left {
+          transform: translateX(-1 * ($indicator-margin + $indicator-width));
+        }
       }
 
       &:last-child {
         margin-right: 0;
+      }
+
+      &.move-right {
+        transform: translateX($indicator-margin + $indicator-width);
+      }
+
+      &.move-left {
+        // transform: translateX(-1 * ($indicator-margin + $indicator-width))
+        //   translateY(-20px);
+        animation: moveLeft 400ms ease-in-out forwards;
+
+        @keyframes moveLeft {
+          0% {
+            transform: translateX(0);
+          }
+          50% {
+            margin-bottom: 15px;
+          }
+          100% {
+            transform: translateX(-1 * ($indicator-margin + $indicator-width));
+          }
+        }
       }
     }
   }

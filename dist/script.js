@@ -96,18 +96,42 @@ const initCarousel = function () {
         let itemWidth = firstItem.getBoundingClientRect().width;
         let prev = carouselContainer.querySelector("[js-prev]");
         let next = carouselContainer.querySelector("[js-next]");
-        let listOfIndicator = carouselContainer.querySelectorAll("[js-indicator]");
+        let indicatorContainer = carouselContainer.querySelector("[js-indicator-container]");
+        let listOfIndicator = indicatorContainer.querySelectorAll("[js-indicator]");
         // console.log(`margin: ${parseInt(getComputedStyle(firstItem).marginRight)}`);
 
-        const updateIndicator = function () {
 
+        const updateIndicator = function (indicatorIndex) {
+            console.log("updateContainer");
+            console.log(listOfIndicator[0]);
+
+            console.log(slideIndex);
+            if (indicatorIndex === 1) {
+                console.log("indicator next");
+                listOfIndicator[slideIndex - 1].classList.add("move-right");
+                listOfIndicator[slideIndex].classList.add("move-left");
+
+                // indicatorContainer.insertBefore(listOfIndicator[slideIndex - 1], listOfIndicator[slideIndex + 1]);
+
+            }
+            else if (indicatorIndex === -1) {
+                console.log("indicator prev");
+                indicatorContainer.insertBefore(listOfIndicator[slideIndex + 1], listOfIndicator[slideIndex]);
+
+            }
+
+            // Update listOfIndicator
+            listOfIndicator = carouselContainer.querySelectorAll("[js-indicator]");
         }
+
+        updateIndicator();
 
         prev.addEventListener("click", () => {
             if (slideIndex !== 0) {
                 marginIndex += itemWidth + marginBetweenItems;
                 slideIndex -= 1;
                 firstItem.style.marginLeft = marginIndex + "px";
+                updateIndicator(-1, slideIndex);
             }
         });
         next.addEventListener("click", () => {
@@ -115,6 +139,7 @@ const initCarousel = function () {
                 marginIndex -= itemWidth + marginBetweenItems;
                 slideIndex += 1;
                 firstItem.style.marginLeft = marginIndex + "px";
+                updateIndicator(1, slideIndex);
             }
         });
     });
