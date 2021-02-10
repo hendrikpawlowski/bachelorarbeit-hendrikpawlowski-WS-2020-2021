@@ -3,7 +3,7 @@
   $max-image-height: $max-item-width / 2;
   $indicator-width: 10px;
   $indicator-height: $indicator-width;
-  $indicator-margin: 10px;
+  $indicator-margin: 16px;
   $dark-background-height: 80px;
 
   position: relative;
@@ -38,6 +38,7 @@
       }
 
       .text {
+        // transition-delay: 400ms;
         position: absolute;
         top: 50%;
         background: white;
@@ -80,9 +81,7 @@
     left: 50%;
     transform: translateX(-50%);
     padding: 0;
-    height: 100px;
     margin-bottom: 12px;
-    // transition: 1000ms;
 
     z-index: 10;
 
@@ -90,9 +89,9 @@
       // transition: 500ms $ease-anticipation;
       width: $indicator-width;
       height: $indicator-height;
-      background: white;
+      background: $grey-light;
       // background: green;
-      opacity: 0.5;
+      // opacity: 0.5;
       border-radius: 10px;
       margin-right: $indicator-margin;
 
@@ -105,6 +104,7 @@
           // margin-left: 100px;
           transform: translateX($indicator-margin + $indicator-width);
           transition: 300ms ease-in-out;
+          // transition: 300ms $ease-anticipation;
         }
 
         &.move-left {
@@ -165,13 +165,13 @@
       cursor: pointer;
       position: absolute;
       height: 100%;
-      width: 50%;
+      width: 30%;
 
       .icon {
         position: absolute;
         width: 50px;
         top: 50%;
-        opacity: 0.5;
+        opacity: 0.4;
         transition: 100ms;
 
         &:hover {
