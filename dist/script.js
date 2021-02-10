@@ -91,6 +91,7 @@ const initCarousel = function () {
         let slideIndex = 0;
         let listOfItem = carouselContainer.querySelectorAll("[js-item]");
         let firstItem = listOfItem[0];
+        firstItem.style.marginLeft = marginIndex + "px";
         let marginBetweenItems = parseInt(getComputedStyle(firstItem).marginRight);
         let itemWidth = firstItem.getBoundingClientRect().width;
         let prev = carouselContainer.querySelector("[js-prev]");
