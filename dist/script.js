@@ -64,24 +64,6 @@ const initDropdown = function () {
 }
 
 const initCarousel = function () {
-    // let listOfElements = document.querySelectorAll("[js-item]");
-    // console.log(listOfElements);
-
-    // // element.scrollLeft = 0;
-
-    // let next = document.querySelector("[js-next]").addEventListener("click", () => {
-    //     console.log("CLICKED");
-    //     // console.log(listOfElements[0].style.marginLeft);
-    //     let margin = listOfElements[0].getBoundingClientRect();
-    //     console.log(margin);
-    //     let width = listOfElements[0].getBoundingClientRect().width;
-    //     let newMargin = margin + width * -1;
-    //     console.log(newMargin);
-    //     listOfElements[0].style.marginLeft = newMargin + "px";
-
-    //     // console.log(element.scrollLeft);
-
-    // })
 
     let listOfCarouselContainer = document.querySelectorAll("[js-carousel-container]");
 
