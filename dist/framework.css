@@ -154,11 +154,11 @@ html .card {
 }
 
 .switch.prin_5_ft.prin_1 .switch__label:after {
-  animation: disableSwitch_Prin_1_AND_Prin_5_FT ease-in-out 400ms forwards;
+  animation: disableSwitch_Prin_1 ease-in-out 200ms forwards;
 }
 
 .switch.prin_5_ft.prin_1 .switch__input:checked + .switch__label:after {
-  animation: enableSwitch_Prin_1_AND_Prin_5_FT ease-in-out 400ms forwards;
+  animation: enableSwitch_Prin_1 ease-in-out 200ms forwards;
 }
 
 .switch.prin_8 .switch__label:after {
@@ -245,36 +245,6 @@ html .card {
     width: 28px;
     height: 14px;
     top: 6px;
-  }
-  100% {
-    left: 13px;
-  }
-}
-
-@keyframes enableSwitch_Prin_5_FT {
-  0% {
-    left: 13px;
-  }
-  50% {
-    left: 34px;
-  }
-  75% {
-    left: 31px;
-  }
-  100% {
-    left: 32px;
-  }
-}
-
-@keyframes disableSwitch_Prin_5_FT {
-  0% {
-    left: 32px;
-  }
-  50% {
-    left: 11px;
-  }
-  75% {
-    left: 14px;
   }
   100% {
     left: 13px;
