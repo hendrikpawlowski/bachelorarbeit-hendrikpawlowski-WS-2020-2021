@@ -90,7 +90,6 @@ $position-unchecked: $dot-width / 2 + $dot-padding;
   .switch__label {
     &:after {
       animation: disableSwitch_Prin_1 ease-in-out 200ms forwards;
-      // animation-direction: reverse;
     }
   }
 
@@ -106,13 +105,7 @@ $position-unchecked: $dot-width / 2 + $dot-padding;
 .switch.prin_5_ft {
   .switch__label {
     &:after {
-      animation: disableSwitch_Prin_5_FT ease-in-out 300ms forwards;
-    }
-  }
-
-  .switch__input:checked + .switch__label {
-    &:after {
-      animation: enableSwitch_Prin_5_FT ease-in-out 300ms forwards;
+      transition: 300ms $ease-bounce;
     }
   }
 }
