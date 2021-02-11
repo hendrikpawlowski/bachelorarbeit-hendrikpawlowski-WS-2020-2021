@@ -15,7 +15,6 @@
     display: flex;
     overflow: hidden;
     -webkit-overflow-scrolling: touch;
-    transition: 200ms;
     position: relative;
 
     .item {
@@ -24,8 +23,8 @@
       scroll-snap-align: start;
       height: $max-image-height;
       position: relative;
-      transition: 400ms;
-      // margin-right: 100px;
+      transition: margin 400ms;
+      // margin-right: 10px;
 
       &:last-child {
         margin-right: 0;
@@ -117,7 +116,7 @@
         margin-right: 0;
       }
 
-      &.not-active.move-right {
+      &:not(.active).move-right {
         // transform: translateX($indicator-margin + $indicator-width);
 
         animation: moveRight 300ms ease-in-out forwards;
@@ -135,7 +134,7 @@
         }
       }
 
-      &.not-active.move-left {
+      &:not(.active).move-left {
         // transform: translateX(-1 * ($indicator-margin + $indicator-width))
         //   translateY(-20px);
         animation: moveLeft 300ms ease-in-out forwards;
@@ -215,5 +214,68 @@
         }
       }
     }
+  }
+}
+
+// Prinzip 1 Squash and Stretch
+
+.carousel-container.prin_1 {
+  .carousel-inner {
+    .item {
+      .image {
+        transition: 400ms;
+      }
+    }
+  }
+  &.animate {
+    .carousel-inner {
+      .item {
+        .image {
+          // height: 100px;
+          transform: scaleY(0.95);
+          // transition: 200ms;
+        }
+        .text {
+          // animation: slide_Prin_1 ease-in-out 200ms forwards;
+          // transition-delay: 2000ms;
+          // margin-right: 0;
+          // left: 50%;
+        }
+      }
+    }
+  }
+}
+
+// Prinzip 2 Anticipation
+// angewandt auf dem Slider angewandt
+
+.carousel-container {
+  $ease-anticipation-carousel: cubic-bezier(0.69, -0.3, 0.6, 1);
+  .carousel-inner.prin_2 {
+    .item {
+      transition: 350ms $ease-anticipation-carousel;
+    }
+  }
+}
+
+// Prinzip 5 Follow Through
+// angewandt auf dem Slider angewandt
+
+.carousel-container {
+  $ease-bounce-carousel: cubic-bezier(0.52, 1.37, 0.7, 0.99);
+  .carousel-inner.prin_5_ft {
+    .item {
+      transition: 400ms $ease-bounce-carousel;
+    }
+  }
+}
+
+@keyframes slide_Prin_1 {
+  0% {
+  }
+  50% {
+    left: 30%;
+  }
+  100% {
   }
 }

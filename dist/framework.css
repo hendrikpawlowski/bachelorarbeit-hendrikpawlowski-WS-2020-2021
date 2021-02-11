@@ -694,7 +694,6 @@ html .card {
   display: flex;
   overflow: hidden;
   -webkit-overflow-scrolling: touch;
-  transition: 200ms;
   position: relative;
 }
 
@@ -704,7 +703,7 @@ html .card {
   scroll-snap-align: start;
   height: 400px;
   position: relative;
-  transition: 400ms;
+  transition: margin 400ms;
 }
 
 .carousel-container .carousel-inner .item:last-child {
@@ -786,7 +785,7 @@ html .card {
   margin-right: 0;
 }
 
-.carousel-container .indicator-container .indicator.not-active.move-right {
+.carousel-container .indicator-container .indicator:not(.active).move-right {
   animation: moveRight 300ms ease-in-out forwards;
 }
 
@@ -802,7 +801,7 @@ html .card {
   }
 }
 
-.carousel-container .indicator-container .indicator.not-active.move-left {
+.carousel-container .indicator-container .indicator:not(.active).move-left {
   animation: moveLeft 300ms ease-in-out forwards;
 }
 
@@ -872,6 +871,32 @@ html .card {
 
 .carousel-container .carousel-controls .control:active.next .icon {
   transform: translateY(-50%) rotate(-90deg) scale(0.8);
+}
+
+.carousel-container.prin_1 .carousel-inner .item .image {
+  transition: 400ms;
+}
+
+.carousel-container.prin_1.animate .carousel-inner .item .image {
+  transform: scaleY(0.95);
+}
+
+.carousel-container .carousel-inner.prin_2 .item {
+  transition: 350ms cubic-bezier(0.69, -0.3, 0.6, 1);
+}
+
+.carousel-container .carousel-inner.prin_5_ft .item {
+  transition: 400ms cubic-bezier(0.52, 1.37, 0.7, 0.99);
+}
+
+@keyframes slide_Prin_1 {
+  0% {
+  }
+  50% {
+    left: 30%;
+  }
+  100% {
+  }
 }
 
 .nav-container {
