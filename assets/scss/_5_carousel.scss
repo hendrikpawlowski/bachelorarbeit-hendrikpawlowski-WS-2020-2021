@@ -30,10 +30,15 @@
         margin-right: 0;
       }
 
-      .image {
+      .image-container {
         width: 100%;
         height: 100%;
-        object-fit: cover;
+
+        .image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
       }
 
       .text {
@@ -80,7 +85,7 @@
     left: 50%;
     transform: translateX(-50%);
     padding: 0;
-    margin-bottom: 12px;
+    margin-bottom: 18px;
 
     z-index: 10;
 
@@ -219,27 +224,19 @@
 
 // Prinzip 1 Squash and Stretch
 
-.carousel-container.prin_1 {
-  .carousel-inner {
+.carousel-container {
+  .carousel-inner.prin_1 {
     .item {
-      .image {
-        transition: 400ms;
+      .image-container {
+        transition: 300ms;
       }
     }
   }
   &.animate {
-    .carousel-inner {
+    .carousel-inner.prin_1 {
       .item {
-        .image {
-          // height: 100px;
+        .image-container {
           transform: scaleY(0.95);
-          // transition: 200ms;
-        }
-        .text {
-          // animation: slide_Prin_1 ease-in-out 200ms forwards;
-          // transition-delay: 2000ms;
-          // margin-right: 0;
-          // left: 50%;
         }
       }
     }
@@ -250,10 +247,11 @@
 // angewandt auf dem Slider angewandt
 
 .carousel-container {
-  $ease-anticipation-carousel: cubic-bezier(0.69, -0.3, 0.6, 1);
+  // $ease-anticipation-carousel: cubic-bezier(0.69, -0.3, 0.6, 1);
+  $ease-anticipation-carousel: cubic-bezier(0.68, -0.49, 0.36, 1.25);
   .carousel-inner.prin_2 {
     .item {
-      transition: 350ms $ease-anticipation-carousel;
+      transition: 450ms $ease-anticipation-carousel;
     }
   }
 }
