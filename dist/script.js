@@ -100,16 +100,18 @@ const initCarousel = function () {
                 indicatorContainer.insertBefore(listOfIndicator[slideIndex + 1], listOfIndicator[slideIndex]);
                 listOfIndicator = carouselContainer.querySelectorAll("[js-indicator]");
             }
+
+            prev.addEventListener("click", prevPressed);
+            next.addEventListener("click", nextPressed);
         }
+
         listOfIndicator.forEach(indicator => {
             indicator.addEventListener("transitionend", eventHandlerIndicator);
         });
 
-
         const updateIndicator = function (n) {
 
             pressed = n;
-
             if (pressed === "next") {
                 listOfIndicator[slideIndex - 1].classList.add("move-right");
                 listOfIndicator[slideIndex].classList.add("move-left");
@@ -120,23 +122,44 @@ const initCarousel = function () {
             }
         }
 
-        prev.addEventListener("click", () => {
+        const updateSlideIndex = function (n) {
+            slideIndex += n;
+        }
+
+        const prevPressed = function () {
             if (slideIndex !== 0) {
                 marginIndex += itemWidth + marginBetweenItems;
-                slideIndex -= 1;
                 firstItem.style.marginLeft = marginIndex + "px";
+                updateSlideIndex(-1);
                 updateIndicator("prev");
-            }
-        });
 
-        next.addEventListener("click", () => {
+                /**
+                 * Damit keine ungewollten Bugs entstehen, wird der EventHandler der Controls removed, während die Animation ausgeführt wird
+                 * so kann nicht merhmals auf einen Button gedrückt werden
+                 */
+                prev.removeEventListener("click", prevPressed);
+                next.removeEventListener("click", nextPressed);
+            }
+        }
+
+        const nextPressed = function () {
             if (slideIndex !== listOfItem.length - 1) {
                 marginIndex -= itemWidth + marginBetweenItems;
-                slideIndex += 1;
                 firstItem.style.marginLeft = marginIndex + "px";
+                updateSlideIndex(1);
                 updateIndicator("next");
+
+                /**
+                 * Damit keine ungewollten Bugs entstehen, wird der EventHandler der Controls removed, während die Animation ausgeführt wird
+                 * so kann nicht merhmals auf einen Button gedrückt werden
+                 */
+                prev.removeEventListener("click", prevPressed);
+                next.removeEventListener("click", nextPressed);
             }
-        });
+        }
+
+        prev.addEventListener("click", prevPressed);
+        next.addEventListener("click", nextPressed);
     });
 }
 
