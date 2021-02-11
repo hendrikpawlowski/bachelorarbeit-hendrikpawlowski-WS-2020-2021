@@ -101,6 +101,8 @@ const initCarousel = function () {
                 listOfIndicator = carouselContainer.querySelectorAll("[js-indicator]");
             }
 
+            carouselContainer.classList.remove("animate");
+
             prev.addEventListener("click", prevPressed);
             next.addEventListener("click", nextPressed);
         }
@@ -139,6 +141,8 @@ const initCarousel = function () {
                  */
                 prev.removeEventListener("click", prevPressed);
                 next.removeEventListener("click", nextPressed);
+
+                carouselContainer.classList.add("animate");
             }
         }
 
@@ -155,6 +159,8 @@ const initCarousel = function () {
                  */
                 prev.removeEventListener("click", prevPressed);
                 next.removeEventListener("click", nextPressed);
+
+                carouselContainer.classList.add("animate");
             }
         }
 
