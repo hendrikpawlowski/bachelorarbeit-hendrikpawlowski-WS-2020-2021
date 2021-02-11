@@ -24,7 +24,6 @@
       height: $max-image-height;
       position: relative;
       transition: margin 400ms;
-      // margin-right: 10px;
 
       &:last-child {
         margin-right: 0;
@@ -39,10 +38,23 @@
           height: 100%;
           object-fit: cover;
         }
+
+        .dark-background {
+          width: 100%;
+          height: $dark-background-height;
+          position: absolute;
+          display: flex;
+          justify-content: center;
+          bottom: 0;
+          background: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.5) 0%,
+            rgba(0, 0, 0, 0) 100%
+          );
+        }
       }
 
       .text {
-        // transition-delay: 400ms;
         position: absolute;
         top: 50%;
         background: white;
@@ -61,19 +73,6 @@
           padding: 0;
         }
       }
-      .dark-background {
-        width: 100%;
-        height: $dark-background-height;
-        position: absolute;
-        display: flex;
-        justify-content: center;
-        bottom: 0;
-        background: linear-gradient(
-          0deg,
-          rgba(0, 0, 0, 0.5) 0%,
-          rgba(0, 0, 0, 0) 100%
-        );
-      }
     }
   }
 
@@ -90,25 +89,19 @@
     z-index: 10;
 
     .indicator {
-      // transition: 500ms $ease-anticipation;
       width: $indicator-width;
       height: $indicator-height;
       background: $grey-light;
-      // background: green;
-      // opacity: 0.5;
       border-radius: 10px;
       margin-right: $indicator-margin;
 
       &.active {
-        // display: none;
         background: $accent;
         opacity: 1;
 
         &.move-right {
-          // margin-left: 100px;
           transform: translateX($indicator-margin + $indicator-width);
           transition: 300ms ease-in-out;
-          // transition: 300ms $ease-anticipation;
         }
 
         &.move-left {
@@ -122,8 +115,6 @@
       }
 
       &:not(.active).move-right {
-        // transform: translateX($indicator-margin + $indicator-width);
-
         animation: moveRight 300ms ease-in-out forwards;
 
         @keyframes moveRight {
@@ -140,8 +131,6 @@
       }
 
       &:not(.active).move-left {
-        // transform: translateX(-1 * ($indicator-margin + $indicator-width))
-        //   translateY(-20px);
         animation: moveLeft 300ms ease-in-out forwards;
 
         @keyframes moveLeft {

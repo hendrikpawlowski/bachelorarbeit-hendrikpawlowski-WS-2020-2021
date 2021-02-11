@@ -721,6 +721,16 @@ html .card {
   object-fit: cover;
 }
 
+.carousel-container .carousel-inner .item .image-container .dark-background {
+  width: 100%;
+  height: 80px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  bottom: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
 .carousel-container .carousel-inner .item .text {
   position: absolute;
   top: 50%;
@@ -739,16 +749,6 @@ html .card {
 .carousel-container .carousel-inner .item .text .description {
   margin: 0;
   padding: 0;
-}
-
-.carousel-container .carousel-inner .item .dark-background {
-  width: 100%;
-  height: 80px;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  bottom: 0;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
 .carousel-container .indicator-container {
