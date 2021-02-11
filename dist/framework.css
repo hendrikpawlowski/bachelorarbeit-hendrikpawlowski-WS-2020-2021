@@ -149,6 +149,10 @@ html .card {
   animation: enableSwitch_Prin_1 ease-in-out 200ms forwards;
 }
 
+.switch.prin_2 .switch__label:after {
+  transition: 300ms cubic-bezier(0.75, -0.81, 0.21, 1.79);
+}
+
 .switch.prin_5_ft .switch__label:after {
   transition: 300ms cubic-bezier(0.5, 1.94, 0.42, 0.74);
 }

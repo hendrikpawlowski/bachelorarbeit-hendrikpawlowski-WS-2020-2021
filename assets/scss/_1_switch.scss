@@ -100,6 +100,16 @@ $position-unchecked: $dot-width / 2 + $dot-padding;
   }
 }
 
+// Prinzip 2 Anticipation
+
+.switch.prin_2 {
+  .switch__label {
+    &:after {
+      transition: 300ms $ease-anticipation;
+    }
+  }
+}
+
 // Prinzip 5 Follow Through
 
 .switch.prin_5_ft {
