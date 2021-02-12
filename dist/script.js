@@ -79,6 +79,13 @@ const initCarousel = function () {
         firstItem.style.marginLeft = marginIndex + "px";
         let marginBetweenItems = parseInt(getComputedStyle(firstItem).marginRight);
         let itemWidth = firstItem.getBoundingClientRect().width;
+        // let transitionSlide = firstItem.style.transitionDuration;
+        // firstItem.style.transitionDuration = "1s";
+        // console.log("transition " + transitionSlide);
+        // const transitionSlide = getComputedStyle(firstItem).transitionDuration;
+        // console.log(firstItem.style.transitionDuration);
+        // console.log(transitionSlide);
+
 
         // Controls
         let prev = carouselContainer.querySelector("[js-prev]");
@@ -100,8 +107,6 @@ const initCarousel = function () {
                 indicatorContainer.insertBefore(listOfIndicator[slideIndex + 1], listOfIndicator[slideIndex]);
                 listOfIndicator = carouselContainer.querySelectorAll("[js-indicator]");
             }
-
-            carouselContainer.classList.remove("animate");
 
             prev.addEventListener("click", prevPressed);
             next.addEventListener("click", nextPressed);
@@ -164,6 +169,10 @@ const initCarousel = function () {
             }
         }
 
+        firstItem.addEventListener("transitionend", () => {
+            console.log("ended sliding");
+            carouselContainer.classList.remove("animate");
+        });
         prev.addEventListener("click", prevPressed);
         next.addEventListener("click", nextPressed);
     });
