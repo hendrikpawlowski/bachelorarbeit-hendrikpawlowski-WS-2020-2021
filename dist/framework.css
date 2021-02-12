@@ -886,12 +886,18 @@ html .card {
   transform: scaleY(0.97);
 }
 
-.carousel-container .carousel-inner .item .text.prin_1 {
-  transition: 250ms;
+.carousel-container.animate .carousel-inner .item .text.prin_1 {
+  animation: carouselSquashText ease-in-out 400ms forwards;
 }
 
-.carousel-container.animate .carousel-inner .item .text.prin_1 {
-  transform: translate(-50%, -50%) scale(1.15, 0.85);
+@keyframes carouselSquashText {
+  from {
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.15, 0.85);
+  }
+  to {
+  }
 }
 
 .carousel-container .carousel-inner.prin_2 .item {

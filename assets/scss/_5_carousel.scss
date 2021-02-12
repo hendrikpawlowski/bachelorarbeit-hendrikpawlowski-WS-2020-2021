@@ -240,7 +240,7 @@
   .carousel-inner {
     .item {
       .text.prin_1 {
-        transition: 250ms;
+        // transition: 250ms;
       }
     }
   }
@@ -248,8 +248,17 @@
     .carousel-inner {
       .item {
         .text.prin_1 {
-          // background: red;
-          transform: translate(-50%, -50%) scale(1.15, 0.85);
+          animation: carouselSquashText ease-in-out 400ms forwards;
+
+          @keyframes carouselSquashText {
+            from {
+            }
+            50% {
+              transform: translate(-50%, -50%) scale(1.15, 0.85);
+            }
+            to {
+            }
+          }
         }
       }
     }
