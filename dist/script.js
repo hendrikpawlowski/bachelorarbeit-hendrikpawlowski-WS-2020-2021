@@ -148,6 +148,7 @@ const initCarousel = function () {
                 next.removeEventListener("click", nextPressed);
 
                 carouselContainer.classList.add("animate");
+                carouselContainer.classList.add("prev");
             }
         }
 
@@ -166,12 +167,15 @@ const initCarousel = function () {
                 next.removeEventListener("click", nextPressed);
 
                 carouselContainer.classList.add("animate");
+                carouselContainer.classList.add("next");
             }
         }
 
         firstItem.addEventListener("transitionend", () => {
             console.log("ended sliding");
             carouselContainer.classList.remove("animate");
+            carouselContainer.classList.remove("next");
+            carouselContainer.classList.remove("prev");
         });
         prev.addEventListener("click", prevPressed);
         next.addEventListener("click", nextPressed);
