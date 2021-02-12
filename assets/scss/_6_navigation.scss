@@ -1,5 +1,7 @@
 .nav-container {
   display: inline-block;
+  overflow: hidden;
+  padding: 12px;
 
   .nav-toggle {
     margin-bottom: 20px;
@@ -80,11 +82,11 @@
           overflow: hidden;
           font-size: $link-font;
           font-weight: inherit;
-          transition: padding-left 200ms $ease-bounce,
+          transition: padding-left 200ms $ease-bounce-medium,
             background 100ms ease-in-out;
 
           &:hover {
-            transition: padding-left 200ms $ease-bounce,
+            transition: padding-left 200ms $ease-bounce-medium,
               background 100ms ease-in-out;
             background: $grey-extra-light;
             padding-left: 32px;
@@ -98,15 +100,17 @@
   }
 
   .nav {
-    transform: scale(0, 1);
+    // transform: scale(0, 1);
+    transform: translateX(-120%);
     transform-origin: left top;
     transition: transform 150ms ease-in;
   }
 
   &.is-open {
     .nav {
-      transform: scale(1);
-      transition: transform 250ms $ease-bounce;
+      // transform: scale(1);
+      transform: translateX(0%);
+      transition: transform 250ms $ease-bounce-medium;
     }
   }
 }
@@ -115,13 +119,13 @@
 
 .nav-container.prin_1 {
   .nav {
-    transition: 350ms $ease-bounce;
+    transition: 350ms $ease-bounce-medium;
 
     .nav-list {
       .list-item {
         .link {
           &:hover {
-            transition: padding-left 200ms $ease-bounce,
+            transition: padding-left 200ms $ease-bounce-medium,
               background 100ms ease-in-out;
             // transition: background 200ms ease-in-out;
             // animation: bounceListItem 200ms ease-in-out forwards;
