@@ -212,7 +212,7 @@
 }
 
 // Prinzip 1 Squash and Stretch
-// angewendet auf Die Slides
+// angewendet auf die Slides
 
 .carousel-container {
   .carousel-inner.prin_1 {
@@ -237,13 +237,6 @@
 // angewendet auf den Text
 
 .carousel-container {
-  .carousel-inner {
-    .item {
-      .text.prin_1 {
-        // transition: 250ms;
-      }
-    }
-  }
   &.animate {
     .carousel-inner {
       .item {
@@ -266,7 +259,7 @@
 }
 
 // Prinzip 2 Anticipation
-// angewendet auf den Slider
+// angewendet auf den Slides
 
 .carousel-container {
   // $ease-anticipation-carousel: cubic-bezier(0.69, -0.3, 0.6, 1);
@@ -279,7 +272,7 @@
 }
 
 // Prinzip 5 Follow Through
-// angewendet auf dem Slider
+// angewendet auf die Slides
 
 .carousel-container {
   $ease-bounce-carousel: cubic-bezier(0.52, 1.37, 0.7, 0.99);
@@ -290,12 +283,50 @@
   }
 }
 
-@keyframes slide_Prin_1 {
-  0% {
-  }
-  50% {
-    left: 30%;
-  }
-  100% {
+// Prinzip 5 Follow Through
+// angewendet auf dem Slider
+
+.carousel-container {
+  &.animate {
+    // Wenn der Prev Button gedrückt wird, wird der Text leicht nach rechts verschoben, damit zwischen Text und Slide ein Parallax Effekt entsteht
+    &.prev {
+      .carousel-inner {
+        .item {
+          .text.prin_5_ft {
+            animation: carouselFollowThroughTextPrev ease-out 400ms forwards;
+
+            @keyframes carouselFollowThroughTextPrev {
+              0% {
+              }
+              50% {
+                transform: translate(-80%, -50%);
+              }
+              100% {
+              }
+            }
+          }
+        }
+      }
+    }
+    // Wenn der Next Button gedrückt wird, wird der Text leicht nach links verschoben, damit zwischen Text und Slide ein Parallax Effekt entsteht
+    &.next {
+      .carousel-inner {
+        .item {
+          .text.prin_5_ft {
+            animation: carouselFollowThroughTextNext ease-out 400ms forwards;
+
+            @keyframes carouselFollowThroughTextNext {
+              0% {
+              }
+              50% {
+                transform: translate(-20%, -50%);
+              }
+              100% {
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }

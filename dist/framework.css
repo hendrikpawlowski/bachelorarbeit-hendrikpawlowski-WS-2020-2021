@@ -908,11 +908,29 @@ html .card {
   transition: 400ms cubic-bezier(0.52, 1.37, 0.7, 0.99);
 }
 
-@keyframes slide_Prin_1 {
+.carousel-container.animate.prev .carousel-inner .item .text.prin_5_ft {
+  animation: carouselFollowThroughTextPrev ease-out 400ms forwards;
+}
+
+@keyframes carouselFollowThroughTextPrev {
   0% {
   }
   50% {
-    left: 30%;
+    transform: translate(-80%, -50%);
+  }
+  100% {
+  }
+}
+
+.carousel-container.animate.next .carousel-inner .item .text.prin_5_ft {
+  animation: carouselFollowThroughTextNext ease-out 400ms forwards;
+}
+
+@keyframes carouselFollowThroughTextNext {
+  0% {
+  }
+  50% {
+    transform: translate(-20%, -50%);
   }
   100% {
   }
