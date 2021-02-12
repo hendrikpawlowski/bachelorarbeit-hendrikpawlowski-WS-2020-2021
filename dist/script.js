@@ -190,13 +190,11 @@ const initNavigation = function () {
 
         // handle CSS classes
         const close = function (element) {
-            element.classList.remove("open");
-            element.classList.add("close");
+            element.classList.remove("is-open");
         }
 
         const open = function (element) {
-            element.classList.remove("close");
-            element.classList.add("open");
+            element.classList.add("is-open");
         }
 
         document.addEventListener("click", function () {
@@ -211,10 +209,10 @@ const initNavigation = function () {
         navToggle.addEventListener("click", function () {
 
             // Hier wird geschaut, ob die Navigation offen oder geschlossen ist
-            if (navContainer.classList.contains("close")) {
-                open(navContainer);
-            } else if (navContainer.classList.contains("open")) {
+            if (navContainer.classList.contains("is-open")) {
                 close(navContainer);
+            } else {
+                open(navContainer);
             }
         });
     });
