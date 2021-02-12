@@ -75,18 +75,19 @@
       .list-item {
         .link {
           width: 100%;
-          padding: 12px 24px;
+          padding: 12px;
           display: block;
           overflow: hidden;
           font-size: $link-font;
-          // transition: 200ms;
           font-weight: inherit;
           transition: padding-left 200ms $ease-bounce,
             background 100ms ease-in-out;
 
           &:hover {
+            transition: padding-left 200ms $ease-bounce,
+              background 100ms ease-in-out;
             background: $grey-extra-light;
-            transition: 200ms;
+            padding-left: 32px;
           }
         }
       }
@@ -97,13 +98,15 @@
   }
 
   .nav {
-    transform: scale(0, 0.3);
+    transform: scale(0, 1);
     transform-origin: left top;
-    transition: 200ms ease-in;
+    transition: transform 150ms ease-in;
+  }
 
-    .nav-list {
-      .list-item {
-      }
+  &.is-open {
+    .nav {
+      transform: scale(1);
+      transition: transform 250ms $ease-bounce;
     }
   }
 }

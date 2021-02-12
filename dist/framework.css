@@ -992,7 +992,7 @@ html .card {
 
 .nav-container .nav .nav-list .list-item .link {
   width: 100%;
-  padding: 12px 24px;
+  padding: 12px;
   display: block;
   overflow: hidden;
   font-size: 20px;
@@ -1001,8 +1001,9 @@ html .card {
 }
 
 .nav-container .nav .nav-list .list-item .link:hover {
+  transition: padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74), background 100ms ease-in-out;
   background: #f5f5f5;
-  transition: 200ms;
+  padding-left: 32px;
 }
 
 .nav-container .nav .nav-list:last-child {
@@ -1010,9 +1011,14 @@ html .card {
 }
 
 .nav-container .nav {
-  transform: scale(0, 0.3);
+  transform: scale(0, 1);
   transform-origin: left top;
-  transition: 200ms ease-in;
+  transition: transform 150ms ease-in;
+}
+
+.nav-container.is-open .nav {
+  transform: scale(1);
+  transition: transform 250ms cubic-bezier(0.5, 1.94, 0.42, 0.74);
 }
 
 .nav-container.prin_1 .nav {
