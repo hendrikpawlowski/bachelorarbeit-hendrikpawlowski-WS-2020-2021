@@ -73,7 +73,6 @@
     border: 2px solid #ccc;
     border-left: none;
     width: 200px;
-    transition: 200ms ease-out;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -113,7 +112,7 @@
     // transform: scale(0, 1);
     transform: translateX(-120%);
     transform-origin: left top;
-    transition: transform 150ms ease-in;
+    transition: transform 200ms ease-in;
   }
 
   &.is-open {
@@ -125,12 +124,14 @@
   }
 }
 
-// Prinzip 5 Follow Through auf die Nav
+// Prinzip 5 Follow Through auf die gesamte Nav
 
 .nav-container {
-  .nav {
-    &.prin_5_ft {
-      transition: 350ms $ease-bounce-medium;
+  &.is-open {
+    .nav {
+      &.prin_5_ft {
+        transition: transform 350ms $ease-bounce-medium;
+      }
     }
   }
 }
@@ -139,14 +140,14 @@
 
 .nav-container {
   .nav {
-    transition: 350ms ease-in-out;
+    // transition: 3500ms ease-in-out;
 
     .nav-list {
       .list-item {
         .link {
           &.prin_5_ft {
             margin-left: -50px;
-            transition: margin-left 200ms ease-in,
+            transition: margin-left 200ms ease-in-out,
               padding-left 200ms $ease-bounce-medium,
               background 100ms ease-in-out;
           }
