@@ -137,14 +137,42 @@
 
 // Prinzip 5 Follow Through auf die einzelnen Links in der Nav
 
-.nav-container.prin_5_ft {
+.nav-container {
   .nav {
-    transition: 350ms $ease-bounce-medium;
+    transition: 350ms ease-in-out;
 
     .nav-list {
       .list-item {
         .link {
-          padding-left: 50px;
+          &.prin_5_ft {
+            margin-left: -50px;
+            transition: margin-left 200ms ease-in,
+              padding-left 200ms $ease-bounce-medium,
+              background 100ms ease-in-out;
+          }
+        }
+      }
+    }
+  }
+
+  &.is-open {
+    .nav {
+      .nav-list {
+        $n: 10;
+        @for $i from 1 through $n {
+          .list-item:nth-child(#{$i}) {
+            .link {
+              margin-left: 0px;
+              transition: margin-left
+                  200ms
+                  $ease-bounce-medium
+                  $i *
+                  30ms +
+                  100ms,
+                padding-left 200ms $ease-bounce-medium,
+                background 100ms ease-in-out;
+            }
+          }
         }
       }
     }

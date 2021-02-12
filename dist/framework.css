@@ -615,52 +615,52 @@ html .card {
 
 .dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(1) .link {
   margin-left: 0px;
-  transition: margin-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74) 70ms, padding-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74), background 100ms ease-in-out;
+  transition: margin-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74) 130ms, padding-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74), background 100ms ease-in-out;
 }
 
 .dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(2) .link {
   margin-left: 0px;
-  transition: margin-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74) 100ms, padding-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74), background 100ms ease-in-out;
+  transition: margin-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74) 160ms, padding-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74), background 100ms ease-in-out;
 }
 
 .dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(3) .link {
   margin-left: 0px;
-  transition: margin-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74) 130ms, padding-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74), background 100ms ease-in-out;
+  transition: margin-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74) 190ms, padding-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74), background 100ms ease-in-out;
 }
 
 .dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(4) .link {
   margin-left: 0px;
-  transition: margin-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74) 160ms, padding-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74), background 100ms ease-in-out;
+  transition: margin-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74) 220ms, padding-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74), background 100ms ease-in-out;
 }
 
 .dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(5) .link {
   margin-left: 0px;
-  transition: margin-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74) 190ms, padding-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74), background 100ms ease-in-out;
+  transition: margin-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74) 250ms, padding-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74), background 100ms ease-in-out;
 }
 
 .dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(6) .link {
   margin-left: 0px;
-  transition: margin-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74) 220ms, padding-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74), background 100ms ease-in-out;
+  transition: margin-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74) 280ms, padding-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74), background 100ms ease-in-out;
 }
 
 .dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(7) .link {
   margin-left: 0px;
-  transition: margin-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74) 250ms, padding-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74), background 100ms ease-in-out;
+  transition: margin-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74) 310ms, padding-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74), background 100ms ease-in-out;
 }
 
 .dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(8) .link {
   margin-left: 0px;
-  transition: margin-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74) 280ms, padding-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74), background 100ms ease-in-out;
+  transition: margin-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74) 340ms, padding-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74), background 100ms ease-in-out;
 }
 
 .dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(9) .link {
   margin-left: 0px;
-  transition: margin-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74) 310ms, padding-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74), background 100ms ease-in-out;
+  transition: margin-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74) 370ms, padding-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74), background 100ms ease-in-out;
 }
 
 .dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(10) .link {
   margin-left: 0px;
-  transition: margin-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74) 340ms, padding-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74), background 100ms ease-in-out;
+  transition: margin-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74) 400ms, padding-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74), background 100ms ease-in-out;
 }
 
 .carousel-container {
@@ -1034,10 +1034,61 @@ html .card {
   transition: 350ms cubic-bezier(0.5, 1.7, 0.42, 0.74);
 }
 
-.nav-container.prin_5_ft .nav {
-  transition: 350ms cubic-bezier(0.5, 1.7, 0.42, 0.74);
+.nav-container .nav {
+  transition: 350ms ease-in-out;
 }
 
-.nav-container.prin_5_ft .nav .nav-list .list-item .link {
-  padding-left: 50px;
+.nav-container .nav .nav-list .list-item .link.prin_5_ft {
+  margin-left: -50px;
+  transition: margin-left 200ms ease-in, padding-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74), background 100ms ease-in-out;
+}
+
+.nav-container.is-open .nav .nav-list .list-item:nth-child(1) .link {
+  margin-left: 0px;
+  transition: margin-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74) 130ms, padding-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74), background 100ms ease-in-out;
+}
+
+.nav-container.is-open .nav .nav-list .list-item:nth-child(2) .link {
+  margin-left: 0px;
+  transition: margin-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74) 160ms, padding-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74), background 100ms ease-in-out;
+}
+
+.nav-container.is-open .nav .nav-list .list-item:nth-child(3) .link {
+  margin-left: 0px;
+  transition: margin-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74) 190ms, padding-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74), background 100ms ease-in-out;
+}
+
+.nav-container.is-open .nav .nav-list .list-item:nth-child(4) .link {
+  margin-left: 0px;
+  transition: margin-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74) 220ms, padding-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74), background 100ms ease-in-out;
+}
+
+.nav-container.is-open .nav .nav-list .list-item:nth-child(5) .link {
+  margin-left: 0px;
+  transition: margin-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74) 250ms, padding-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74), background 100ms ease-in-out;
+}
+
+.nav-container.is-open .nav .nav-list .list-item:nth-child(6) .link {
+  margin-left: 0px;
+  transition: margin-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74) 280ms, padding-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74), background 100ms ease-in-out;
+}
+
+.nav-container.is-open .nav .nav-list .list-item:nth-child(7) .link {
+  margin-left: 0px;
+  transition: margin-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74) 310ms, padding-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74), background 100ms ease-in-out;
+}
+
+.nav-container.is-open .nav .nav-list .list-item:nth-child(8) .link {
+  margin-left: 0px;
+  transition: margin-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74) 340ms, padding-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74), background 100ms ease-in-out;
+}
+
+.nav-container.is-open .nav .nav-list .list-item:nth-child(9) .link {
+  margin-left: 0px;
+  transition: margin-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74) 370ms, padding-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74), background 100ms ease-in-out;
+}
+
+.nav-container.is-open .nav .nav-list .list-item:nth-child(10) .link {
+  margin-left: 0px;
+  transition: margin-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74) 400ms, padding-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74), background 100ms ease-in-out;
 }
