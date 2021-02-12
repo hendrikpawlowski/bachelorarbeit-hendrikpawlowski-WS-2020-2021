@@ -31,12 +31,11 @@
     .list-item {
       .link {
         width: 100%;
-        padding: 12px 24px;
-        padding-left: 48px;
+        padding: 12px;
+        // padding-left: 48px;
         display: block;
         overflow: hidden;
         font-size: $link-font;
-        // transition: 200ms;
         font-weight: inherit;
         transition: padding-left 200ms $ease-bounce,
           background 100ms ease-in-out;
@@ -61,8 +60,6 @@
 
       .list-item {
         .link {
-          padding-left: 12px;
-
           &:hover {
             background: $grey-extra-light;
             padding-left: 32px;
@@ -121,6 +118,18 @@
 
 // Die einzelnen Listenelemente werden mit einem Offset von rechts nach links animiert
 .dropdown-container {
+  .dropdown-list {
+    &.prin_5_ft {
+      .list-item {
+        .link {
+          margin-left: 60px;
+          transition: margin-left 200ms, padding-left 200ms $ease-bounce,
+            background 100ms ease-in-out;
+        }
+      }
+    }
+  }
+
   &.is-open {
     .dropdown-list {
       &.prin_5_ft {
@@ -128,7 +137,9 @@
         @for $i from 1 through $n {
           .list-item:nth-child(#{$i}) {
             .link {
-              transition: padding-left 200ms $ease-bounce $i * 30ms + 40ms;
+              margin-left: 0px;
+              transition: margin-left 200ms $ease-bounce $i * 30ms + 40ms,
+                padding-left 200ms $ease-bounce, background 100ms ease-in-out;
             }
           }
         }
