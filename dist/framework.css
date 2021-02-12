@@ -563,19 +563,12 @@ html .card {
 
 .dropdown-container .dropdown-list .list-item .link {
   width: 100%;
-  padding: 12px 24px;
-  padding-left: 48px;
+  padding: 12px;
   display: block;
   overflow: hidden;
   font-size: 20px;
   font-weight: inherit;
   transition: padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74), background 100ms ease-in-out;
-}
-
-.dropdown-container .dropdown-list .list-item .link:hover {
-  background: #f5f5f5;
-  padding-left: 32px;
-  transition: 200ms;
 }
 
 .dropdown-container .dropdown-list .list-item:last-child {
@@ -592,8 +585,10 @@ html .card {
   transition: 150ms ease-in-out;
 }
 
-.dropdown-container.is-open .dropdown-list .list-item .link {
-  padding-left: 12px;
+.dropdown-container.is-open .dropdown-list .list-item .link:hover {
+  background: #f5f5f5;
+  padding-left: 32px;
+  transition: padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74), background 100ms ease-in-out;
 }
 
 .dropdown-container .button .button-icon.prin_5_ft {
@@ -613,44 +608,59 @@ html .card {
   transition: padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74), background 100ms ease-in-out;
 }
 
+.dropdown-container .dropdown-list.prin_5_ft .list-item .link {
+  margin-left: 32px;
+  transition: margin-left 200ms, padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74), background 100ms ease-in-out;
+}
+
 .dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(1) .link {
-  transition: padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 70ms;
+  margin-left: 0px;
+  transition: margin-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 70ms, padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74), background 100ms ease-in-out;
 }
 
 .dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(2) .link {
-  transition: padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 100ms;
+  margin-left: 0px;
+  transition: margin-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 100ms, padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74), background 100ms ease-in-out;
 }
 
 .dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(3) .link {
-  transition: padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 130ms;
+  margin-left: 0px;
+  transition: margin-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 130ms, padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74), background 100ms ease-in-out;
 }
 
 .dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(4) .link {
-  transition: padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 160ms;
+  margin-left: 0px;
+  transition: margin-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 160ms, padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74), background 100ms ease-in-out;
 }
 
 .dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(5) .link {
-  transition: padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 190ms;
+  margin-left: 0px;
+  transition: margin-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 190ms, padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74), background 100ms ease-in-out;
 }
 
 .dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(6) .link {
-  transition: padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 220ms;
+  margin-left: 0px;
+  transition: margin-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 220ms, padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74), background 100ms ease-in-out;
 }
 
 .dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(7) .link {
-  transition: padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 250ms;
+  margin-left: 0px;
+  transition: margin-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 250ms, padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74), background 100ms ease-in-out;
 }
 
 .dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(8) .link {
-  transition: padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 280ms;
+  margin-left: 0px;
+  transition: margin-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 280ms, padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74), background 100ms ease-in-out;
 }
 
 .dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(9) .link {
-  transition: padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 310ms;
+  margin-left: 0px;
+  transition: margin-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 310ms, padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74), background 100ms ease-in-out;
 }
 
 .dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(10) .link {
-  transition: padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 340ms;
+  margin-left: 0px;
+  transition: margin-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 340ms, padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74), background 100ms ease-in-out;
 }
 
 .carousel-container {
