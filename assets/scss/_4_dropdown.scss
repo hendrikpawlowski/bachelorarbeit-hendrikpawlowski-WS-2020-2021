@@ -37,7 +37,7 @@
         overflow: hidden;
         font-size: $link-font;
         font-weight: inherit;
-        transition: padding-left 200ms $ease-bounce,
+        transition: padding-left 200ms $ease-bounce-medium,
           background 100ms ease-in-out;
       }
       &:last-child {
@@ -63,7 +63,7 @@
           &:hover {
             background: $grey-extra-light;
             padding-left: 32px;
-            transition: padding-left 200ms $ease-bounce,
+            transition: padding-left 200ms $ease-bounce-medium,
               background 100ms ease-in-out;
           }
         }
@@ -79,7 +79,7 @@
   .button {
     .button-icon {
       &.prin_5_ft {
-        transition: transform 300ms $ease-bounce;
+        transition: transform 300ms $ease-bounce-medium;
       }
     }
   }
@@ -89,7 +89,7 @@
       .button-icon {
         &.prin_5_ft {
           transform: rotate(180deg);
-          transition: transform 300ms $ease-bounce;
+          transition: transform 300ms $ease-bounce-medium;
         }
       }
     }
@@ -101,12 +101,12 @@
   &.prin_5_ft {
     &.is-open {
       .dropdown-list {
-        transition: 250ms $ease-bounce;
+        transition: 250ms $ease-bounce-medium;
 
         .list-item {
           .link {
             &:hover {
-              transition: padding-left 200ms $ease-bounce,
+              transition: padding-left 200ms $ease-bounce-medium,
                 background 100ms ease-in-out;
             }
           }
@@ -123,7 +123,7 @@
       .list-item {
         .link {
           margin-left: 32px;
-          transition: margin-left 200ms, padding-left 200ms $ease-bounce,
+          transition: margin-left 200ms, padding-left 200ms $ease-bounce-medium,
             background 100ms ease-in-out;
         }
       }
@@ -138,8 +138,9 @@
           .list-item:nth-child(#{$i}) {
             .link {
               margin-left: 0px;
-              transition: margin-left 200ms $ease-bounce $i * 30ms + 40ms,
-                padding-left 200ms $ease-bounce, background 100ms ease-in-out;
+              transition: margin-left 200ms $ease-bounce-medium $i * 30ms + 40ms,
+                padding-left 200ms $ease-bounce-medium,
+                background 100ms ease-in-out;
             }
           }
         }
