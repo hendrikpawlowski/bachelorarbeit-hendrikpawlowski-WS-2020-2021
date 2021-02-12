@@ -90,7 +90,6 @@ $position-unchecked: $dot-width / 2 + $dot-padding;
   .switch__label {
     &:after {
       animation: disableSwitch_Prin_1 ease-in-out 200ms forwards;
-      // animation-direction: reverse;
     }
   }
 
@@ -101,18 +100,22 @@ $position-unchecked: $dot-width / 2 + $dot-padding;
   }
 }
 
+// Prinzip 2 Anticipation
+
+.switch.prin_2 {
+  .switch__label {
+    &:after {
+      transition: 300ms $ease-anticipation;
+    }
+  }
+}
+
 // Prinzip 5 Follow Through
 
 .switch.prin_5_ft {
   .switch__label {
     &:after {
-      animation: disableSwitch_Prin_5_FT ease-in-out 300ms forwards;
-    }
-  }
-
-  .switch__input:checked + .switch__label {
-    &:after {
-      animation: enableSwitch_Prin_5_FT ease-in-out 300ms forwards;
+      transition: 300ms $ease-bounce;
     }
   }
 }
@@ -123,12 +126,14 @@ $position-unchecked: $dot-width / 2 + $dot-padding;
   .switch__label {
     &:after {
       animation: disableSwitch_Prin_1_AND_Prin_5_FT ease-in-out 400ms forwards;
+      // animation: disableSwitch_Prin_1 ease-in-out 200ms forwards;
     }
   }
 
   .switch__input:checked + .switch__label {
     &:after {
       animation: enableSwitch_Prin_1_AND_Prin_5_FT ease-in-out 400ms forwards;
+      // animation: enableSwitch_Prin_1 ease-in-out 200ms forwards;
     }
   }
 }
@@ -226,40 +231,6 @@ $position-unchecked: $dot-width / 2 + $dot-padding;
     width: $dot-width + 8px;
     height: $dot-height - 6px;
     top: $dot-padding + 3px;
-  }
-  100% {
-    left: $position-unchecked;
-  }
-}
-
-@keyframes enableSwitch_Prin_5_FT {
-  0% {
-    left: $position-unchecked;
-  }
-  50% {
-    // Der Punkt bewegt sich ein Stück rechts über das Ziel hinaus
-    left: $position-checked + 2px;
-  }
-  75% {
-    // Der Punkt bewegt sich ein Stück links über das Ziel hinaus
-    left: $position-checked - 1px;
-  }
-  100% {
-    left: $position-checked;
-  }
-}
-
-@keyframes disableSwitch_Prin_5_FT {
-  0% {
-    left: $position-checked;
-  }
-  50% {
-    // Der Punkt bewegt sich ein Stück links über das Ziel hinaus
-    left: $position-unchecked - 2px;
-  }
-  75% {
-    // Der Punkt bewegt sich ein Stück rechts über das Ziel hinaus
-    left: $position-unchecked + 1px;
   }
   100% {
     left: $position-unchecked;

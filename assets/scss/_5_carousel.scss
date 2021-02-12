@@ -1,0 +1,332 @@
+.carousel-container {
+  $max-item-width: 800px;
+  $max-image-height: $max-item-width / 2;
+  $indicator-width: 10px;
+  $indicator-height: $indicator-width;
+  $indicator-margin: 16px;
+  $dark-background-height: 80px;
+
+  position: relative;
+  width: 100%;
+  max-width: $max-item-width;
+  height: auto;
+
+  .carousel-inner {
+    display: flex;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+
+    .item {
+      width: 100%;
+      flex-shrink: 0;
+      scroll-snap-align: start;
+      height: $max-image-height;
+      position: relative;
+      transition: margin 400ms;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      .image-container {
+        width: 100%;
+        height: 100%;
+
+        .image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .dark-background {
+          width: 100%;
+          height: $dark-background-height;
+          position: absolute;
+          display: flex;
+          justify-content: center;
+          bottom: 0;
+          background: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.5) 0%,
+            rgba(0, 0, 0, 0) 100%
+          );
+        }
+      }
+
+      .text {
+        position: absolute;
+        top: 50%;
+        background: white;
+        padding: 16px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 5px;
+
+        .headline {
+          margin: 0;
+          padding: 0;
+        }
+
+        .description {
+          margin: 0;
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  .indicator-container {
+    display: flex;
+    align-items: flex-end;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0;
+    margin-bottom: 18px;
+
+    z-index: 10;
+
+    .indicator {
+      width: $indicator-width;
+      height: $indicator-height;
+      background: $grey-light;
+      border-radius: 10px;
+      margin-right: $indicator-margin;
+
+      &.active {
+        background: $accent;
+        opacity: 1;
+
+        &.move-right {
+          transform: translateX($indicator-margin + $indicator-width);
+          transition: 300ms ease-in-out;
+        }
+
+        &.move-left {
+          transform: translateX(-1 * ($indicator-margin + $indicator-width));
+          transition: 300ms ease-in-out;
+        }
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:not(.active).move-right {
+        animation: moveRight 300ms ease-in-out forwards;
+
+        @keyframes moveRight {
+          0% {
+            transform: translateX(0);
+          }
+          50% {
+            margin-bottom: 16px;
+          }
+          100% {
+            transform: translateX($indicator-margin + $indicator-width);
+          }
+        }
+      }
+
+      &:not(.active).move-left {
+        animation: moveLeft 300ms ease-in-out forwards;
+
+        @keyframes moveLeft {
+          0% {
+            transform: translateX(0);
+          }
+          50% {
+            margin-bottom: 16px;
+          }
+          100% {
+            transform: translateX(-1 * ($indicator-margin + $indicator-width));
+          }
+        }
+      }
+    }
+  }
+
+  .carousel-controls {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+
+    .control {
+      cursor: pointer;
+      position: absolute;
+      height: 100%;
+      width: 30%;
+
+      .icon {
+        position: absolute;
+        width: 50px;
+        top: 50%;
+        opacity: 0.4;
+        transition: 100ms;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      &.prev {
+        left: 0;
+        .icon {
+          transform: translateY(-50%) rotate(90deg);
+          left: 0;
+        }
+      }
+
+      &.next {
+        right: 0;
+        .icon {
+          transform: translateY(-50%) rotate(-90deg);
+          right: 0;
+        }
+      }
+
+      &:hover {
+        .icon {
+          opacity: 1;
+        }
+      }
+
+      &:active {
+        &.prev {
+          .icon {
+            transform: translateY(-50%) rotate(90deg) scale(0.8);
+          }
+        }
+
+        &.next {
+          .icon {
+            transform: translateY(-50%) rotate(-90deg) scale(0.8);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Prinzip 1 Squash and Stretch
+// angewendet auf die Slides
+
+.carousel-container {
+  .carousel-inner.prin_1 {
+    .item {
+      .image-container {
+        transition: 300ms;
+      }
+    }
+  }
+  &.animate {
+    .carousel-inner.prin_1 {
+      .item {
+        .image-container {
+          transform: scaleY(0.97);
+        }
+      }
+    }
+  }
+}
+
+// Prinzip 1 Squash and Stretch
+// angewendet auf den Text
+
+.carousel-container {
+  &.animate {
+    .carousel-inner {
+      .item {
+        .text.prin_1 {
+          animation: carouselSquashText ease-in-out 400ms forwards;
+
+          @keyframes carouselSquashText {
+            from {
+            }
+            50% {
+              transform: translate(-50%, -50%) scale(1.15, 0.85);
+            }
+            to {
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Prinzip 2 Anticipation
+// angewendet auf den Slides
+
+.carousel-container {
+  // $ease-anticipation-carousel: cubic-bezier(0.69, -0.3, 0.6, 1);
+  $ease-anticipation-carousel: cubic-bezier(0.68, -0.49, 0.36, 1.25);
+  .carousel-inner.prin_2 {
+    .item {
+      transition: 450ms $ease-anticipation-carousel;
+    }
+  }
+}
+
+// Prinzip 5 Follow Through
+// angewendet auf die Slides
+
+.carousel-container {
+  $ease-bounce-carousel: cubic-bezier(0.52, 1.37, 0.7, 0.99);
+  .carousel-inner.prin_5_ft {
+    .item {
+      transition: 400ms $ease-bounce-carousel;
+    }
+  }
+}
+
+// Prinzip 5 Follow Through
+// angewendet auf dem Slider
+
+.carousel-container {
+  &.animate {
+    // Wenn der Prev Button gedrückt wird, wird der Text leicht nach rechts verschoben, damit zwischen Text und Slide ein Parallax Effekt entsteht
+    &.prev {
+      .carousel-inner {
+        .item {
+          .text.prin_5_ft {
+            animation: carouselFollowThroughTextPrev ease-out 400ms forwards;
+
+            @keyframes carouselFollowThroughTextPrev {
+              0% {
+              }
+              50% {
+                transform: translate(-80%, -50%);
+              }
+              100% {
+              }
+            }
+          }
+        }
+      }
+    }
+    // Wenn der Next Button gedrückt wird, wird der Text leicht nach links verschoben, damit zwischen Text und Slide ein Parallax Effekt entsteht
+    &.next {
+      .carousel-inner {
+        .item {
+          .text.prin_5_ft {
+            animation: carouselFollowThroughTextNext ease-out 400ms forwards;
+
+            @keyframes carouselFollowThroughTextNext {
+              0% {
+              }
+              50% {
+                transform: translate(-20%, -50%);
+              }
+              100% {
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

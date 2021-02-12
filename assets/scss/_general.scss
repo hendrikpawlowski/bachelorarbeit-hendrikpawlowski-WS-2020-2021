@@ -8,6 +8,7 @@ $primary-light: #dca2f7;
 $primary-test: #9313ce;
 $primary-shadow: #e7c4f7;
 $primary-extra-light: #fbf2ff;
+$accent: #fd60a1;
 $grey-light: #cecece;
 $grey-extra-light: #f5f5f5;
 $text-color: #3b3b3b;
@@ -24,19 +25,22 @@ $xxl-font: $xl-font * 1.618;
 $xxl-line-height: $xxl-font * 1.618;
 $card-font: $m-font * 1.25;
 $card-line-height: $card-font * 1.618;
-$button-font: 24px;
+$button-font: 20px;
 $link-font: 20px;
 
 $default-shadow: 0px 0px 2px #ccc, 0px 1px 2px #ccc;
 $default-shadow-hover: 0px 0px 4px #ccc, 0px 4px 4px #ccc;
+$default-shadow-hover-dark: 0px 0px 4px #000, 0px 4px 4px #000;
 $default-shadow-pressed: none;
 $default-shadow-primary: 0px 0px 2px $primary-shadow,
   0px 1px 2px $primary-shadow;
 $default-shadow-primary-hover: 0px 0px 4px $primary-shadow,
   0px 4px 8px $primary-shadow;
 
-// $ease-bounce: cubic-bezier(0.61, 1.71, 0.57, 0.78);
-$ease-bounce: cubic-bezier(0.4, 1.69, 0.52, 0.9);
+$ease-bounce: cubic-bezier(0.5, 1.94, 0.42, 0.74);
+// $ease-anticipation: cubic-bezier(0.4, -0.6, 0.5, 1.6);
+$ease-anticipation: cubic-bezier(0.75, -0.81, 0.21, 1.79);
+$ease-card-bounce: cubic-bezier(0.51, 1.79, 0.56, 0.75);
 
 // General Layout
 
@@ -46,7 +50,8 @@ $ease-bounce: cubic-bezier(0.4, 1.69, 0.52, 0.9);
   box-sizing: border-box;
 }
 
-ul {
+ul,
+ol {
   list-style: none;
 }
 
@@ -75,7 +80,15 @@ html {
   }
   h4 {
     font-size: $m-font;
-    line-height: $l-line-height;
+    line-height: $m-line-height;
+  }
+  h5 {
+    font-size: $m-font;
+    line-height: $m-line-height;
+  }
+  p {
+    font-size: $m-font;
+    line-height: $m-line-height;
   }
 
   button {
@@ -92,7 +105,7 @@ html {
     position: relative;
     padding: 12px 32px;
     border: none;
-    display: block;
+    display: flex;
     outline: none;
     border-radius: 5px;
     background: $primary;

@@ -5,7 +5,8 @@
   box-sizing: border-box;
 }
 
-ul {
+ul,
+ol {
   list-style: none;
 }
 
@@ -35,7 +36,17 @@ html h3 {
 
 html h4 {
   font-size: 1rem;
-  line-height: 2.61792rem;
+  line-height: 1.618rem;
+}
+
+html h5 {
+  font-size: 1rem;
+  line-height: 1.618rem;
+}
+
+html p {
+  font-size: 1rem;
+  line-height: 1.618rem;
 }
 
 html button {
@@ -47,12 +58,12 @@ html button {
 }
 
 html .button {
-  font-size: 24px;
+  font-size: 20px;
   font-family: "Montserrat", sans-serif;
   position: relative;
   padding: 12px 32px;
   border: none;
-  display: block;
+  display: flex;
   outline: none;
   border-radius: 5px;
   background: #9313ce;
@@ -138,12 +149,12 @@ html .card {
   animation: enableSwitch_Prin_1 ease-in-out 200ms forwards;
 }
 
-.switch.prin_5_ft .switch__label:after {
-  animation: disableSwitch_Prin_5_FT ease-in-out 300ms forwards;
+.switch.prin_2 .switch__label:after {
+  transition: 300ms cubic-bezier(0.75, -0.81, 0.21, 1.79);
 }
 
-.switch.prin_5_ft .switch__input:checked + .switch__label:after {
-  animation: enableSwitch_Prin_5_FT ease-in-out 300ms forwards;
+.switch.prin_5_ft .switch__label:after {
+  transition: 300ms cubic-bezier(0.5, 1.94, 0.42, 0.74);
 }
 
 .switch.prin_5_ft.prin_1 .switch__label:after {
@@ -244,36 +255,6 @@ html .card {
   }
 }
 
-@keyframes enableSwitch_Prin_5_FT {
-  0% {
-    left: 13px;
-  }
-  50% {
-    left: 34px;
-  }
-  75% {
-    left: 31px;
-  }
-  100% {
-    left: 32px;
-  }
-}
-
-@keyframes disableSwitch_Prin_5_FT {
-  0% {
-    left: 32px;
-  }
-  50% {
-    left: 11px;
-  }
-  75% {
-    left: 14px;
-  }
-  100% {
-    left: 13px;
-  }
-}
-
 @keyframes enableSwitch_Prin_8 {
   from {
     box-shadow: 0 0 0 0px #9313ce, 0 0 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
@@ -290,6 +271,34 @@ html .card {
   to {
     box-shadow: 0 0 0 7px rgba(147, 19, 206, 0), 0 0 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
   }
+}
+
+.button {
+  display: flex;
+  align-items: center;
+}
+
+.button.with-icon {
+  padding-right: 22px;
+}
+
+.button .button-icon {
+  margin-left: 12px;
+}
+
+.button.ghost {
+  background: none;
+  color: #9313ce;
+  border: 2px solid #9313ce;
+  box-shadow: none;
+}
+
+.button.ghost:hover {
+  box-shadow: none;
+}
+
+.button.ghost:active {
+  background: #fbf2ff;
 }
 
 .button:hover {
@@ -316,7 +325,7 @@ html .card {
 .button.prin_8_variation_1:before, .button.prin_8_variation_1:after {
   position: absolute;
   content: "";
-  display: block;
+  display: flex;
   width: 140%;
   height: 100%;
   left: -20%;
@@ -340,12 +349,12 @@ html .card {
 }
 
 .button.animate.prin_8_variation_1:before {
-  display: block;
+  display: flex;
   animation: topBubbles ease-out 0.3s forwards;
 }
 
 .button.animate.prin_8_variation_1:after {
-  display: block;
+  display: flex;
   animation: bottomBubbles ease-out 0.3s forwards;
 }
 
@@ -384,7 +393,7 @@ html .card {
     box-shadow: 0 0 1px 0px #dca2f7;
   }
   to {
-    box-shadow: 0 0 1px 12px rgba(220, 162, 247, 0), 0px 0px 4px #e7c4f7, 0px 8px 16px #e7c4f7;
+    box-shadow: 0 0 1px 12px rgba(220, 162, 247, 0);
   }
 }
 
@@ -406,20 +415,12 @@ html .card {
 
 .card:hover .bottom .title {
   white-space: normal;
-  animation: showTitle ease-in-out 0.2s forwards;
+  height: 4.045rem;
+  transition: height 200ms;
 }
 
 .card:active {
   box-shadow: none;
-}
-
-.card.prin_1:hover {
-  transform: scale(1.02, 1.02);
-  transition: 200ms;
-}
-
-.card.prin_1:active {
-  transform: scale(0.95, 0.95);
 }
 
 .card .picture {
@@ -428,21 +429,21 @@ html .card {
   width: 300px;
   height: 185.41409px;
   object-fit: cover;
-  animation: maximizePicture_Default ease-in-out 0.2s forwards;
-}
-
-.card.prin_5_ft .picture {
-  animation: maximizePicture_Prin_5_FT ease-in-out 0.4s forwards;
-}
-
-.card.prin_5_ft .bottom .description-container {
-  animation: hideDescription ease-in-out 0.2s forwards;
+  transition: height 200ms;
 }
 
 .card .bottom .title,
-.card .bottom .description-container,
-.card .bottom .subtitle {
+.card .bottom .description-container {
   margin: 0 16px 0 16px;
+}
+
+.card .bottom .title {
+  font-size: 1.25rem;
+  height: 2.0225rem;
+  line-height: 2.0225rem;
+  margin-top: 16px;
+  white-space: nowrap;
+  transition: 200ms;
 }
 
 .card .bottom .title,
@@ -452,27 +453,15 @@ html .card {
   overflow: hidden;
 }
 
-.card .bottom .title {
-  font-size: 1.25rem;
-  line-height: 2.0225rem;
-  margin-top: 16px;
-  animation: hideTitle ease-in-out 0.2s forwards;
-}
-
-.card .bottom .subtitle {
-  margin-top: 4px;
-  font-size: 1rem;
-  line-height: 1.618rem;
-  color: #9313ce;
-}
-
 .card .bottom .description-container {
+  line-height: 1.618rem;
   margin-bottom: 16px;
   margin-top: 8px;
-  line-height: 1.618rem;
+  height: 1.618rem;
   color: #6b6b6b;
   overflow: hidden;
-  animation: hideDescription ease-in-out 0.2s forwards;
+  height: 0px;
+  transition: height 200ms;
 }
 
 .card .bottom .description-container .description {
@@ -501,105 +490,419 @@ html .card {
   margin: 0 16px 0 16px;
 }
 
-.card:hover.prin_5_ft .picture {
-  animation: minimizePicture_Prin_5_FT ease-in-out 0.4s forwards;
-}
-
-.card:hover.prin_5_ft .bottom .description-container {
-  animation: showDescription ease-in-out 0.2s forwards;
-}
-
 .card:hover .picture {
   object-fit: cover;
-  animation: minimizePicture_Default ease-in-out 0.2s forwards;
+  height: 50px;
+  transition: height 200ms;
 }
 
 .card:hover .bottom .description-container {
-  animation: showDescription ease-in-out 0.2s forwards;
+  height: 6.472rem !important;
+  transition: height 200ms;
 }
 
-@keyframes minimizePicture_Prin_5_FT {
+.card.prin_1:hover {
+  transform: scale(1.02, 1.02);
+  transition: 200ms;
+}
+
+.card.prin_1:active {
+  transform: scale(0.95, 0.95);
+}
+
+.card:hover.prin_5_ft .picture {
+  height: 50px;
+  transition: height 300ms cubic-bezier(0.51, 1.79, 0.56, 0.75);
+}
+
+.card:hover.prin_5_ft .bottom .description-container {
+  height: 6.472rem !important;
+  transition: height 200ms;
+}
+
+.card.prin_5_ft .picture {
+  animation: maximizePicture_Prin_5_FT ease-in-out 0.4s forwards;
+}
+
+.card.prin_5_ft .bottom .description-container {
+  height: 0px;
+  transition: height 200ms;
+}
+
+.dropdown-container {
+  display: inline-block;
+  position: relative;
+}
+
+.dropdown-container .button {
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.dropdown-container .button .button-icon {
+  transition: transform 200ms;
+}
+
+.dropdown-container .button:active {
+  box-shadow: none;
+}
+
+.dropdown-container .dropdown-list {
+  position: absolute;
+  border-radius: 5px;
+  box-shadow: 0px 0px 4px #ccc, 0px 4px 4px #ccc;
+  width: 200px;
+  background: white;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  transform: scaleX(0.1) scaleY(0);
+  transform-origin: right top;
+  transition: 150ms ease-in-out;
+}
+
+.dropdown-container .dropdown-list .list-item .link {
+  width: 100%;
+  padding: 12px 24px;
+  padding-left: 48px;
+  display: block;
+  overflow: hidden;
+  font-size: 20px;
+  font-weight: inherit;
+  transition: padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74), background 100ms ease-in-out;
+}
+
+.dropdown-container .dropdown-list .list-item .link:hover {
+  background: #f5f5f5;
+  padding-left: 32px;
+  transition: 200ms;
+}
+
+.dropdown-container .dropdown-list .list-item:last-child {
+  margin-bottom: 0;
+}
+
+.dropdown-container.is-open .button .button-icon {
+  transform: rotate(180deg);
+  transition: transform 200ms;
+}
+
+.dropdown-container.is-open .dropdown-list {
+  transform: scale(1, 1);
+  transition: 150ms ease-in-out;
+}
+
+.dropdown-container.is-open .dropdown-list .list-item .link {
+  padding-left: 12px;
+}
+
+.dropdown-container .button .button-icon.prin_5_ft {
+  transition: transform 300ms cubic-bezier(0.5, 1.94, 0.42, 0.74);
+}
+
+.dropdown-container.is-open .button .button-icon.prin_5_ft {
+  transform: rotate(180deg);
+  transition: transform 300ms cubic-bezier(0.5, 1.94, 0.42, 0.74);
+}
+
+.dropdown-container.prin_5_ft.is-open .dropdown-list {
+  transition: 250ms cubic-bezier(0.5, 1.94, 0.42, 0.74);
+}
+
+.dropdown-container.prin_5_ft.is-open .dropdown-list .list-item .link:hover {
+  transition: padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74), background 100ms ease-in-out;
+}
+
+.dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(1) .link {
+  transition: padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 70ms;
+}
+
+.dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(2) .link {
+  transition: padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 100ms;
+}
+
+.dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(3) .link {
+  transition: padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 130ms;
+}
+
+.dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(4) .link {
+  transition: padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 160ms;
+}
+
+.dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(5) .link {
+  transition: padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 190ms;
+}
+
+.dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(6) .link {
+  transition: padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 220ms;
+}
+
+.dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(7) .link {
+  transition: padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 250ms;
+}
+
+.dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(8) .link {
+  transition: padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 280ms;
+}
+
+.dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(9) .link {
+  transition: padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 310ms;
+}
+
+.dropdown-container.is-open .dropdown-list.prin_5_ft .list-item:nth-child(10) .link {
+  transition: padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74) 340ms;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+}
+
+.carousel-container .carousel-inner {
+  display: flex;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+}
+
+.carousel-container .carousel-inner .item {
+  width: 100%;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  height: 400px;
+  position: relative;
+  transition: margin 400ms;
+}
+
+.carousel-container .carousel-inner .item:last-child {
+  margin-right: 0;
+}
+
+.carousel-container .carousel-inner .item .image-container {
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-container .carousel-inner .item .image-container .image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-container .carousel-inner .item .image-container .dark-background {
+  width: 100%;
+  height: 80px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  bottom: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.carousel-container .carousel-inner .item .text {
+  position: absolute;
+  top: 50%;
+  background: white;
+  padding: 16px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+}
+
+.carousel-container .carousel-inner .item .text .headline {
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-container .carousel-inner .item .text .description {
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-container .indicator-container {
+  display: flex;
+  align-items: flex-end;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0;
+  margin-bottom: 18px;
+  z-index: 10;
+}
+
+.carousel-container .indicator-container .indicator {
+  width: 10px;
+  height: 10px;
+  background: #cecece;
+  border-radius: 10px;
+  margin-right: 16px;
+}
+
+.carousel-container .indicator-container .indicator.active {
+  background: #fd60a1;
+  opacity: 1;
+}
+
+.carousel-container .indicator-container .indicator.active.move-right {
+  transform: translateX(26px);
+  transition: 300ms ease-in-out;
+}
+
+.carousel-container .indicator-container .indicator.active.move-left {
+  transform: translateX(-26px);
+  transition: 300ms ease-in-out;
+}
+
+.carousel-container .indicator-container .indicator:last-child {
+  margin-right: 0;
+}
+
+.carousel-container .indicator-container .indicator:not(.active).move-right {
+  animation: moveRight 300ms ease-in-out forwards;
+}
+
+@keyframes moveRight {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    margin-bottom: 16px;
+  }
+  100% {
+    transform: translateX(26px);
+  }
+}
+
+.carousel-container .indicator-container .indicator:not(.active).move-left {
+  animation: moveLeft 300ms ease-in-out forwards;
+}
+
+@keyframes moveLeft {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    margin-bottom: 16px;
+  }
+  100% {
+    transform: translateX(-26px);
+  }
+}
+
+.carousel-container .carousel-controls {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+
+.carousel-container .carousel-controls .control {
+  cursor: pointer;
+  position: absolute;
+  height: 100%;
+  width: 30%;
+}
+
+.carousel-container .carousel-controls .control .icon {
+  position: absolute;
+  width: 50px;
+  top: 50%;
+  opacity: 0.4;
+  transition: 100ms;
+}
+
+.carousel-container .carousel-controls .control .icon:hover {
+  cursor: pointer;
+}
+
+.carousel-container .carousel-controls .control.prev {
+  left: 0;
+}
+
+.carousel-container .carousel-controls .control.prev .icon {
+  transform: translateY(-50%) rotate(90deg);
+  left: 0;
+}
+
+.carousel-container .carousel-controls .control.next {
+  right: 0;
+}
+
+.carousel-container .carousel-controls .control.next .icon {
+  transform: translateY(-50%) rotate(-90deg);
+  right: 0;
+}
+
+.carousel-container .carousel-controls .control:hover .icon {
+  opacity: 1;
+}
+
+.carousel-container .carousel-controls .control:active.prev .icon {
+  transform: translateY(-50%) rotate(90deg) scale(0.8);
+}
+
+.carousel-container .carousel-controls .control:active.next .icon {
+  transform: translateY(-50%) rotate(-90deg) scale(0.8);
+}
+
+.carousel-container .carousel-inner.prin_1 .item .image-container {
+  transition: 300ms;
+}
+
+.carousel-container.animate .carousel-inner.prin_1 .item .image-container {
+  transform: scaleY(0.97);
+}
+
+.carousel-container.animate .carousel-inner .item .text.prin_1 {
+  animation: carouselSquashText ease-in-out 400ms forwards;
+}
+
+@keyframes carouselSquashText {
+  from {
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.15, 0.85);
+  }
+  to {
+  }
+}
+
+.carousel-container .carousel-inner.prin_2 .item {
+  transition: 450ms cubic-bezier(0.68, -0.49, 0.36, 1.25);
+}
+
+.carousel-container .carousel-inner.prin_5_ft .item {
+  transition: 400ms cubic-bezier(0.52, 1.37, 0.7, 0.99);
+}
+
+.carousel-container.animate.prev .carousel-inner .item .text.prin_5_ft {
+  animation: carouselFollowThroughTextPrev ease-out 400ms forwards;
+}
+
+@keyframes carouselFollowThroughTextPrev {
   0% {
   }
   50% {
-    height: 42px;
-  }
-  75% {
-    height: 54px;
+    transform: translate(-80%, -50%);
   }
   100% {
-    height: 50px;
   }
 }
 
-@keyframes minimizePicture_Default {
-  0% {
-  }
-  100% {
-    height: 50px;
-  }
+.carousel-container.animate.next .carousel-inner .item .text.prin_5_ft {
+  animation: carouselFollowThroughTextNext ease-out 400ms forwards;
 }
 
-@keyframes maximizePicture_Prin_5_FT {
+@keyframes carouselFollowThroughTextNext {
   0% {
-    height: 50px;
   }
   50% {
-    height: 193.41409px;
-  }
-  75% {
-    height: 181.41409px;
+    transform: translate(-20%, -50%);
   }
   100% {
-    height: 185.41409px;
-  }
-}
-
-@keyframes maximizePicture_Default {
-  0% {
-    height: 50px;
-  }
-  100% {
-    height: 185.41409px;
-  }
-}
-
-@keyframes showDescription {
-  from {
-    height: 0px;
-  }
-  to {
-    height: 6.472rem;
-  }
-}
-
-@keyframes hideDescription {
-  from {
-    height: 6.472rem;
-    opacity: 1;
-  }
-  to {
-    height: 0px;
-  }
-}
-
-@keyframes showTitle {
-  from {
-    height: 2.0225rem;
-  }
-  to {
-    height: 4.045rem;
-  }
-}
-
-@keyframes hideTitle {
-  from {
-    height: 4.045rem;
-    white-space: normal;
-  }
-  to {
-    height: 2.0225rem;
-    white-space: nowrap;
   }
 }
 
@@ -647,7 +950,7 @@ html .card {
   overflow: hidden;
   font-size: 20px;
   font-weight: inherit;
-  transition: padding-left 200ms cubic-bezier(0.4, 1.69, 0.52, 0.9), background 100ms ease-in-out;
+  transition: padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74), background 100ms ease-in-out;
 }
 
 .nav-container .nav .nav-list .list-item .link:hover {
@@ -708,11 +1011,11 @@ html .card {
 }
 
 .nav-container.prin_1 .nav {
-  transition: 350ms cubic-bezier(0.4, 1.69, 0.52, 0.9);
+  transition: 350ms cubic-bezier(0.5, 1.94, 0.42, 0.74);
 }
 
 .nav-container.prin_1 .nav .nav-list .list-item .link:hover {
-  transition: padding-left 200ms cubic-bezier(0.4, 1.69, 0.52, 0.9), background 100ms ease-in-out;
+  transition: padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74), background 100ms ease-in-out;
   padding-left: 38px;
 }
 

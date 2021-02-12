@@ -1,0 +1,137 @@
+.dropdown-container {
+  display: inline-block;
+  position: relative;
+
+  .button {
+    margin-bottom: 20px;
+    cursor: pointer;
+
+    .button-icon {
+      transition: transform 200ms;
+    }
+
+    &:active {
+      box-shadow: $default-shadow-pressed;
+    }
+  }
+
+  .dropdown-list {
+    position: absolute;
+    border-radius: 5px;
+    box-shadow: 0px 0px 4px #ccc, 0px 4px 4px #ccc;
+    width: 200px;
+    background: white;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    transform: scaleX(0.1) scaleY(0);
+    transform-origin: right top;
+    transition: 150ms ease-in-out;
+
+    .list-item {
+      .link {
+        width: 100%;
+        padding: 12px 24px;
+        padding-left: 48px;
+        display: block;
+        overflow: hidden;
+        font-size: $link-font;
+        // transition: 200ms;
+        font-weight: inherit;
+        transition: padding-left 200ms $ease-bounce,
+          background 100ms ease-in-out;
+
+        &:hover {
+          background: $grey-extra-light;
+          padding-left: 32px;
+          transition: 200ms;
+        }
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &.is-open {
+    .button {
+      .button-icon {
+        transform: rotate(180deg);
+        transition: transform 200ms;
+      }
+    }
+
+    .dropdown-list {
+      transform: scale(1, 1);
+      transition: 150ms ease-in-out;
+
+      .list-item {
+        .link {
+          padding-left: 12px;
+        }
+      }
+    }
+  }
+}
+
+// Prinzip 5 Follow Through
+
+// Das Icon wird mit einem Bounce versehen
+.dropdown-container {
+  .button {
+    .button-icon {
+      &.prin_5_ft {
+        transition: transform 300ms $ease-bounce;
+      }
+    }
+  }
+
+  &.is-open {
+    .button {
+      .button-icon {
+        &.prin_5_ft {
+          transform: rotate(180deg);
+          transition: transform 300ms $ease-bounce;
+        }
+      }
+    }
+  }
+}
+
+// Die gesamte Liste wird mit einem Bounce Effekt versehen
+.dropdown-container {
+  &.prin_5_ft {
+    &.is-open {
+      .dropdown-list {
+        transition: 250ms $ease-bounce;
+
+        .list-item {
+          .link {
+            &:hover {
+              transition: padding-left 200ms $ease-bounce,
+                background 100ms ease-in-out;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Die einzelnen Listenelemente werden mit einem Offset von rechts nach links animiert
+.dropdown-container {
+  &.is-open {
+    .dropdown-list {
+      &.prin_5_ft {
+        $n: 10;
+        @for $i from 1 through $n {
+          .list-item:nth-child(#{$i}) {
+            .link {
+              transition: padding-left 200ms $ease-bounce $i * 30ms + 40ms;
+            }
+          }
+        }
+      }
+    }
+  }
+}

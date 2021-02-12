@@ -1,4 +1,32 @@
 .button {
+  display: flex;
+  align-items: center;
+
+  &.with-icon {
+    padding-right: 22px;
+  }
+
+  .button-icon {
+    margin-left: 12px;
+    // margin-right: -8px;
+  }
+
+  &.ghost {
+    background: none;
+    color: $primary;
+    border: 2px solid $primary;
+    box-shadow: none;
+
+    &:hover {
+      box-shadow: none;
+    }
+
+    &:active {
+      background: $primary-extra-light;
+      // color: white;
+    }
+  }
+
   &:hover {
     cursor: pointer;
     box-shadow: $default-shadow-primary-hover;
@@ -24,7 +52,7 @@
   &.prin_8_variation_1:after {
     position: absolute;
     content: "";
-    display: block;
+    display: flex;
     width: 140%;
     height: 100%;
     left: -20%;
@@ -65,11 +93,11 @@
 
   &.animate.prin_8_variation_1 {
     &:before {
-      display: block;
+      display: flex;
       animation: topBubbles ease-out 0.3s forwards;
     }
     &:after {
-      display: block;
+      display: flex;
       animation: bottomBubbles ease-out 0.3s forwards;
     }
   }
@@ -110,7 +138,6 @@
     box-shadow: 0 0 1px 0px transparentize($color: $primary-light, $amount: 0);
   }
   to {
-    box-shadow: 0 0 1px 12px transparentize($color: $primary-light, $amount: 1),
-      0px 0px 4px $primary-shadow, 0px 8px 16px $primary-shadow;
+    box-shadow: 0 0 1px 12px transparentize($color: $primary-light, $amount: 1);
   }
 }
