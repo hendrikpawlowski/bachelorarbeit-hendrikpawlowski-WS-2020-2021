@@ -212,6 +212,7 @@
 }
 
 // Prinzip 1 Squash and Stretch
+// angewendet auf Die Slides
 
 .carousel-container {
   .carousel-inner.prin_1 {
@@ -232,8 +233,31 @@
   }
 }
 
+// Prinzip 1 Squash and Stretch
+// angewendet auf den Text
+
+.carousel-container {
+  .carousel-inner {
+    .item {
+      .text.prin_1 {
+        transition: 250ms;
+      }
+    }
+  }
+  &.animate {
+    .carousel-inner {
+      .item {
+        .text.prin_1 {
+          // background: red;
+          transform: translate(-50%, -50%) scale(1.15, 0.85);
+        }
+      }
+    }
+  }
+}
+
 // Prinzip 2 Anticipation
-// angewandt auf dem Slider angewandt
+// angewendet auf den Slider
 
 .carousel-container {
   // $ease-anticipation-carousel: cubic-bezier(0.69, -0.3, 0.6, 1);
@@ -246,7 +270,7 @@
 }
 
 // Prinzip 5 Follow Through
-// angewandt auf dem Slider angewandt
+// angewendet auf dem Slider
 
 .carousel-container {
   $ease-bounce-carousel: cubic-bezier(0.52, 1.37, 0.7, 0.99);
