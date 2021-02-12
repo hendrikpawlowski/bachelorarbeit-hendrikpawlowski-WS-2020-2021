@@ -163,13 +163,9 @@
           .list-item:nth-child(#{$i}) {
             .link {
               margin-left: 0px;
-              transition: margin-left
-                  200ms
-                  $ease-bounce-medium
-                  $i *
-                  30ms +
-                  100ms,
-                padding-left 200ms $ease-bounce, background 100ms ease-in-out;
+              transition: margin-left 200ms $ease-bounce $i * 30ms + 50ms,
+                padding-left 200ms $ease-bounce-medium,
+                background 100ms ease-in-out;
             }
           }
         }
