@@ -188,15 +188,6 @@ const initNavigation = function () {
     listOfNavContainer.forEach(navContainer => {
         let navToggle = navContainer.querySelector("[js-toggle-nav]");
 
-        // handle CSS classes
-        const close = function (element) {
-            element.classList.remove("is-open");
-        }
-
-        const open = function (element) {
-            element.classList.add("is-open");
-        }
-
         document.addEventListener("click", function () {
             close(navContainer);
         });
@@ -210,9 +201,9 @@ const initNavigation = function () {
 
             // Hier wird geschaut, ob die Navigation offen oder geschlossen ist
             if (navContainer.classList.contains("is-open")) {
-                close(navContainer);
+                navContainer.classList.remove("is-open");
             } else {
-                open(navContainer);
+                navContainer.classList.add("is-open");
             }
         });
     });
