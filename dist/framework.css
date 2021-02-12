@@ -930,10 +930,47 @@ html .card {
   width: 32px;
   background: #3b3b3b;
   margin: 6px;
+  transition: 150ms;
+}
+
+.nav-container .nav-toggle .line.two {
+  width: 20px;
+  margin-left: 6px;
+}
+
+.nav-container .nav-toggle .line.three {
+  width: 12px;
+}
+
+.nav-container .nav-toggle:hover .one {
+  transform: translateY(-2px);
+}
+
+.nav-container .nav-toggle:hover .three {
+  transform: translateY(2px);
 }
 
 .nav-container .nav-toggle:active {
   box-shadow: none;
+}
+
+.nav-container.is-open .nav-toggle .line {
+  transition: 150ms;
+}
+
+.nav-container.is-open .nav-toggle .line.one {
+  transform: translateY(120%) rotate(-45deg);
+  width: 18px;
+}
+
+.nav-container.is-open .nav-toggle .line.two {
+  width: 28px;
+  margin-left: 10px;
+}
+
+.nav-container.is-open .nav-toggle .line.three {
+  transform: translateY(-120%) rotate(45deg);
+  width: 18px;
 }
 
 .nav-container .nav {
@@ -972,45 +1009,7 @@ html .card {
   margin-bottom: 0;
 }
 
-.nav-container.open .nav-toggle .line {
-  transition: 200ms;
-}
-
-.nav-container.open .nav-toggle .line.one {
-  transform: translateY(110%) translateX(-22%) rotate(-45deg) scale(0.6, 1);
-}
-
-.nav-container.open .nav-toggle .line.two {
-  width: 28px;
-  margin-left: 10px;
-}
-
-.nav-container.open .nav-toggle .line.three {
-  transform: translateY(-110%) translateX(-22%) rotate(45deg) scale(0.5, 1);
-}
-
-.nav-container.close .nav-toggle .line {
-  transition: 100ms;
-}
-
-.nav-container.close .nav-toggle .line.two {
-  width: 20px;
-  margin-left: 6px;
-}
-
-.nav-container.close .nav-toggle .line.three {
-  width: 12px;
-}
-
-.nav-container.close .nav-toggle:hover .one {
-  transform: translateY(-2px);
-}
-
-.nav-container.close .nav-toggle:hover .three {
-  transform: translateY(2px);
-}
-
-.nav-container.close .nav {
+.nav-container .nav {
   transform: scale(0, 0.3);
   transform-origin: left top;
   transition: 200ms ease-in;
@@ -1023,10 +1022,6 @@ html .card {
 .nav-container.prin_1 .nav .nav-list .list-item .link:hover {
   transition: padding-left 200ms cubic-bezier(0.5, 1.94, 0.42, 0.74), background 100ms ease-in-out;
   padding-left: 38px;
-}
-
-.nav-container.prin_1.close .nav {
-  transition: 200ms ease-in;
 }
 
 @keyframes bounceListItem {

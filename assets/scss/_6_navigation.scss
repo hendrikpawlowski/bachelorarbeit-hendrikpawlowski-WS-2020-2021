@@ -10,10 +10,50 @@
       width: 32px;
       background: $text-color;
       margin: 6px;
+      transition: 150ms;
+
+      &.two {
+        width: 20px;
+        margin-left: 6px;
+      }
+
+      &.three {
+        width: 12px;
+      }
+    }
+
+    &:hover {
+      .one {
+        transform: translateY(-2px);
+      }
+      .three {
+        transform: translateY(2px);
+      }
     }
 
     &:active {
       box-shadow: $default-shadow-pressed;
+    }
+  }
+
+  &.is-open {
+    .nav-toggle {
+      .line {
+        transition: 150ms;
+
+        &.one {
+          transform: translateY(120%) rotate(-45deg);
+          width: 18px;
+        }
+        &.two {
+          width: 28px;
+          margin-left: 10px;
+        }
+        &.three {
+          transform: translateY(-120%) rotate(45deg);
+          width: 18px;
+        }
+      }
     }
   }
 
@@ -56,58 +96,13 @@
     }
   }
 
-  &.open {
-    .nav-toggle {
-      .line {
-        transition: 200ms;
+  .nav {
+    transform: scale(0, 0.3);
+    transform-origin: left top;
+    transition: 200ms ease-in;
 
-        &.one {
-          transform: translateY(110%) translateX(-22%) rotate(-45deg)
-            scale(0.6, 1);
-        }
-        &.two {
-          width: 28px;
-          margin-left: 10px;
-        }
-        &.three {
-          transform: translateY(-110%) translateX(-22%) rotate(45deg)
-            scale(0.5, 1);
-        }
-      }
-    }
-  }
-
-  &.close {
-    .nav-toggle {
-      .line {
-        transition: 100ms;
-        &.two {
-          width: 20px;
-          margin-left: 6px;
-        }
-
-        &.three {
-          width: 12px;
-        }
-      }
-
-      &:hover {
-        .one {
-          transform: translateY(-2px);
-        }
-        .three {
-          transform: translateY(2px);
-        }
-      }
-    }
-    .nav {
-      transform: scale(0, 0.3);
-      transform-origin: left top;
-      transition: 200ms ease-in;
-
-      .nav-list {
-        .list-item {
-        }
+    .nav-list {
+      .list-item {
       }
     }
   }
@@ -137,11 +132,11 @@
     }
   }
 
-  &.close {
-    .nav {
-      transition: 200ms ease-in;
-    }
-  }
+  // &.close {
+  //   .nav {
+  //     transition: 200ms ease-in;
+  //   }
+  // }
 }
 
 @keyframes bounceListItem {
