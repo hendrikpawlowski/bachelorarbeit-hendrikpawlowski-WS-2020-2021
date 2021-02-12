@@ -79,6 +79,13 @@ const initCarousel = function () {
         firstItem.style.marginLeft = marginIndex + "px";
         let marginBetweenItems = parseInt(getComputedStyle(firstItem).marginRight);
         let itemWidth = firstItem.getBoundingClientRect().width;
+        // let transitionSlide = firstItem.style.transitionDuration;
+        // firstItem.style.transitionDuration = "1s";
+        // console.log("transition " + transitionSlide);
+        // const transitionSlide = getComputedStyle(firstItem).transitionDuration;
+        // console.log(firstItem.style.transitionDuration);
+        // console.log(transitionSlide);
+
 
         // Controls
         let prev = carouselContainer.querySelector("[js-prev]");
@@ -139,6 +146,9 @@ const initCarousel = function () {
                  */
                 prev.removeEventListener("click", prevPressed);
                 next.removeEventListener("click", nextPressed);
+
+                carouselContainer.classList.add("animate");
+                carouselContainer.classList.add("prev");
             }
         }
 
@@ -155,9 +165,18 @@ const initCarousel = function () {
                  */
                 prev.removeEventListener("click", prevPressed);
                 next.removeEventListener("click", nextPressed);
+
+                carouselContainer.classList.add("animate");
+                carouselContainer.classList.add("next");
             }
         }
 
+        firstItem.addEventListener("transitionend", () => {
+            console.log("ended sliding");
+            carouselContainer.classList.remove("animate");
+            carouselContainer.classList.remove("next");
+            carouselContainer.classList.remove("prev");
+        });
         prev.addEventListener("click", prevPressed);
         next.addEventListener("click", nextPressed);
     });
