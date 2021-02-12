@@ -1030,21 +1030,14 @@ html .card {
   transition: transform 200ms ease-out;
 }
 
+.nav-container .nav.prin_5_ft {
+  transition: 350ms cubic-bezier(0.5, 1.7, 0.42, 0.74);
+}
+
 .nav-container.prin_5_ft .nav {
   transition: 350ms cubic-bezier(0.5, 1.7, 0.42, 0.74);
 }
 
-.nav-container.prin_5_ft .nav .nav-list .list-item .link:hover {
-  transition: padding-left 200ms cubic-bezier(0.5, 1.7, 0.42, 0.74), background 100ms ease-in-out;
-  padding-left: 38px;
-}
-
-@keyframes bounceListItem {
-  0% {
-  }
-  50% {
-    padding-left: 32px;
-  }
-  100% {
-  }
+.nav-container.prin_5_ft .nav .nav-list .list-item .link {
+  padding-left: 50px;
 }

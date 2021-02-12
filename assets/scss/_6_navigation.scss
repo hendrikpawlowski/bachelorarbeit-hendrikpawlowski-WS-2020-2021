@@ -125,7 +125,17 @@
   }
 }
 
-// Prinzip 1 Squash and Stretch
+// Prinzip 5 Follow Through auf die Nav
+
+.nav-container {
+  .nav {
+    &.prin_5_ft {
+      transition: 350ms $ease-bounce-medium;
+    }
+  }
+}
+
+// Prinzip 5 Follow Through auf die einzelnen Links in der Nav
 
 .nav-container.prin_5_ft {
   .nav {
@@ -134,34 +144,9 @@
     .nav-list {
       .list-item {
         .link {
-          &:hover {
-            transition: padding-left 200ms $ease-bounce-medium,
-              background 100ms ease-in-out;
-            // transition: background 200ms ease-in-out;
-            // animation: bounceListItem 200ms ease-in-out forwards;
-            // transition-timing-function: $ease-bounce;
-            // transform: translateX(8px);
-            // transition: 1000ms $ease-bounce;
-            padding-left: 38px;
-          }
+          padding-left: 50px;
         }
       }
     }
-  }
-
-  // &.close {
-  //   .nav {
-  //     transition: 200ms ease-in;
-  //   }
-  // }
-}
-
-@keyframes bounceListItem {
-  0% {
-  }
-  50% {
-    padding-left: 32px;
-  }
-  100% {
   }
 }
