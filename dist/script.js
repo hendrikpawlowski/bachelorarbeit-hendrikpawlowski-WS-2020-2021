@@ -189,7 +189,7 @@ const initNavigation = function () {
         let navToggle = navContainer.querySelector("[js-toggle-nav]");
 
         document.addEventListener("click", function () {
-            close(navContainer);
+            navContainer.classList.remove("is-open");
         });
 
         // Wenn irgendwo außerhalb der Nav geklickt wird, wird die Navigation geschlossen
