@@ -111,7 +111,7 @@
   .nav {
     // transform: scale(0, 1);
     transform: translateX(-120%);
-    transform-origin: left top;
+    // transform-origin: left top;
     transition: transform 200ms ease-in;
   }
 
@@ -120,6 +120,26 @@
       // transform: scale(1);
       transform: translateX(0%);
       transition: transform 200ms ease-out;
+    }
+  }
+}
+
+// Prinzip 1 Squash and Stretch
+
+.nav-container {
+  .nav {
+    &.prin_1 {
+      transform: scale(0, 0.3);
+      transform-origin: left top;
+    }
+  }
+
+  &.is-open {
+    .nav {
+      &.prin_1 {
+        transform: scale(1);
+        transition: transform 300ms $ease-bounce-medium;
+      }
     }
   }
 }
