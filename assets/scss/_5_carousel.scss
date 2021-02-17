@@ -224,6 +224,54 @@
   }
 }
 
+// Alle Prinzipien
+// angewendet auf den Text
+
+.carousel-container {
+  &.animate {
+    &.prev {
+      .carousel-inner {
+        .item {
+          .text.prin_1.prin_5_ft {
+            animation: carousel_Prin_1_AND_Prin_5_FT_Prev ease-in-out 400ms
+              forwards;
+
+            @keyframes carousel_Prin_1_AND_Prin_5_FT_Prev {
+              from {
+              }
+              50% {
+                transform: translate(-80%, -50%) scale(1.15, 0.85);
+              }
+              to {
+              }
+            }
+          }
+        }
+      }
+    }
+    &.next {
+      .carousel-inner {
+        .item {
+          .text.prin_1.prin_5_ft {
+            animation: carousel_Prin_1_AND_Prin_5_FT_Next ease-in-out 400ms
+              forwards;
+
+            @keyframes carousel_Prin_1_AND_Prin_5_FT_Next {
+              from {
+              }
+              50% {
+                transform: translate(-20%, -50%) scale(1.15, 0.85);
+              }
+              to {
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 // Prinzip 1 Squash and Stretch
 // angewendet auf die Slides
 
@@ -297,7 +345,7 @@
 }
 
 // Prinzip 5 Follow Through
-// angewendet auf dem Slider
+// angewendet auf den Text
 
 .carousel-container {
   &.animate {
