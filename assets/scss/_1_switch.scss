@@ -84,6 +84,95 @@ $position-unchecked: $dot-width / 2 + $dot-padding;
   }
 }
 
+// Alle Prinzipien
+
+.switch.prin_1.prin_2.prin_5_ft.prin_8 {
+  .switch__label {
+    &:after {
+      // animation: disableSwitch_all_prin ease-in-out 200ms forwards;
+      animation: disableSwitch_all_prin cubic-bezier(0.6, -0.6, 0.32, 1.8) 350ms
+          forwards,
+        disableSwitch_all_prin_1 cubic-bezier(0.6, -0.6, 0.32, 1.8) 350ms
+          forwards,
+        disableSwitch_Prin_8 ease-in-out 400ms forwards 100ms;
+
+      @keyframes disableSwitch_all_prin {
+        0% {
+          left: $position-checked;
+        }
+        100% {
+          left: $position-unchecked;
+        }
+      }
+
+      @keyframes disableSwitch_all_prin_1 {
+        0% {
+        }
+        20% {
+          width: $dot-width;
+          height: $dot-height;
+          top: $dot-padding;
+        }
+        50% {
+          width: $dot-width + 4px;
+          height: $dot-height - 4px;
+          top: $dot-padding + 2px;
+        }
+        80% {
+          width: $dot-width;
+          height: $dot-height;
+          top: $dot-padding;
+        }
+        100% {
+          width: $dot-width;
+        }
+      }
+    }
+  }
+
+  .switch__input:checked + .switch__label {
+    &:after {
+      animation: enableSwitch_all_prin cubic-bezier(0.6, -0.6, 0.32, 1.8) 350ms
+          forwards,
+        enableSwitch_all_prin_1 cubic-bezier(0.6, -0.6, 0.32, 1.8) 350ms
+          forwards,
+        enableSwitch_Prin_8 ease-in-out 400ms forwards 100ms;
+
+      @keyframes enableSwitch_all_prin {
+        0% {
+          left: $position-unchecked;
+        }
+        100% {
+          left: $position-checked;
+        }
+      }
+
+      @keyframes enableSwitch_all_prin_1 {
+        0% {
+        }
+        20% {
+          width: $dot-width;
+          height: $dot-height;
+          top: $dot-padding;
+        }
+        50% {
+          width: $dot-width + 4px;
+          height: $dot-height - 4px;
+          top: $dot-padding + 2px;
+        }
+        80% {
+          width: $dot-width;
+          height: $dot-height;
+          top: $dot-padding;
+        }
+        100% {
+          width: $dot-width;
+        }
+      }
+    }
+  }
+}
+
 // Prinzip 1 Squash and Stretch
 
 .switch.prin_1 {
