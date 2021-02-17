@@ -185,7 +185,7 @@
           .list-item:nth-child(#{$i}) {
             .link {
               margin-left: 0px;
-              transition: margin-left 200ms $ease-bounce $i * 30ms + 50ms,
+              transition: margin-left 200ms $ease-bounce $i * 30ms + 40ms,
                 padding-left 200ms $ease-bounce-medium,
                 background 100ms ease-in-out;
             }
