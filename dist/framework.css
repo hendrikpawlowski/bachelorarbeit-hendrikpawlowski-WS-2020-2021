@@ -930,6 +930,22 @@ html .card {
   transform: translateY(-50%) rotate(-90deg) scale(0.8);
 }
 
+.carousel-container.animate .carousel-inner.prin_1.prin_2.prin_5_ft .item {
+  transition: 450ms cubic-bezier(0.34, -0.32, 0.58, 1.22);
+}
+
+@keyframes carousel_all_prin {
+  0% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0.97);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
 .carousel-container .carousel-inner.prin_1 .item .image-container {
   transition: 300ms;
 }
