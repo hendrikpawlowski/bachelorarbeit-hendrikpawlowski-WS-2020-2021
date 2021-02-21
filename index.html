@@ -13,9 +13,19 @@
 
 <body>
   <nav class="left-nav">
+    <ul>
+      <li><a href="#introduction">Einleitung</a></li>
+      <li><a href="#ui-elements">Ui-Elemente</a></li>
+      <li><a class="margin-left-s" href="#scroll-switch">Switch</a></li>
+      <li><a class="margin-left-s" href="#scroll-button">Button</a></li>
+      <li><a class="margin-left-s" href="#scroll-card">Card</a></li>
+      <li><a class="margin-left-s" href="#scroll-dropdown">Dropdown</a></li>
+      <li><a class="margin-left-s" href="#scroll-navigation">Navigation</a></li>
+      <li><a class="margin-left-s" href="#scroll-carousel">Carousel</a></li>
+    </ul>
   </nav>
   <div class="container">
-    <div class="content">
+    <div id="introduction" class="content">
       <h1 class="headline">Dokumentation des <br> CSS-Frameworks</h1>
       <section class="introduction">
         <h2 class="headline">Kontext</h2>
@@ -48,9 +58,9 @@
         <h2 class="headline">Browser Support</h2>
         <p>Dieses CSS-Framework wurde in den Browsern Firefox (85) und Chrome (88) getestet.</p>
       </section>
-      <h2 class="headline-ui-elements">UI-Elemente</h2>
+      <h2 id="ui-elements" class="headline-ui-elements">UI-Elemente</h2>
       <section class="ui-elements atoms">
-        <h3 class="element-headline">Switch Button</h3>
+        <h3 id="scroll-switch" class="element-headline">Switch Button</h3>
         <div class="element">
           <h4>Default</h4>
           <div class="switch">
@@ -142,7 +152,7 @@
 &lt;/div></code>
           </pre>
         </div>
-        <h3 class="element-headline">Button</h3>
+        <h3 id="scroll-button" class="element-headline">Button</h3>
         <div class="element">
           <h4>Default</h4>
           <div class="button-wrapper">
@@ -186,7 +196,7 @@
       </section>
 
       <section class="ui-elements molecules">
-        <h3 class="element-headline">Card</h3>
+        <h3 id="scroll-card" class="element-headline">Card</h3>
 
         <div class="element">
           <h4>Default</h4>
@@ -332,7 +342,7 @@
 &lt;/a></code>
           </pre>
         </div>
-        <h3 class="headline">Dropdown</h3>
+        <h3 id="scroll-dropdown" class="headline">Dropdown</h3>
         <div class="element">
           <h4>Default</h4>
           <div js-dropdown-container class="dropdown-container">
@@ -542,7 +552,7 @@
           </pre>
       </section>
       <section class="ui-elements organisms">
-        <h3 class="element-headline">Navigation</h3>
+        <h3 id="scroll-navigation" class="element-headline">Navigation</h3>
         <div class="element no-margin-left">
           <h4 class="headline">Default</h4>
           <div js-nav-container js-nav class="nav-container">
@@ -858,7 +868,7 @@
 &lt;/div></code>
         </pre>
         </div>
-        <h3 class="element-headline">Carousel ohne Beschreibung</h3>
+        <h3 id="scroll-carousel" class="element-headline">Carousel ohne Beschreibung</h3>
         <div class="element">
           <h5 class="headline no-margin-left">Default</h5>
           <div js-carousel-container class="carousel-container">
