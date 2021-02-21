@@ -14,7 +14,7 @@ Das Ergebnis der Arbeit stellt die Konzeption und Implementierung eines Prototyp
 
 ### CSS
 
-`<link href="https://raw.githubusercontent.com/hendrikpawlowski/bachelorarbeit-hendrikpawlowski-WS-2020-2021/main/dist/framework.css">`
+```<link href="https://raw.githubusercontent.com/hendrikpawlowski/bachelorarbeit-hendrikpawlowski-WS-2020-2021/main/dist/framework.css">  ```
 
 ### JavaScript
 
