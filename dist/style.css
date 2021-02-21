@@ -62,10 +62,25 @@ code {
 }
 
 .element-headline {
-  margin-bottom: 128px;
+  margin-top: 64px;
+  margin-bottom: 64px;
+  margin-left: 64px;
+}
+
+.headline-ui-elements {
+  font-size: 3rem;
+  margin-top: 128px;
   margin-left: 64px;
 }
 
 .headline {
+  margin-top: 64px;
   margin-left: 64px;
+}
+
+.headline:before {
+  content: "";
+  width: 100px;
+  height: 100px;
+  background: black;
 }
