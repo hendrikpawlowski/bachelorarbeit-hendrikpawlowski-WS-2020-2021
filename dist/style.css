@@ -3,6 +3,10 @@ body {
   margin: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .container {
   padding: 64px 0 64px 250px;
 }
