@@ -20,6 +20,10 @@ Das Ergebnis der Arbeit stellt die Konzeption und Implementierung eines Prototyp
 
 `<script src="https://raw.githubusercontent.com/hendrikpawlowski/bachelorarbeit-hendrikpawlowski-WS-2020-2021/main/dist/script.js"></script>`
 
-### Browser Support
+## Dokumentation
+
+Die Website https://hendrikpawlowski.github.io/bachelorarbeit-hendrikpawlowski-WS-2020-2021/ fungiert als Dokumentation der umgesetzten UI-Elemente.
+
+## Browser Support
 
 Dieses CSS-Framework wurde in den Browsern Firefox (85) und Chrome (88) getestet.
