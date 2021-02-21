@@ -8,30 +8,84 @@
   <link rel="stylesheet" href="./dist/framework.css">
   <link rel="stylesheet" href="./dist/style.css">
   <link rel="icon" href="./favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <nav class="left-nav">
+    <ul>
+      <li><a href="#introduction">Einleitung</a></li>
+      <li><a href="#ui-elements">Ui-Elemente</a></li>
+      <li><a class="padding-left-s" href="#scroll-switch">Switch</a></li>
+      <li><a class="padding-left-s" href="#scroll-button">Button</a></li>
+      <li><a class="padding-left-s" href="#scroll-card">Card</a></li>
+      <li><a class="padding-left-s" href="#scroll-dropdown">Dropdown</a></li>
+      <li><a class="padding-left-s" href="#scroll-navigation">Navigation</a></li>
+      <li><a class="padding-left-s" href="#scroll-carousel">Carousel</a></li>
+    </ul>
   </nav>
   <div class="container">
-    <div class="content">
-      <h1 class="headline">Documentation</h1>
+    <div id="introduction" class="content">
+      <h1 class="headline">Dokumentation des <br> CSS-Frameworks</h1>
+      <section class="introduction">
+        <h2 class="headline">Kontext</h2>
+        <p>Im Jahre 1981 veröffentlichten Frank Thomas und Ollie Johnston das Buch The Illusion of Life: Disney
+          Animation, in welchem zwölf verschiedene Prinzipien der Animation aufgeführt sind, um möglichst realistische
+          Bewegungen und Figuren zu kreieren. Die Bachelorarbeit befasst sich mit dem Thema UI/UX-Animationen in Bezug
+          auf Disneys Prinzipien der Animation.</p>
+        <h2 class="headline">Ziel</h2>
+        <p>Das Ergebnis der Arbeit stellt die Konzeption und Implementierung eines Prototypen für ein CSS-Framework dar.
+          Dieser soll zum einen demonstrieren, wie sich die Prinzipien für gängige UI-Elemente konzipieren lassen, und
+          zum anderen wie die Umsetzung der Animationen mithilfe von Web Technologien aussehen könnte. Der Prototyp soll
+          nach Fertigstellung für Entwickler:innen bereitgestellt und in eine Webanwendung inkludiert werden können.</p>
+        <h2 class="headline">Installation</h2>
+        <h3 class="subheadline">CSS</h3>
+        <p>
+          <code class="no-margin-top">
+            &lt;link href="https://raw.githubusercontent.com/hendrikpawlowski/bachelorarbeit-hendrikpawlowski-WS-2020-2021/main/dist/framework.css"&gt;
+          </code>
+        </p>
+        <h3 class="subheadline">JavaScript</h3>
+        <p>
+          <code class="no-margin-top">
+            <span class="tag">&lt;script&gt;</span> src="https://raw.githubusercontent.com/hendrikpawlowski/bachelorarbeit-hendrikpawlowski-WS-2020-2021/main/dist/script.js"><span class="tag">&lt;/script&gt;</span>
+          </code>
+        </p>
+        <h2 class="headline">Github Repository</h2>
+        <p>Das Github Repository ist unter folgendem Link zu finden: <a
+            href="https://github.com/hendrikpawlowski/bachelorarbeit-hendrikpawlowski-WS-2020-2021/blob/main/README.md">https://github.com/hendrikpawlowski/bachelorarbeit-hendrikpawlowski-WS-2020-2021/blob/main/README.md</a>
+        </p>
+        <h2 class="headline">Browser Support</h2>
+        <p>Dieses CSS-Framework wurde in den Browsern Firefox (85) und Chrome (88) getestet.</p>
+      </section>
+      <h2 id="ui-elements" class="headline-ui-elements">UI-Elemente</h2>
       <section class="ui-elements atoms">
-        <h2 class="headline">Atoms</h2>
-        <h3 class="element-headline">Switch Button</h3>
+        <h3 id="scroll-switch" class="element-headline">Switch Button</h3>
         <div class="element">
           <h4>Standard</h4>
           <div class="switch">
             <input type="checkbox" id="switch1" class="switch__input">
-            <label for="switch1" class="switch__label">Standard</label>
+            <label for="switch1" class="switch__label">Label</label>
           </div>
+          <pre>
+            <code>&lt;div class="switch">
+  &lt;input type="checkbox" id="switch" class="switch__input">
+  &lt;label for="switch" class="switch__label">Label&lt;/label>
+&lt;/div></code>
+          </pre>
         </div>
         <div class="element">
-          <h4 id="switch">Alle Prinzipien</h4>
+          <h4 id="switch-ba">Version aus der Bachelorarbeit</h4>
           <div class="switch prin_1 prin_2 prin_5_ft prin_8">
             <input type="checkbox" id="switch7" class="switch__input">
-            <label for="switch7" class="switch__label">Alle Prinzipien</label>
+            <label for="switch7" class="switch__label">Label</label>
           </div>
+          <pre>
+            <code>&lt;div class="switch prin_1 prin_2 prin_5_ft prin_8">
+  &lt;input type="checkbox" id="switch" class="switch__input">
+  &lt;label for="switch" class="switch__label">Label&lt;/label>
+&lt;/div></code>
+          </pre>
         </div>
         <div class="element">
           <h4>Variation 1</h4>
@@ -39,6 +93,12 @@
             <input type="checkbox" id="switch2" class="switch__input">
             <label for="switch2" class="switch__label">Squash and Stretch</label>
           </div>
+          <pre>
+            <code>&lt;div class="switch prin_1">
+  &lt;input type="checkbox" id="switch" class="switch__input">
+  &lt;label for="switch" class="switch__label">Label&lt;/label>
+&lt;/div></code>
+          </pre>
         </div>
         <div class="element">
           <h4>Variation 2</h4>
@@ -46,6 +106,12 @@
             <input type="checkbox" id="switch3" class="switch__input">
             <label for="switch3" class="switch__label">Follow Through</label>
           </div>
+          <pre>
+            <code>&lt;div class="switch prin_5_ft">
+  &lt;input type="checkbox" id="switch" class="switch__input">
+  &lt;label for="switch" class="switch__label">Label&lt;/label>
+&lt;/div></code>
+          </pre>
         </div>
         <div class="element">
           <h4>Variation 3</h4>
@@ -53,6 +119,12 @@
             <input type="checkbox" id="switch4" class="switch__input">
             <label for="switch4" class="switch__label">Squash and Stretch & Follow Through</label>
           </div>
+          <pre>
+            <code>&lt;div class="switch prin_1 prin_5_ft">
+  &lt;input type="checkbox" id="switch" class="switch__input">
+  &lt;label for="switch" class="switch__label">Label&lt;/label>
+&lt;/div></code>
+          </pre>
         </div>
         <div class="element">
           <h4>Variation 5</h4>
@@ -60,6 +132,12 @@
             <input type="checkbox" id="switch5" class="switch__input">
             <label for="switch5" class="switch__label">Anticipation</label>
           </div>
+          <pre>
+            <code>&lt;div class="switch prin_2">
+  &lt;input type="checkbox" id="switch" class="switch__input">
+  &lt;label for="switch" class="switch__label">Label&lt;/label>
+&lt;/div></code>
+          </pre>
         </div>
         <div class="element">
           <h4>Variation 6</h4>
@@ -67,41 +145,58 @@
             <input type="checkbox" id="switch6" class="switch__input">
             <label for="switch6" class="switch__label">Secondary Action</label>
           </div>
+          <pre>
+            <code>&lt;div class="switch prin_8">
+  &lt;input type="checkbox" id="switch" class="switch__input">
+  &lt;label for="switch" class="switch__label">Label&lt;/label>
+&lt;/div></code>
+          </pre>
         </div>
-        <h3 class="element-headline">Button</h3>
+        <h3 id="scroll-button" class="element-headline">Button</h3>
         <div class="element">
-          <h4>Standard</h4>
-          <button class="button">Click me</button>
-        </div>
-        <div class="element">
-          <button class="button ghost">Click me</button>
-        </div>
-        <div class="element">
-          <h4 id="button">Alle Prinzipien</h4>
-          <button class="button prin_1 prin_8_variation_1">Click me</button>
-        </div>
-        <div class="element">
-          <button class="button ghost prin_1 prin_8_variation_1">Click me</button>
-        </div>
-        <div class="element">
-          <h4>Alle Prinzipien 2</h4>
-          <button class="button prin_1 prin_8_variation_2">Click me</button>
+          <h4>Default</h4>
+          <div class="button-wrapper">
+            <button class="button">Click me</button>
+            <button class="button ghost">Click me</button>
+          </div>
+          <pre>
+            <code>&lt;button class="button">Click me&lt;/button></code>
+          </pre>
         </div>
         <div class="element">
-          <button class="button ghost prin_1 prin_8_variation_2">Click me</button>
+          <h4 id="button-ba">Version aus der Bachelorarbeit</h4>
+          <div class="button-wrapper">
+            <button class="button prin_1 prin_8_variation_1">Click me</button>
+            <button class="button ghost prin_1 prin_8_variation_1">Click me</button>
+          </div>
+          <pre>
+              <code>&lt;button class="button prin_1 prin_8_variation_1">Click me&lt;/button></code>
+            </pre>
+        </div>
+        <div class="element">
+          <h4>Version aus der Bachelorarbeit Alternative</h4>
+          <div class="button-wrapper">
+            <button class="button prin_1 prin_8_variation_2">Click me</button>
+            <button class="button ghost prin_1 prin_8_variation_2">Click me</button>
+          </div>
+          <pre>
+            <code>&lt;button class="button prin_1 prin_8_variation_2">Click me&lt;/button></code>
+          </pre>
         </div>
         <div class="element">
           <h4>Variation 1</h4>
-          <button class="button prin_1">Click me</button>
-        </div>
-        <div class="element">
-          <button class="button ghost prin_1">Click me</button>
+          <div class="button-wrapper">
+            <button class="button prin_1">Click me</button>
+            <button class="button ghost prin_1">Click me</button>
+          </div>
+          <pre>
+            <code>&lt;button class="button prin_1">Click me&lt;/button></code>
+          </pre>
         </div>
       </section>
 
       <section class="ui-elements molecules">
-        <h2 class="headline">Molecules</h2>
-        <h3 class="element-headline">Card</h3>
+        <h3 id="scroll-card" class="element-headline">Card</h3>
 
         <div class="element">
           <h4>Standard</h4>
@@ -124,9 +219,23 @@
               </div>
             </div>
           </a>
+          <pre>
+            <code>&lt;a class="card">
+  &lt;img class="picture" src="./assets/images/demo picture.jpg" alt="">
+  &lt;div class="bottom">
+    &lt;h4 class="title">Title Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe, tempore?&lt;/h4>
+    &lt;div class="description-container">
+      &lt;p js-description class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis tempora ipsa sunt unde totam earum? Fugiat tempora adipisci ex aut corrupti itaque sunt officiis, qui dolor id voluptatum nobis placeat hic magnam saepe&lt;/p>
+      &lt;div class="call-to-action-container">
+        &lt;p class="call-to-action">Ansehen&lt;/p>
+      &lt;/div>
+    &lt;/div>
+  &lt;/div>
+&lt;/a></code>
+          </pre>
         </div>
         <div class="element">
-          <h4 id="card">Alle Prinzipien</h4>
+          <h4 id="card-ba">Version aus der Bachelorarbeit</h4>
           <a class="card prin_1 prin_5_ft">
             <img class="picture" src="./assets/images/demo picture.jpg" alt="">
             <div class="bottom">
@@ -146,6 +255,20 @@
               </div>
             </div>
           </a>
+          <pre>
+            <code>&lt;a class="card prin_1 prin_5_ft">
+  &lt;img class="picture" src="./assets/images/demo picture.jpg" alt="">
+  &lt;div class="bottom">
+    &lt;h4 class="title">Title Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe, tempore?&lt;/h4>
+    &lt;div class="description-container">
+      &lt;p js-description class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis tempora ipsa sunt unde totam earum? Fugiat tempora adipisci ex aut corrupti itaque sunt officiis, qui dolor id voluptatum nobis placeat hic magnam saepe&lt;/p>
+      &lt;div class="call-to-action-container">
+        &lt;p class="call-to-action">Ansehen&lt;/p>
+      &lt;/div>
+    &lt;/div>
+  &lt;/div>
+&lt;/a></code>
+          </pre>
         </div>
         <div class="element">
           <h4>Variation 1</h4>
@@ -168,6 +291,20 @@
               </div>
             </div>
           </a>
+          <pre>
+            <code>&lt;a class="card prin_5_ft">
+  &lt;img class="picture" src="./assets/images/demo picture.jpg" alt="">
+  &lt;div class="bottom">
+    &lt;h4 class="title">Title Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe, tempore?&lt;/h4>
+    &lt;div class="description-container">
+      &lt;p js-description class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis tempora ipsa sunt unde totam earum? Fugiat tempora adipisci ex aut corrupti itaque sunt officiis, qui dolor id voluptatum nobis placeat hic magnam saepe&lt;/p>
+      &lt;div class="call-to-action-container">
+        &lt;p class="call-to-action">Ansehen&lt;/p>
+      &lt;/div>
+    &lt;/div>
+  &lt;/div>
+&lt;/a></code>
+          </pre>
         </div>
         <div class="element">
           <h4>Variation 2</h4>
@@ -190,10 +327,24 @@
               </div>
             </div>
           </a>
+          <pre>
+            <code>&lt;a class="card prin_1">
+  &lt;img class="picture" src="./assets/images/demo picture.jpg" alt="">
+  &lt;div class="bottom">
+    &lt;h4 class="title">Title Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe, tempore?&lt;/h4>
+    &lt;div class="description-container">
+      &lt;p js-description class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis tempora ipsa sunt unde totam earum? Fugiat tempora adipisci ex aut corrupti itaque sunt officiis, qui dolor id voluptatum nobis placeat hic magnam saepe&lt;/p>
+      &lt;div class="call-to-action-container">
+        &lt;p class="call-to-action">Ansehen&lt;/p>
+      &lt;/div>
+    &lt;/div>
+  &lt;/div>
+&lt;/a></code>
+          </pre>
         </div>
-        <h3 class="headline">Dropdown</h3>
-        <div class="element large-margin">
-          <h4>Standard</h4>
+        <h3 id="scroll-dropdown" class="headline">Dropdown</h3>
+        <div class="element">
+          <h4>Default</h4>
           <div js-dropdown-container class="dropdown-container">
             <button js-toggle-dropdown class="button with-icon ghost">Dropdown<img class="button-icon"
                 src="./assets/icons/arrow-bottom-icon.svg" alt="Arrow Bottom Icon"></button>
@@ -218,9 +369,34 @@
               </li>
             </ul>
           </div>
+          <pre>
+            <code>&lt;div js-dropdown-container class="dropdown-container">
+  &lt;button js-toggle-dropdown class="button with-icon ghost">Dropdown&lt;img class="button-icon" src="./assets/icons/arrow-bottom-icon.svg" alt="Arrow Bottom Icon">&lt;/button>
+  &lt;ul class="dropdown-list">
+    &lt;li class="list-item">
+      &lt;a class="link" href="">About&lt;/a>
+    &lt;/li>
+    &lt;li class="list-item">
+      &lt;a class="link" href="">Contact&lt;/a>
+    &lt;/li>
+    &lt;li class="list-item">
+      &lt;a class="link" href="">FAQ&lt;/a>
+    &lt;/li>
+    &lt;li class="list-item">
+      &lt;a class="link" href="">Settings&lt;/a>
+    &lt;/li>
+    &lt;li class="list-item">
+      &lt;a class="link" href="">Security&lt;/a>
+    &lt;/li>
+    &lt;li class="list-item">
+      &lt;a class="link" href="">Imprint&lt;/a>
+    &lt;/li>
+  &lt;/ul>
+&lt;/div></code>
+          </pre>
         </div>
-        <div class="element large-margin">
-          <h4 id="dropdown">Alle Prinzipien</h4>
+        <div class="element">
+          <h4 id="dropdown-ba">Version aus der Bachelorarbeit</h4>
           <div js-dropdown-container class="dropdown-container prin_5_ft">
             <button js-toggle-dropdown class="button with-icon ghost">Dropdown<img class="button-icon prin_5_ft"
                 src="./assets/icons/arrow-bottom-icon.svg" alt="Arrow Bottom Icon"></button>
@@ -245,8 +421,33 @@
               </li>
             </ul>
           </div>
+          <pre>
+            <code>&lt;div js-dropdown-container class="dropdown-container prin_5_ft">
+  &lt;button js-toggle-dropdown class="button with-icon ghost">Dropdown&lt;img class="button-icon prin_5_ft" src="./assets/icons/arrow-bottom-icon.svg" alt="Arrow Bottom Icon">&lt;/button>
+  &lt;ul class="dropdown-list prin_5_ft">
+    &lt;li class="list-item">
+      &lt;a class="link" href="">About&lt;/a>
+    &lt;/li>
+    &lt;li class="list-item">
+      &lt;a class="link" href="">Contact&lt;/a>
+    &lt;/li>
+    &lt;li class="list-item">
+      &lt;a class="link" href="">FAQ&lt;/a>
+    &lt;/li>
+    &lt;li class="list-item">
+      &lt;a class="link" href="">Settings&lt;/a>
+    &lt;/li>
+    &lt;li class="list-item">
+      &lt;a class="link" href="">Security&lt;/a>
+    &lt;/li>
+    &lt;li class="list-item">
+      &lt;a class="link" href="">Imprint&lt;/a>
+    &lt;/li>
+  &lt;/ul>
+&lt;/div></code>
+          </pre>
         </div>
-        <div class="element large-margin">
+        <div class="element">
           <h4>Variation 1</h4>
           <div js-dropdown-container js-dropdown class="dropdown-container">
             <button js-toggle-dropdown class="button with-icon ghost">Dropdown<img class="button-icon prin_5_ft"
@@ -272,8 +473,33 @@
               </li>
             </ul>
           </div>
+          <pre>
+            <code>&lt;div js-dropdown-container class="dropdown-container">
+  &lt;button js-toggle-dropdown class="button with-icon ghost">Dropdown&lt;img class="button-icon prin_5_ft" src="./assets/icons/arrow-bottom-icon.svg" alt="Arrow Bottom Icon">&lt;/button>
+  &lt;ul class="dropdown-list prin_5_ft">
+    &lt;li class="list-item">
+      &lt;a class="link" href="">About&lt;/a>
+    &lt;/li>
+    &lt;li class="list-item">
+      &lt;a class="link" href="">Contact&lt;/a>
+    &lt;/li>
+    &lt;li class="list-item">
+      &lt;a class="link" href="">FAQ&lt;/a>
+    &lt;/li>
+    &lt;li class="list-item">
+      &lt;a class="link" href="">Settings&lt;/a>
+    &lt;/li>
+    &lt;li class="list-item">
+      &lt;a class="link" href="">Security&lt;/a>
+    &lt;/li>
+    &lt;li class="list-item">
+      &lt;a class="link" href="">Imprint&lt;/a>
+    &lt;/li>
+  &lt;/ul>
+&lt;/div></code>
+          </pre>
         </div>
-        <div class="element large-margin">
+        <div class="element">
           <h4>Variation 2</h4>
           <div js-dropdown-container js-dropdown class="dropdown-container prin_5_ft">
             <button js-toggle-dropdown class="button with-icon ghost">Dropdown<img class="button-icon prin_5_ft"
@@ -299,13 +525,36 @@
               </li>
             </ul>
           </div>
+          <pre>
+            <code>&lt;div js-dropdown-container class="dropdown-container prin_5_ft">
+  &lt;button js-toggle-dropdown class="button with-icon ghost">Dropdown&lt;img class="button-icon prin_5_ft" src="./assets/icons/arrow-bottom-icon.svg" alt="Arrow Bottom Icon">&lt;/button>
+  &lt;ul class="dropdown-list">
+    &lt;li class="list-item">
+      &lt;a class="link" href="">About&lt;/a>
+    &lt;/li>
+    &lt;li class="list-item">
+      &lt;a class="link" href="">Contact&lt;/a>
+    &lt;/li>
+    &lt;li class="list-item">
+      &lt;a class="link" href="">FAQ&lt;/a>
+    &lt;/li>
+    &lt;li class="list-item">
+      &lt;a class="link" href="">Settings&lt;/a>
+    &lt;/li>
+    &lt;li class="list-item">
+      &lt;a class="link" href="">Security&lt;/a>
+    &lt;/li>
+    &lt;li class="list-item">
+      &lt;a class="link" href="">Imprint&lt;/a>
+    &lt;/li>
+  &lt;/ul>
+&lt;/div></code>
+          </pre>
       </section>
-
       <section class="ui-elements organisms">
-        <h2 class="headline">Organisms</h2>
-        <h3 class="element-headline">Navigation</h3>
-        <div class="x-large-margin">
-          <h4 class="headline">Standard</h4>
+        <h3 id="scroll-navigation" class="element-headline">Navigation</h3>
+        <div class="element no-margin-left">
+          <h4 class="headline">Default</h4>
           <div js-nav-container js-nav class="nav-container">
             <button js-toggle-nav class="nav-toggle">
               <div class="line one"></div>
@@ -335,9 +584,40 @@
               </ul>
             </nav>
           </div>
+          <pre>
+            <code>&lt;div js-nav-container js-nav class="nav-container">
+  &lt;button js-toggle-nav class="nav-toggle">
+    &lt;div class="line one">&lt;/div>
+    &lt;div class="line two">&lt;/div>
+    &lt;div class="line three">&lt;/div>
+  &lt;/button>
+  &lt;nav class="nav">
+    &lt;ul class="nav-list">
+      &lt;li class="list-item">
+        &lt;a class="link" href="">About&lt;/a>
+      &lt;/li>
+      &lt;li class="list-item">
+        &lt;a class="link" href="">Contact&lt;/a>
+      &lt;/li>
+      &lt;li class="list-item">
+        &lt;a class="link" href="">FAQ&lt;/a>
+      &lt;/li>
+      &lt;li class="list-item">
+        &lt;a class="link" href="">Settings&lt;/a>
+      &lt;/li>
+      &lt;li class="list-item">
+        &lt;a class="link" href="">Security&lt;/a>
+      &lt;/li>
+      &lt;li class="list-item">
+        &lt;a class="link" href="">Imprint&lt;/a>
+      &lt;/li>
+    &lt;/ul>
+  &lt;/nav>
+&lt;/div></code>
+        </pre>
         </div>
-        <div class="x-large-margin">
-          <h4 id="nav" class="headline">Alle Prinzipien</h4>
+        <div class="element no-margin-left">
+          <h4 id="nav-ba" class="headline">Version aus der Bachelorarbeit</h4>
           <div js-nav-container js-nav class="nav-container">
             <button js-toggle-nav class="nav-toggle">
               <div class="line one"></div>
@@ -367,8 +647,39 @@
               </ul>
             </nav>
           </div>
+          <pre>
+            <code>&lt;div js-nav-container js-nav class="nav-container">
+  &lt;button js-toggle-nav class="nav-toggle">
+    &lt;div class="line one">&lt;/div>
+    &lt;div class="line two">&lt;/div>
+    &lt;div class="line three">&lt;/div>
+  &lt;/button>
+  &lt;nav class="nav prin_1 prin_5_ft">
+    &lt;ul class="nav-list">
+      &lt;li class="list-item">
+        &lt;a class="link prin_5_ft" href="">About&lt;/a>
+      &lt;/li>
+      &lt;li class="list-item">
+        &lt;a class="link prin_5_ft" href="">Contact&lt;/a>
+      &lt;/li>
+      &lt;li class="list-item">
+        &lt;a class="link prin_5_ft" href="">FAQ&lt;/a>
+      &lt;/li>
+      &lt;li class="list-item">
+        &lt;a class="link prin_5_ft" href="">Settings&lt;/a>
+      &lt;/li>
+      &lt;li class="list-item">
+        &lt;a class="link prin_5_ft" href="">Security&lt;/a>
+      &lt;/li>
+      &lt;li class="list-item">
+        &lt;a class="link prin_5_ft" href="">Imprint&lt;/a>
+      &lt;/li>
+    &lt;/ul>
+  &lt;/nav>
+&lt;/div></code>
+        </pre>
         </div>
-        <div class="x-large-margin">
+        <div class="element no-margin-left">
           <h4 class="headline">Variation 1</h4>
           <div js-nav-container js-nav class="nav-container">
             <button js-toggle-nav class="nav-toggle">
@@ -399,8 +710,39 @@
               </ul>
             </nav>
           </div>
+          <pre>
+            <code>&lt;div js-nav-container js-nav class="nav-container">
+  &lt;button js-toggle-nav class="nav-toggle">
+    &lt;div class="line one">&lt;/div>
+    &lt;div class="line two">&lt;/div>
+    &lt;div class="line three">&lt;/div>
+  &lt;/button>
+  &lt;nav class="nav prin_1">
+    &lt;ul class="nav-list">
+      &lt;li class="list-item">
+        &lt;a class="link" href="">About&lt;/a>
+      &lt;/li>
+      &lt;li class="list-item">
+        &lt;a class="link" href="">Contact&lt;/a>
+      &lt;/li>
+      &lt;li class="list-item">
+        &lt;a class="link" href="">FAQ&lt;/a>
+      &lt;/li>
+      &lt;li class="list-item">
+        &lt;a class="link" href="">Settings&lt;/a>
+      &lt;/li>
+      &lt;li class="list-item">
+        &lt;a class="link" href="">Security&lt;/a>
+      &lt;/li>
+      &lt;li class="list-item">
+        &lt;a class="link" href="">Imprint&lt;/a>
+      &lt;/li>
+    &lt;/ul>
+  &lt;/nav>
+&lt;/div></code>
+        </pre>
         </div>
-        <div class="x-large-margin">
+        <div class="element no-margin-left">
           <h4 class="headline">Variation 2</h4>
           <div js-nav-container js-nav class="nav-container">
             <button js-toggle-nav class="nav-toggle">
@@ -431,8 +773,39 @@
               </ul>
             </nav>
           </div>
+          <pre>
+            <code>&lt;div js-nav-container js-nav class="nav-container">
+  &lt;button js-toggle-nav class="nav-toggle">
+    &lt;div class="line one">&lt;/div>
+    &lt;div class="line two">&lt;/div>
+    &lt;div class="line three">&lt;/div>
+  &lt;/button>
+  &lt;nav class="nav prin_5_ft">
+    &lt;ul class="nav-list">
+      &lt;li class="list-item">
+        &lt;a class="link" href="">About&lt;/a>
+      &lt;/li>
+      &lt;li class="list-item">
+        &lt;a class="link" href="">Contact&lt;/a>
+      &lt;/li>
+      &lt;li class="list-item">
+        &lt;a class="link" href="">FAQ&lt;/a>
+      &lt;/li>
+      &lt;li class="list-item">
+        &lt;a class="link" href="">Settings&lt;/a>
+      &lt;/li>
+      &lt;li class="list-item">
+        &lt;a class="link" href="">Security&lt;/a>
+      &lt;/li>
+      &lt;li class="list-item">
+        &lt;a class="link" href="">Imprint&lt;/a>
+      &lt;/li>
+    &lt;/ul>
+  &lt;/nav>
+&lt;/div></code>
+        </pre>
         </div>
-        <div class="x-large-margin">
+        <div class="element no-margin-left">
           <h4 class="headline">Variation 3</h4>
           <div js-nav-container js-nav class="nav-container">
             <button js-toggle-nav class="nav-toggle">
@@ -463,10 +836,41 @@
               </ul>
             </nav>
           </div>
+          <pre>
+            <code>&lt;div js-nav-container js-nav class="nav-container">
+  &lt;button js-toggle-nav class="nav-toggle">
+    &lt;div class="line one">&lt;/div>
+    &lt;div class="line two">&lt;/div>
+    &lt;div class="line three">&lt;/div>
+  &lt;/button>
+  &lt;nav class="nav">
+    &lt;ul class="nav-list">
+      &lt;li class="list-item">
+        &lt;a class="link prin_5_ft" href="">About&lt;/a>
+      &lt;/li>
+      &lt;li class="list-item">
+        &lt;a class="link prin_5_ft" href="">Contact&lt;/a>
+      &lt;/li>
+      &lt;li class="list-item">
+        &lt;a class="link prin_5_ft" href="">FAQ&lt;/a>
+      &lt;/li>
+      &lt;li class="list-item">
+        &lt;a class="link prin_5_ft" href="">Settings&lt;/a>
+      &lt;/li>
+      &lt;li class="list-item">
+        &lt;a class="link prin_5_ft" href="">Security&lt;/a>
+      &lt;/li>
+      &lt;li class="list-item">
+        &lt;a class="link prin_5_ft" href="">Imprint&lt;/a>
+      &lt;/li>
+    &lt;/ul>
+  &lt;/nav>
+&lt;/div></code>
+        </pre>
         </div>
-        <h3 class="element-headline">Carousel ohne Beschreibung</h3>
-        <div>
-          <h5 class="headline">Standard</h5>
+        <h3 id="scroll-carousel" class="element-headline">Carousel ohne Beschreibung</h3>
+        <div class="element">
+          <h5 class="headline no-margin-left">Default</h5>
           <div js-carousel-container class="carousel-container">
             <div id="carousel-inner" class="carousel-inner">
               <div js-item class="item active">
@@ -500,9 +904,45 @@
                   srcset=""></a>
             </div>
           </div>
+          <pre>
+            <code>&lt;div js-carousel-container class="carousel-container">
+  &lt;div id="carousel-inner" class="carousel-inner">
+    &lt;div js-item class="item active">
+      &lt;div class="image-container">
+        &lt;img class="image" src="./assets/images/carousel-1.jpg" alt="">
+        &lt;div class="dark-background">&lt;/div>
+      &lt;/div>
+    &lt;/div>
+    &lt;div id="slide-2" js-item class="item">
+      &lt;div class="image-container">
+        &lt;img class="image active" src="./assets/images/carousel-2.jpg" alt="">
+        &lt;div class="dark-background">&lt;/div>
+      &lt;/div>
+    &lt;/div>
+    &lt;div id="slide-3" js-item class="item">
+      &lt;div class="image-container">
+        &lt;img class="image" src="./assets/images/carousel-3.jpg" alt="">
+        &lt;div class="dark-background">&lt;/div>
+      &lt;/div>
+    &lt;/div>
+  &lt;/div>
+  &lt;ol js-indicator-container class="indicator-container">
+    &lt;li js-1 js-indicator class="indicator active">&lt;a>&lt;/a>&lt;/li>
+    &lt;li js-2 js-indicator class="indicator not-active">&lt;a>&lt;/a>&lt;/li>
+    &lt;li js-3 js-indicator class="indicator not-active">&lt;a>&lt;/a>&lt;/li>
+  &lt;/ol>
+  &lt;div class="carousel-controls">
+    &lt;a js-prev class="prev control">&lt;img class="icon" src="./assets/icons/arrow-bottom-icon-white.svg" alt=""
+        srcset="">&lt;/a>
+    &lt;a js-next class="next control">&lt;img class="icon" src="./assets/icons/arrow-bottom-icon-white.svg" alt=""
+        srcset="">&lt;/a>
+  &lt;/div>
+&lt;/div>
+            </code>
+        </pre>
         </div>
-        <div>
-          <h4 id="carousel" class="headline">Alle Prinzipien</h4>
+        <div class="element">
+          <h5 class="carousel-ba" class="headline no-margin-left">Version aus der Bachelorarbeit</h5>
           <div js-carousel-container class="carousel-container">
             <div id="carousel-inner" class="carousel-inner prin_1 prin_2 prin_5_ft">
               <div js-item class="item active">
@@ -536,9 +976,45 @@
                   srcset=""></a>
             </div>
           </div>
+          <pre>
+            <code>&lt;div js-carousel-container class="carousel-container">
+  &lt;div id="carousel-inner" class="carousel-inner prin_1 prin_2 prin_5_ft">
+    &lt;div js-item class="item active">
+      &lt;div class="image-container">
+        &lt;img class="image" src="./assets/images/carousel-1.jpg" alt="">
+        &lt;div class="dark-background">&lt;/div>
+      &lt;/div>
+    &lt;/div>
+    &lt;div id="slide-2" js-item class="item">
+      &lt;div class="image-container">
+        &lt;img class="image active" src="./assets/images/carousel-2.jpg" alt="">
+        &lt;div class="dark-background">&lt;/div>
+      &lt;/div>
+    &lt;/div>
+    &lt;div id="slide-3" js-item class="item">
+      &lt;div class="image-container">
+        &lt;img class="image" src="./assets/images/carousel-3.jpg" alt="">
+        &lt;div class="dark-background">&lt;/div>
+      &lt;/div>
+    &lt;/div>
+  &lt;/div>
+  &lt;ol js-indicator-container class="indicator-container">
+    &lt;li js-1 js-indicator class="indicator active">&lt;a>&lt;/a>&lt;/li>
+    &lt;li js-2 js-indicator class="indicator not-active">&lt;a>&lt;/a>&lt;/li>
+    &lt;li js-3 js-indicator class="indicator not-active">&lt;a>&lt;/a>&lt;/li>
+  &lt;/ol>
+  &lt;div class="carousel-controls">
+    &lt;a js-prev class="prev control">&lt;img class="icon" src="./assets/icons/arrow-bottom-icon-white.svg" alt=""
+        srcset="">&lt;/a>
+    &lt;a js-next class="next control">&lt;img class="icon" src="./assets/icons/arrow-bottom-icon-white.svg" alt=""
+        srcset="">&lt;/a>
+  &lt;/div>
+&lt;/div>
+            </code>
+        </pre>
         </div>
-        <div>
-          <h5 class="headline">Variation 1</h5>
+        <div class="element">
+          <h5 class="headline no-margin-left">Variation 1</h5>
           <div js-carousel-container class="carousel-container">
             <div id="carousel-inner" class="carousel-inner prin_1">
               <div js-item class="item active">
@@ -572,9 +1048,45 @@
                   srcset=""></a>
             </div>
           </div>
+          <pre>
+            <code>&lt;div js-carousel-container class="carousel-container">
+  &lt;div id="carousel-inner" class="carousel-inner prin_1">
+    &lt;div js-item class="item active">
+      &lt;div class="image-container">
+        &lt;img class="image" src="./assets/images/carousel-1.jpg" alt="">
+        &lt;div class="dark-background">&lt;/div>
+      &lt;/div>
+    &lt;/div>
+    &lt;div id="slide-2" js-item class="item">
+      &lt;div class="image-container">
+        &lt;img class="image active" src="./assets/images/carousel-2.jpg" alt="">
+        &lt;div class="dark-background">&lt;/div>
+      &lt;/div>
+    &lt;/div>
+    &lt;div id="slide-3" js-item class="item">
+      &lt;div class="image-container">
+        &lt;img class="image" src="./assets/images/carousel-3.jpg" alt="">
+        &lt;div class="dark-background">&lt;/div>
+      &lt;/div>
+    &lt;/div>
+  &lt;/div>
+  &lt;ol js-indicator-container class="indicator-container">
+    &lt;li js-1 js-indicator class="indicator active">&lt;a>&lt;/a>&lt;/li>
+    &lt;li js-2 js-indicator class="indicator not-active">&lt;a>&lt;/a>&lt;/li>
+    &lt;li js-3 js-indicator class="indicator not-active">&lt;a>&lt;/a>&lt;/li>
+  &lt;/ol>
+  &lt;div class="carousel-controls">
+    &lt;a js-prev class="prev control">&lt;img class="icon" src="./assets/icons/arrow-bottom-icon-white.svg" alt=""
+        srcset="">&lt;/a>
+    &lt;a js-next class="next control">&lt;img class="icon" src="./assets/icons/arrow-bottom-icon-white.svg" alt=""
+        srcset="">&lt;/a>
+  &lt;/div>
+&lt;/div>
+            </code>
+        </pre>
         </div>
-        <div>
-          <h5 class="headline">Variation 2</h5>
+        <div class="element">
+          <h5 class="headline no-margin-left">Variation 2</h5>
           <div js-carousel-container class="carousel-container">
             <div id="carousel-inner" class="carousel-inner prin_2">
               <div js-item class="item active">
@@ -608,9 +1120,45 @@
                   srcset=""></a>
             </div>
           </div>
+          <pre>
+            <code>&lt;div js-carousel-container class="carousel-container">
+  &lt;div id="carousel-inner" class="carousel-inner prin_2">
+    &lt;div js-item class="item active">
+      &lt;div class="image-container">
+        &lt;img class="image" src="./assets/images/carousel-1.jpg" alt="">
+        &lt;div class="dark-background">&lt;/div>
+      &lt;/div>
+    &lt;/div>
+    &lt;div id="slide-2" js-item class="item">
+      &lt;div class="image-container">
+        &lt;img class="image active" src="./assets/images/carousel-2.jpg" alt="">
+        &lt;div class="dark-background">&lt;/div>
+      &lt;/div>
+    &lt;/div>
+    &lt;div id="slide-3" js-item class="item">
+      &lt;div class="image-container">
+        &lt;img class="image" src="./assets/images/carousel-3.jpg" alt="">
+        &lt;div class="dark-background">&lt;/div>
+      &lt;/div>
+    &lt;/div>
+  &lt;/div>
+  &lt;ol js-indicator-container class="indicator-container">
+    &lt;li js-1 js-indicator class="indicator active">&lt;a>&lt;/a>&lt;/li>
+    &lt;li js-2 js-indicator class="indicator not-active">&lt;a>&lt;/a>&lt;/li>
+    &lt;li js-3 js-indicator class="indicator not-active">&lt;a>&lt;/a>&lt;/li>
+  &lt;/ol>
+  &lt;div class="carousel-controls">
+    &lt;a js-prev class="prev control">&lt;img class="icon" src="./assets/icons/arrow-bottom-icon-white.svg" alt=""
+        srcset="">&lt;/a>
+    &lt;a js-next class="next control">&lt;img class="icon" src="./assets/icons/arrow-bottom-icon-white.svg" alt=""
+        srcset="">&lt;/a>
+  &lt;/div>
+&lt;/div>
+            </code>
+        </pre>
         </div>
-        <div>
-          <h5 class="headline">Variation 3</h5>
+        <div class="element">
+          <h5 class="headline no-margin-left">Variation 3</h5>
           <div js-carousel-container class="carousel-container">
             <div id="carousel-inner" class="carousel-inner prin_5_ft">
               <div js-item class="item active">
@@ -644,10 +1192,46 @@
                   srcset=""></a>
             </div>
           </div>
+          <pre>
+            <code>&lt;div js-carousel-container class="carousel-container">
+  &lt;div id="carousel-inner" class="carousel-inner prin_5_ft">
+    &lt;div js-item class="item active">
+      &lt;div class="image-container">
+        &lt;img class="image" src="./assets/images/carousel-1.jpg" alt="">
+        &lt;div class="dark-background">&lt;/div>
+      &lt;/div>
+    &lt;/div>
+    &lt;div id="slide-2" js-item class="item">
+      &lt;div class="image-container">
+        &lt;img class="image active" src="./assets/images/carousel-2.jpg" alt="">
+        &lt;div class="dark-background">&lt;/div>
+      &lt;/div>
+    &lt;/div>
+    &lt;div id="slide-3" js-item class="item">
+      &lt;div class="image-container">
+        &lt;img class="image" src="./assets/images/carousel-3.jpg" alt="">
+        &lt;div class="dark-background">&lt;/div>
+      &lt;/div>
+    &lt;/div>
+  &lt;/div>
+  &lt;ol js-indicator-container class="indicator-container">
+    &lt;li js-1 js-indicator class="indicator active">&lt;a>&lt;/a>&lt;/li>
+    &lt;li js-2 js-indicator class="indicator not-active">&lt;a>&lt;/a>&lt;/li>
+    &lt;li js-3 js-indicator class="indicator not-active">&lt;a>&lt;/a>&lt;/li>
+  &lt;/ol>
+  &lt;div class="carousel-controls">
+    &lt;a js-prev class="prev control">&lt;img class="icon" src="./assets/icons/arrow-bottom-icon-white.svg" alt=""
+        srcset="">&lt;/a>
+    &lt;a js-next class="next control">&lt;img class="icon" src="./assets/icons/arrow-bottom-icon-white.svg" alt=""
+        srcset="">&lt;/a>
+  &lt;/div>
+&lt;/div>
+            </code>
+        </pre>
         </div>
         <h3 class="element-headline">Carousel mit Beschreibung</h3>
-        <div>
-          <h5 class="headline">Standard</h5>
+        <div class="element">
+          <h5 class="headline no-margin-left">Default</h5>
           <div js-carousel-container class="carousel-container">
             <div id="carousel-inner" class="carousel-inner">
               <div js-item class="item active">
@@ -690,9 +1274,53 @@
                   srcset=""></a>
             </div>
           </div>
+          <pre>
+            <code>&lt;div js-carousel-container class="carousel-container">
+  &lt;div id="carousel-inner" class="carousel-inner">
+    &lt;div js-item class="item active">
+      &lt;div class="image-container">
+        &lt;img class="image" src="./assets/images/carousel-1.jpg" alt="">
+        &lt;div class="dark-background">&lt;/div>
+      &lt;/div>
+      &lt;div class="text">
+        &lt;h5 class="headline">Item 1 Lorem, ipsum dolor.&lt;/h5>
+      &lt;/div>
+    &lt;/div>
+    &lt;div id="slide-2" js-item class="item">
+      &lt;div class="image-container">
+        &lt;img class="image active" src="./assets/images/carousel-2.jpg" alt="">
+        &lt;div class="dark-background">&lt;/div>
+      &lt;/div>
+      &lt;div class="text">
+        &lt;h5 class="headline">Item 2 elit. Minima, amet?&lt;/h5>
+      &lt;/div>
+    &lt;/div>
+    &lt;div id="slide-3" js-item class="item">
+      &lt;div class="image-container">
+        &lt;img class="image" src="./assets/images/carousel-3.jpg" alt="">
+        &lt;div class="dark-background">&lt;/div>
+      &lt;/div>
+      &lt;div class="text">
+        &lt;h5 class="headline">Item 3 magni minima voluptas expedita asperiores&lt;/h5>
+      &lt;/div>
+    &lt;/div>
+  &lt;/div>
+  &lt;ol js-indicator-container class="indicator-container">
+    &lt;li js-1 js-indicator class="indicator active">&lt;a>&lt;/a>&lt;/li>
+    &lt;li js-2 js-indicator class="indicator not-active">&lt;a>&lt;/a>&lt;/li>
+    &lt;li js-3 js-indicator class="indicator not-active">&lt;a>&lt;/a>&lt;/li>
+  &lt;/ol>
+  &lt;div class="carousel-controls">
+    &lt;a js-prev class="prev control">&lt;img class="icon" src="./assets/icons/arrow-bottom-icon-white.svg" alt=""
+        srcset="">&lt;/a>
+    &lt;a js-next class="next control">&lt;img class="icon" src="./assets/icons/arrow-bottom-icon-white.svg" alt=""
+        srcset="">&lt;/a>
+  &lt;/div>
+&lt;/div></code>
+          </pre>
         </div>
-        <div>
-          <h5 class="headline">Alle Prinzipien</h5>
+        <div class="element">
+          <h5 class="headline no-margin-left">Version aus der Bachelorarbeit</h5>
           <div js-carousel-container class="carousel-container">
             <div id="carousel-inner" class="carousel-inner">
               <div js-item class="item active">
@@ -735,9 +1363,53 @@
                   srcset=""></a>
             </div>
           </div>
+          <pre>
+            <code>&lt;div js-carousel-container class="carousel-container">
+  &lt;div id="carousel-inner" class="carousel-inner">
+    &lt;div js-item class="item active">
+      &lt;div class="image-container">
+        &lt;img class="image" src="./assets/images/carousel-1.jpg" alt="">
+        &lt;div class="dark-background">&lt;/div>
+      &lt;/div>
+      &lt;div class="text prin_1 prin_5_ft">
+        &lt;h5 class="headline">Item 1 Lorem, ipsum dolor.&lt;/h5>
+      &lt;/div>
+    &lt;/div>
+    &lt;div id="slide-2" js-item class="item">
+      &lt;div class="image-container">
+        &lt;img class="image active" src="./assets/images/carousel-2.jpg" alt="">
+        &lt;div class="dark-background">&lt;/div>
+      &lt;/div>
+      &lt;div class="text prin_1 prin_5_ft">
+        &lt;h5 class="headline">Item 2 elit. Minima, amet?&lt;/h5>
+      &lt;/div>
+    &lt;/div>
+    &lt;div id="slide-3" js-item class="item">
+      &lt;div class="image-container">
+        &lt;img class="image" src="./assets/images/carousel-3.jpg" alt="">
+        &lt;div class="dark-background">&lt;/div>
+      &lt;/div>
+      &lt;div class="text prin_1 prin_5_ft">
+        &lt;h5 class="headline">Item 3 magni minima voluptas expedita asperiores&lt;/h5>
+      &lt;/div>
+    &lt;/div>
+  &lt;/div>
+  &lt;ol js-indicator-container class="indicator-container">
+    &lt;li js-1 js-indicator class="indicator active">&lt;a>&lt;/a>&lt;/li>
+    &lt;li js-2 js-indicator class="indicator not-active">&lt;a>&lt;/a>&lt;/li>
+    &lt;li js-3 js-indicator class="indicator not-active">&lt;a>&lt;/a>&lt;/li>
+  &lt;/ol>
+  &lt;div class="carousel-controls">
+    &lt;a js-prev class="prev control">&lt;img class="icon" src="./assets/icons/arrow-bottom-icon-white.svg" alt=""
+        srcset="">&lt;/a>
+    &lt;a js-next class="next control">&lt;img class="icon" src="./assets/icons/arrow-bottom-icon-white.svg" alt=""
+        srcset="">&lt;/a>
+  &lt;/div>
+&lt;/div></code>
+          </pre>
         </div>
-        <div>
-          <h5 class="headline">Variation 1</h5>
+        <div class="element">
+          <h5 class="headline no-margin-left">Variation 1</h5>
           <div js-carousel-container class="carousel-container">
             <div id="carousel-inner" class="carousel-inner">
               <div js-item class="item active">
@@ -780,9 +1452,53 @@
                   srcset=""></a>
             </div>
           </div>
+          <pre>
+            <code>&lt;div js-carousel-container class="carousel-container">
+  &lt;div id="carousel-inner" class="carousel-inner">
+    &lt;div js-item class="item active">
+      &lt;div class="image-container">
+        &lt;img class="image" src="./assets/images/carousel-1.jpg" alt="">
+        &lt;div class="dark-background">&lt;/div>
+      &lt;/div>
+      &lt;div class="text prin_1">
+        &lt;h5 class="headline">Item 1 Lorem, ipsum dolor.&lt;/h5>
+      &lt;/div>
+    &lt;/div>
+    &lt;div id="slide-2" js-item class="item">
+      &lt;div class="image-container">
+        &lt;img class="image active" src="./assets/images/carousel-2.jpg" alt="">
+        &lt;div class="dark-background">&lt;/div>
+      &lt;/div>
+      &lt;div class="text prin_1">
+        &lt;h5 class="headline">Item 2 elit. Minima, amet?&lt;/h5>
+      &lt;/div>
+    &lt;/div>
+    &lt;div id="slide-3" js-item class="item">
+      &lt;div class="image-container">
+        &lt;img class="image" src="./assets/images/carousel-3.jpg" alt="">
+        &lt;div class="dark-background">&lt;/div>
+      &lt;/div>
+      &lt;div class="text prin_1">
+        &lt;h5 class="headline">Item 3 magni minima voluptas expedita asperiores&lt;/h5>
+      &lt;/div>
+    &lt;/div>
+  &lt;/div>
+  &lt;ol js-indicator-container class="indicator-container">
+    &lt;li js-1 js-indicator class="indicator active">&lt;a>&lt;/a>&lt;/li>
+    &lt;li js-2 js-indicator class="indicator not-active">&lt;a>&lt;/a>&lt;/li>
+    &lt;li js-3 js-indicator class="indicator not-active">&lt;a>&lt;/a>&lt;/li>
+  &lt;/ol>
+  &lt;div class="carousel-controls">
+    &lt;a js-prev class="prev control">&lt;img class="icon" src="./assets/icons/arrow-bottom-icon-white.svg" alt=""
+        srcset="">&lt;/a>
+    &lt;a js-next class="next control">&lt;img class="icon" src="./assets/icons/arrow-bottom-icon-white.svg" alt=""
+        srcset="">&lt;/a>
+  &lt;/div>
+&lt;/div></code>
+          </pre>
         </div>
-        <div>
-          <h5 class="headline">Variation 2</h5>
+        <div class="element">
+          <h5 class="headline no-margin-left">Variation 2</h5>
           <div js-carousel-container class="carousel-container">
             <div id="carousel-inner" class="carousel-inner">
               <div js-item class="item active">
@@ -825,9 +1541,57 @@
                   srcset=""></a>
             </div>
           </div>
+          <pre>
+            <code>&lt;div js-carousel-container class="carousel-container">
+  &lt;div id="carousel-inner" class="carousel-inner">
+    &lt;div js-item class="item active">
+      &lt;div class="image-container">
+        &lt;img class="image" src="./assets/images/carousel-1.jpg" alt="">
+        &lt;div class="dark-background">&lt;/div>
+      &lt;/div>
+      &lt;div class="text prin_5_ft">
+        &lt;h5 class="headline">Item 1 Lorem, ipsum dolor.&lt;/h5>
+      &lt;/div>
+    &lt;/div>
+    &lt;div id="slide-2" js-item class="item">
+      &lt;div class="image-container">
+        &lt;img class="image active" src="./assets/images/carousel-2.jpg" alt="">
+        &lt;div class="dark-background">&lt;/div>
+      &lt;/div>
+      &lt;div class="text prin_5_ft">
+        &lt;h5 class="headline">Item 2 elit. Minima, amet?&lt;/h5>
+      &lt;/div>
+    &lt;/div>
+    &lt;div id="slide-3" js-item class="item">
+      &lt;div class="image-container">
+        &lt;img class="image" src="./assets/images/carousel-3.jpg" alt="">
+        &lt;div class="dark-background">&lt;/div>
+      &lt;/div>
+      &lt;div class="text prin_5_ft">
+        &lt;h5 class="headline">Item 3 magni minima voluptas expedita asperiores&lt;/h5>
+      &lt;/div>
+    &lt;/div>
+  &lt;/div>
+  &lt;ol js-indicator-container class="indicator-container">
+    &lt;li js-1 js-indicator class="indicator active">&lt;a>&lt;/a>&lt;/li>
+    &lt;li js-2 js-indicator class="indicator not-active">&lt;a>&lt;/a>&lt;/li>
+    &lt;li js-3 js-indicator class="indicator not-active">&lt;a>&lt;/a>&lt;/li>
+  &lt;/ol>
+  &lt;div class="carousel-controls">
+    &lt;a js-prev class="prev control">&lt;img class="icon" src="./assets/icons/arrow-bottom-icon-white.svg" alt=""
+        srcset="">&lt;/a>
+    &lt;a js-next class="next control">&lt;img class="icon" src="./assets/icons/arrow-bottom-icon-white.svg" alt=""
+        srcset="">&lt;/a>
+  &lt;/div>
+&lt;/div></code>
+          </pre>
         </div>
       </section>
     </div>
+  </div>
+
+  <div class="autor-wrapper">
+    <p>Autor: Hendrik Pawlowski</p>
   </div>
 
   <script src="./dist/script.js"></script>
